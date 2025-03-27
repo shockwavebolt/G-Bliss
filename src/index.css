@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Condiment&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+@import "tailwindcss";
+@theme {
+  /* Greens */
+  --color-green04: #cde0b4;
+  --color-green05: #a0c776;
+  --color-green06: #33481e;
+  --color-green09: #141d0c;
+  --color-greenGd: linear-gradient(to bottom, #a0c776, #aecf8a);
+
+  /* Magenta */
+  --color-magenta: #7a0037;
+
+  /* Off-white */
+  --color-offWhite: #fcf9f4;
+
+  /* Fonts */
+  --font-font01: "Anton";
+  --font-font02: "Condiment";
+  --font-font03: "Inter";
+
+  /* Breakpoints */
+  --breakpoint-xs: 480px;
+}
+@tailwind utilities;
