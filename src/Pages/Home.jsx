@@ -19,7 +19,7 @@ function Home() {
           </div>
           <div className="font-font01 text-[18px]">Shop all</div>
         </div>
-        <div className="grid grid-cols-1 gap-x-[32px] gap-y-[32px] xs:grid-cols-3 md:gap-y-[64px]">
+        <div className="grid grid-cols-1 gap-x-[32px] gap-y-[32px] sm:grid-cols-3 md:gap-y-[64px]">
           <Category imgSrc={`public/img/flower.png`} category={"Flower"} />
           <Category imgSrc={`public/img/pre-roll.jpg`} category={"Pre-Roll"} />
           <Category imgSrc={`public/img/vapes.jpeg`} category={"Vapes"} />

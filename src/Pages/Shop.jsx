@@ -1,9 +1,10 @@
+import Cart from "../Components/Cart";
 import Filter from "../Components/Filter";
 import Product from "../Components/Product";
 
 function Shop() {
   return (
-    <div>
+    <div className="relative">
       <div className="flex items-center justify-between px-[48px] py-[32px] bg-green05 text-green09 ">
         <div>
           <img src="public\img\logo(svg).svg"></img>
@@ -69,7 +70,7 @@ function Shop() {
           </div>
         </div>
         <div className="flex flex-col gap-[24px]">
-          <div className="font-font02 text-[76px]">Flower</div>
+          <div className="font-font02 text-[76px] md:hidden">Flower</div>
           <div className="grid grid-cols-2 gap-y-[48px] gap-x-[16px]  sm:gap-x-[32px] md:hidden">
             <Product />
             <Product />

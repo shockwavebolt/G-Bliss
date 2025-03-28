@@ -13,7 +13,9 @@ function Product() {
           <div className="pr-[4px]">Indica</div>
           <div className="pl-[4px]">Hybrid</div>
         </div>
+
         <div className="font-font03">3.5g</div>
+
         <div className="flex justify-between py-[8px]">
           <div className="font-font01 text-[22px] md:text-[24px] md:lg-[29px]">
             $50
