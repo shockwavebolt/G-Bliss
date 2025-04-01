@@ -1,6 +1,6 @@
 function CheckoutItem() {
   return (
-    <div className="flex p-[24px] gap-[24px] bg-offWhite rounded-lg">
+    <div className="flex p-[24px] gap-[24px] bg-white rounded-lg">
       <div className="flex items-center justify-between w-full">
         <div className="flex">
           <img src="public/products/pinkRozay.png" className="w-[150px]"></img>
@@ -16,7 +16,9 @@ function CheckoutItem() {
             <div className="font-font03">Quantity: 1</div>
           </div>
         </div>
-        <div className="font-font01 text-[29px]">$50</div>
+        <div className="font-font01 text-[29px] place-self-start py-[12px]">
+          $50
+        </div>
       </div>
     </div>
   );
