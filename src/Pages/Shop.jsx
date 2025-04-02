@@ -1,30 +1,104 @@
 import Cart from "../Components/Cart";
 import Filter from "../Components/Filter";
-import Product from "../Components/Product";
+import NavBar from "../Components/NavBar";
+import ShopItem from "../Components/shopItem";
+
+import BackButton from "../UI/BackButton";
+
+const data = [
+  {
+    name: "Pink Rozay",
+    type: "Indica",
+    type2: "Hybrid",
+    weight: "3.5g",
+    price: 50,
+    quantity: 1,
+    img: "public/img/strains/pinkRozay.png",
+  },
+  {
+    name: "Gelato",
+    type: "Indica",
+    type2: "Hybrid",
+    weight: "3.5g",
+    price: 30,
+    quantity: 1,
+    img: "public/img/strains/gelato.jpg",
+  },
+  {
+    name: "Gorilla Glue",
+    type: "Indica",
+    type2: "Hybrid",
+    weight: "3.5g",
+    price: 30,
+    quantity: 1,
+    img: "public/img/strains/gorilla.jpg",
+  },
+
+  {
+    name: "Pink Rozay",
+    type: "Indica",
+    type2: "Hybrid",
+    weight: "3.5g",
+    price: 50,
+    quantity: 1,
+    img: "public/img/strains/pinkRozay.png",
+  },
+  {
+    name: "Gelato",
+    type: "Indica",
+    type2: "Hybrid",
+    weight: "3.5g",
+    price: 30,
+    quantity: 1,
+    img: "public/img/strains/gelato.jpg",
+  },
+  {
+    name: "Gorilla Glue",
+    type: "Indica",
+    type2: "Hybrid",
+    weight: "3.5g",
+    price: 30,
+    quantity: 1,
+    img: "public/img/strains/gorilla.jpg",
+  },
+  {
+    name: "Pink Rozay",
+    type: "Indica",
+    type2: "Hybrid",
+    weight: "3.5g",
+    price: 50,
+    quantity: 1,
+    img: "public/img/strains/pinkRozay.png",
+  },
+  {
+    name: "Gelato",
+    type: "Indica",
+    type2: "Hybrid",
+    weight: "3.5g",
+    price: 30,
+    quantity: 1,
+    img: "public/img/strains/gelato.jpg",
+  },
+  {
+    name: "Gorilla Glue",
+    type: "Indica",
+    type2: "Hybrid",
+    weight: "3.5g",
+    price: 30,
+    quantity: 1,
+    img: "public/img/strains/gorilla.jpg",
+  },
+];
 
 function Shop() {
+  const itemData = data;
   return (
     <div className="relative">
-      <div className="flex items-center justify-between px-[48px] py-[32px] bg-green05 text-green09 ">
-        <div>
-          <img src="public\img\logo(svg).svg"></img>
-        </div>
-        <div className="flex  justify-between gap-[64px] font-font01 ">
-          <div>Shop</div>
-          <div>Search</div>
-          <div>Cart</div>
-          <div>My Order</div>
-        </div>
-      </div>
+      <NavBar />
       <section className="flex flex-col py-[128px] px-[24px] bg-offWhite text-green09 gap-[96px] md:gap-[64px] lg:px-[48px]">
         {/* Desktop  */}
         <div className="hidden grid-cols-4 md:grid">
-          <div className="flex items-center gap-[8px] font-font01">
-            <span>
-              <img src="public/icons/back.svg" />
-            </span>
-            Back
-          </div>
+          <BackButton />
           <div className="font-font02 text-[76px]">Flower</div>
           <div></div>
           <div className=" flex gap-[4px] place-self-center justify-self-end font-font01">
@@ -34,16 +108,13 @@ function Shop() {
             </span>
           </div>
         </div>
-        <div className="hidden md:grid grid-cols-[auto_auto] divide-x-2 gap-x-[32px]">
+        <div className="hidden md:grid grid-cols-[auto_auto] divide-x-2 gap-x-[32px] ">
           <Filter />
-          <div className="grid grid-cols-2 gap-y-[48px] gap-x-[32px] min-[1000px]:grid-cols-3">
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-          </div>
+          <ul className="grid grid-cols-2 gap-y-[48px] gap-x-[32px] min-[1000px]:grid-cols-3">
+            {itemData.map((data) => (
+              <ShopItem item={data} key={data.name} />
+            ))}
+          </ul>
         </div>
 
         {/* Mobile */}
@@ -71,14 +142,11 @@ function Shop() {
         </div>
         <div className="flex flex-col gap-[24px]">
           <div className="font-font02 text-[76px] md:hidden">Flower</div>
-          <div className="grid grid-cols-2 gap-y-[48px] gap-x-[16px]  sm:gap-x-[32px] md:hidden">
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-          </div>
+          <ul className="grid grid-cols-2 gap-y-[48px] gap-x-[16px]  sm:gap-x-[32px] md:hidden">
+            {itemData.map((data) => (
+              <ShopItem item={data} key={data.name} />
+            ))}
+          </ul>
         </div>
       </section>
     </div>

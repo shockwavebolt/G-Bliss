@@ -1,30 +1,27 @@
-function Product() {
+function ShopItem({ item }) {
   return (
-    <div className="flex flex-col max-w-[318px] gap-[24px] px-[16px] bg-white rounded-lg border-[1px] border-[#D5D5D5] ">
-      <img
-        src="public/products/pinkRozay.png"
-        className="h-[170px] rounded-lg sm:h-[248px]"
-      />
+    <li className="flex flex-col max-w-[318px] gap-[24px] px-[16px] self-start bg-white rounded-lg border-[1px] border-[#D5D5D5] ">
+      <img src={item.img} className="h-[170px] rounded-lg sm:h-[248px]" />
       <div className="flex flex-col gap-[4px] px-[5px] py-[12px] text-green09">
         <div className="font-font01 text-[22px] md:text-[24px] md:lg-[29px]">
-          Pink Rozay
+          {item.name}
         </div>
         <div className="flex divide-x-2 font-font03">
-          <div className="pr-[4px]">Indica</div>
-          <div className="pl-[4px]">Hybrid</div>
+          <div className="pr-[4px]">{item.type}</div>
+          <div className="pl-[4px]">{item.type2}</div>
         </div>
 
-        <div className="font-font03">3.5g</div>
+        <div className="font-font03">{item.weight}</div>
 
         <div className="flex justify-between py-[8px]">
           <div className="font-font01 text-[22px] md:text-[24px] md:lg-[29px]">
-            $50
+            ${item.price}
           </div>
           <div className="flex gap-[8px] items-center font-font01 text-[22px] md:text-[24px] md:lg-[29px]">
             <span>
               <img src="public/icons/decrement.svg" />
             </span>
-            1
+            {item.quantity}
             <span>
               <img src="public/icons/increment.svg" />
             </span>
@@ -34,8 +31,8 @@ function Product() {
           Add to cart
         </div>
       </div>
-    </div>
+    </li>
   );
 }
 
-export default Product;
+export default ShopItem;
