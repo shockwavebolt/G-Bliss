@@ -1,4 +1,3 @@
-import Cart from "../Components/Cart";
 import Filter from "../Components/Filter";
 import NavBar from "../Components/NavBar";
 import ShopItem from "../Components/shopItem";
@@ -7,85 +6,85 @@ import BackButton from "../UI/BackButton";
 
 const data = [
   {
+    id: 111,
     name: "Pink Rozay",
     type: "Indica",
     type2: "Hybrid",
     weight: "3.5g",
     price: 50,
-    quantity: 1,
     img: "public/img/strains/pinkRozay.png",
   },
   {
+    id: 121,
     name: "Gelato",
     type: "Indica",
     type2: "Hybrid",
     weight: "3.5g",
     price: 30,
-    quantity: 1,
     img: "public/img/strains/gelato.jpg",
   },
   {
+    id: 123,
     name: "Gorilla Glue",
     type: "Indica",
     type2: "Hybrid",
     weight: "3.5g",
     price: 30,
-    quantity: 1,
     img: "public/img/strains/gorilla.jpg",
   },
 
   {
+    id: 114,
     name: "Pink Rozay",
     type: "Indica",
     type2: "Hybrid",
     weight: "3.5g",
     price: 50,
-    quantity: 1,
     img: "public/img/strains/pinkRozay.png",
   },
   {
+    id: 115,
     name: "Gelato",
     type: "Indica",
     type2: "Hybrid",
     weight: "3.5g",
     price: 30,
-    quantity: 1,
     img: "public/img/strains/gelato.jpg",
   },
   {
+    id: 116,
     name: "Gorilla Glue",
     type: "Indica",
     type2: "Hybrid",
     weight: "3.5g",
     price: 30,
-    quantity: 1,
     img: "public/img/strains/gorilla.jpg",
   },
   {
+    id: 117,
     name: "Pink Rozay",
     type: "Indica",
     type2: "Hybrid",
     weight: "3.5g",
     price: 50,
-    quantity: 1,
     img: "public/img/strains/pinkRozay.png",
   },
   {
+    id: 118,
     name: "Gelato",
     type: "Indica",
     type2: "Hybrid",
     weight: "3.5g",
     price: 30,
-    quantity: 1,
     img: "public/img/strains/gelato.jpg",
   },
   {
+    id: 119,
     name: "Gorilla Glue",
     type: "Indica",
     type2: "Hybrid",
     weight: "3.5g",
     price: 30,
-    quantity: 1,
     img: "public/img/strains/gorilla.jpg",
   },
 ];
@@ -93,7 +92,7 @@ const data = [
 function Shop() {
   const itemData = data;
   return (
-    <div className="relative">
+    <div>
       <NavBar />
       <section className="flex flex-col py-[128px] px-[24px] bg-offWhite text-green09 gap-[96px] md:gap-[64px] lg:px-[48px]">
         {/* Desktop  */}
@@ -112,7 +111,7 @@ function Shop() {
           <Filter />
           <ul className="grid grid-cols-2 gap-y-[48px] gap-x-[32px] min-[1000px]:grid-cols-3">
             {itemData.map((data) => (
-              <ShopItem item={data} key={data.name} />
+              <ShopItem item={data} key={data.id} />
             ))}
           </ul>
         </div>
@@ -144,7 +143,7 @@ function Shop() {
           <div className="font-font02 text-[76px] md:hidden">Flower</div>
           <ul className="grid grid-cols-2 gap-y-[48px] gap-x-[16px]  sm:gap-x-[32px] md:hidden">
             {itemData.map((data) => (
-              <ShopItem item={data} key={data.name} />
+              <ShopItem item={data} key={data.id} />
             ))}
           </ul>
         </div>
