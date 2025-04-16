@@ -8,11 +8,25 @@ const initialState = {
 
 function reducer(state, action) {
   switch (action.type) {
-    case "cart/add":
-      return {
-        ...state,
-        cart: [...state.cart, action.payload],
-      };
+    case "cart/add": {
+      const isInCart = state.cart.find((item) => item.id === action.payload.id);
+      if (isInCart) {
+        const updatedCart = state.cart.map((item) =>
+          item.id === action.payload.id
+            ? { ...item, quantity: item.quantity + action.payload.quantity }
+            : item
+        );
+        return {
+          ...state,
+          cart: updatedCart,
+        };
+      } else {
+        return {
+          ...state,
+          cart: [...state.cart, action.payload],
+        };
+      }
+    }
 
     case "cart/remove":
       return {
@@ -70,7 +84,7 @@ function CartProvider({ children }) {
 
   function getQuantity(id) {
     const item = cart.find((item) => item.id === id);
-    return item ? item.quantity : 1;
+    return item ? item.quantity : 0;
   }
 
   function getTotalCartPrice() {
