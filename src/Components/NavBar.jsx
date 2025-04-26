@@ -12,7 +12,7 @@ function NavBar() {
       <div className=" hidden w-full relative items-center justify-between  px-[48px] py-[32px] bg-green05 text-green09 md:flex  ">
         {location.pathname !== "/" && (
           <Link to="/" className="cursor-pointer">
-            <img src="public\img\logo(svg).svg"></img>
+            <img src="\public\img\logo(svg).svg"></img>
           </Link>
         )}
         <div
@@ -33,18 +33,18 @@ function NavBar() {
       <div className="flex items-center justify-between px-[24px] py-[32px] bg-green05 text-green09 md:hidden ">
         {location.pathname !== "/" && (
           <div>
-            <img src="public\img\logo(svg).svg"></img>
+            <img src="\public\img\logo(svg).svg"></img>
           </div>
         )}
         <div className="flex  justify-between gap-[64px] font-font01 ">
           <div>
-            <img src="public/icons/search.svg" />
+            <img src="/public/icons/search.svg" />
           </div>
           <div>
-            <img src="public/icons/cart.svg" />
+            <img src="/public/icons/cart.svg" />
           </div>
           <div>
-            <img src="public/icons/hamburger.svg" />
+            <img src="/public/icons/hamburger.svg" />
           </div>
         </div>
       </div>

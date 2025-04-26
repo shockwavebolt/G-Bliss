@@ -8,7 +8,7 @@ function BackButton() {
       onClick={() => navigate(-1)}
     >
       <span className="cursor-pointer">
-        <img src="public/icons/back.svg" />
+        <img src="/public/icons/back.svg" />
       </span>
       Back
     </button>

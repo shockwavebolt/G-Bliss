@@ -17,20 +17,33 @@ function Home() {
           <div className="font-font01 text-[18px]">Shop all</div>
         </div>
         <div className="grid grid-cols-1 gap-x-[32px] gap-y-[32px] sm:grid-cols-3 md:gap-y-[64px]">
-          <Link to="/shop">
+          <Link to="/shop/flower">
             <Category imgSrc={`public/img/flower.png`} category={"Flower"} />
           </Link>
-          <Category imgSrc={`public/img/pre-roll.jpg`} category={"Pre-Roll"} />
-          <Category imgSrc={`public/img/vapes.jpeg`} category={"Vapes"} />
-          <Category imgSrc={`public/img/edibles.webp`} category={"Edibles"} />
-          <Category
-            imgSrc={`public/img/tinctures.jpg`}
-            category={"Tinctures"}
-          />
-          <Category
-            imgSrc={`public/img/accessories.jpg`}
-            category={"Accessories"}
-          />
+          <Link to="/shop/prerolls">
+            <Category
+              imgSrc={`public/img/pre-roll.jpg`}
+              category={"Pre-Roll"}
+            />
+          </Link>
+          <Link to="/shop/vapes">
+            <Category imgSrc={`public/img/vapes.jpeg`} category={"Vapes"} />
+          </Link>
+          <Link to="/shop/edibles">
+            <Category imgSrc={`public/img/edibles.webp`} category={"Edibles"} />
+          </Link>
+          <Link to="/shop/tinctures">
+            <Category
+              imgSrc={`public/img/tinctures.jpg`}
+              category={"Tinctures"}
+            />
+          </Link>
+          <Link to="/shop/accessories">
+            <Category
+              imgSrc={`public/img/accessories.jpg`}
+              category={"Accessories"}
+            />
+          </Link>
         </div>
       </section>
     </div>

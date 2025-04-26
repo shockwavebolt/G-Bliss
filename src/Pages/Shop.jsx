@@ -1,25 +1,63 @@
 import Filter from "../Components/Filter";
 import NavBar from "../Components/NavBar";
+import { useUI } from "../Components/UIContext";
 import ShopItem from "../Components/shopItem";
-
 import BackButton from "../UI/BackButton";
-import data from "../data";
+
+import flowerData from "../data/flowerData";
+import preRollsData from "../data/preRollsData";
+import vapesData from "../data/vapesData";
+import edibleData from "../data/edibleData";
+import tincturesData from "../data/tincturesData";
+import accessoriesData from "../data/accessoriesData";
+import { useParams } from "react-router-dom";
+
+const categoryMap = {
+  all: [
+    ...flowerData,
+    ...preRollsData,
+    ...vapesData,
+    ...edibleData,
+    ...tincturesData,
+    ...accessoriesData,
+  ],
+  flower: flowerData,
+  prerolls: preRollsData,
+  vapes: vapesData,
+  edibles: edibleData,
+  tincture: tincturesData,
+  accessories: accessoriesData,
+};
+
+const displayNames = {
+  all: "All",
+  flower: "Flower",
+  prerolls: "Pre-Rolls",
+  vapes: "Vapes",
+  edibles: "Edibles",
+  tincture: "Tinctures",
+  accessories: "Accessories",
+};
 
 function Shop() {
-  const itemData = data;
+  const { category } = useParams();
+  const itemData = categoryMap[category];
+  const displayCategoryName = category ? displayNames[category] || "" : "";
+
+  const { open } = useUI;
   return (
-    <div>
+    <div className={open ? " bg-slate-200/20 backdrop-blur-sm" : ""}>
       <NavBar />
       <section className="flex flex-col py-[128px] px-[24px] bg-offWhite text-green09 gap-[96px] md:gap-[64px] lg:px-[48px]">
         {/* Desktop  */}
         <div className="hidden grid-cols-4 md:grid">
           <BackButton />
-          <div className="font-font02 text-[76px]">Flower</div>
+          <div className="font-font02 text-[76px]">{displayCategoryName}</div>
           <div></div>
           <div className=" flex gap-[4px] place-self-center justify-self-end font-font01">
             sort
             <span>
-              <img src="public/icons/sort.svg"></img>
+              <img src="/public/icons/sort.svg"></img>
             </span>
           </div>
         </div>
@@ -36,7 +74,7 @@ function Shop() {
         <div className="flex items-center justify-between text-green09 md:hidden">
           <div className="flex items-center gap-[8px] font-font01">
             <span>
-              <img src="public/icons/back.svg" />
+              <img src="/public/icons/back.svg" />
             </span>
             Back
           </div>
@@ -44,7 +82,7 @@ function Shop() {
             <div className="flex gap-[4px] border-2 px-[8px] py-[8px] rounded-lg font-font01 items-center ">
               Filter
               <span>
-                <img src="public/icons/filter.svg"></img>
+                <img src="/public/icons/filter.svg"></img>
               </span>
             </div>
             <div className="flex gap-[2px] border-2 px-[8px] py-[8px] rounded-lg font-font01 ">

@@ -8,7 +8,11 @@ function CartItem({ item }) {
     increaseQt(item);
   }
   function handleDec() {
-    decreaseQt(item);
+    if (currQt > 1) {
+      decreaseQt(item);
+    } else {
+      removeFromCart(item);
+    }
   }
 
   return (
@@ -19,9 +23,11 @@ function CartItem({ item }) {
           <div className="font-font01 text-[22px] md:text-[24px] md:lg-[29px]">
             {item.name}
           </div>
-          <div className="flex divide-x-2 font-font03">
+          <div
+            className={`flex ${item.type2 != "" && "divide-x-2"} font-font03`}
+          >
             <div className="pr-[4px]">{item.type}</div>
-            <div className="pl-[4px]">{item.type2}</div>
+            {item.type2 != "" && <div className="pl-[4px]">{item.type2}</div>}
           </div>
           <div className="font-font03">{item.weight}</div>
 
@@ -31,11 +37,11 @@ function CartItem({ item }) {
             </div>
             <div className="flex gap-[8px] items-center font-font01 text-[22px] md:text-[24px] md:lg-[29px]">
               <span className="cursor-pointer" onClick={() => handleDec()}>
-                <img src="public/icons/decrement.svg" />
+                <img src="/public/icons/decrement.svg" />
               </span>
               {currQt}
               <span className="cursor-pointer" onClick={() => handleInc()}>
-                <img src="public/icons/increment.svg" />
+                <img src="/public/icons/increment.svg" />
               </span>
             </div>
           </div>

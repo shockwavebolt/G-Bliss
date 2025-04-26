@@ -39,9 +39,9 @@ function ShopItem({ item }) {
         <div className="font-font01 text-[22px] md:text-[24px] md:lg-[29px]">
           {name}
         </div>
-        <div className="flex divide-x-2 font-font03">
+        <div className={`flex ${type2 != "" && "divide-x-2"} font-font03`}>
           <div className="pr-[4px]">{type}</div>
-          <div className="pl-[4px]">{type2}</div>
+          {type2 != "" && <div className="pl-[4px]">{type2}</div>}
         </div>
 
         <div className="font-font03">{weight}</div>
@@ -52,11 +52,11 @@ function ShopItem({ item }) {
           </div>
           <div className="flex gap-[8px] items-center font-font01 text-[22px] md:text-[24px] md:lg-[29px]">
             <span className="cursor-pointer" onClick={() => handleDec()}>
-              <img src="public/icons/decrement.svg" />
+              <img src="/public/icons/decrement.svg" />
             </span>
             {quantity}
             <span className="cursor-pointer" onClick={() => handleInc()}>
-              <img src="public/icons/increment.svg" />
+              <img src="/public/icons/increment.svg" />
             </span>
           </div>
         </div>
