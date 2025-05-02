@@ -11,6 +11,48 @@ import edibleData from "../data/edibleData";
 import tincturesData from "../data/tincturesData";
 import accessoriesData from "../data/accessoriesData";
 import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+// import { useReducer } from "react";
+
+// const initialFilterState = {
+//   products: [],
+//   type: [],
+//   weight: [],
+// };
+
+// function filterReducer(state, action) {
+//   switch (action.type) {
+//     case "TOGGLE_PRODUCT":
+//       return {
+//         ...state,
+//         products: state.products.includes(action.payload)
+//           ? state.products.filter((product) => product !== action.payload)
+//           : [...state.products, action.payload],
+//       };
+
+//     case "TOGGLE_TYPE":
+//       return {
+//         ...state,
+//         type: state.type.includes(action.payload)
+//           ? state.type.filter((type) => type !== action.payload)
+//           : [...state.type, action.payload],
+//       };
+
+//     case "TOGGLE_WEIGHT":
+//       return {
+//         ...state,
+//         weight: state.weight.includes(action.payload)
+//           ? state.weight.filter((weight) => weight !== action.payload)
+//           : [...state.weight, action.payload],
+//       };
+
+//     case "RESET_FILTERS":
+//       return initialFilterState;
+
+//     default:
+//       return state;
+//   }
+// }
 
 const categoryMap = {
   all: [
@@ -40,19 +82,77 @@ const displayNames = {
 };
 
 function Shop() {
+  // const [filterState, dispatch] = useReducer(filterReducer, initialFilterState);
   const { category } = useParams();
-  const itemData = categoryMap[category];
-  const displayCategoryName = category ? displayNames[category] || "" : "";
+  const data = categoryMap.all;
+  const [itemData, setItemData] = useState(data);
+  const [filteredProducts, setFilteredProducts] = useState(data);
+  const [filters, setFilters] = useState({
+    product: category,
+    type: "",
+    weight: "",
+  });
+
+  function filterProducts() {
+    let newFilteredProducts = [...itemData];
+
+    if (filters.product) {
+      newFilteredProducts = newFilteredProducts.filter(
+        (item) => item.product === filters.product
+      );
+    }
+
+    if (filters.type) {
+      newFilteredProducts = newFilteredProducts.filter(
+        (item) => item.type === filters.type
+      );
+    }
+
+    if (filters.weight) {
+      newFilteredProducts = newFilteredProducts.filter(
+        (item) => item.weight === filters.weight
+      );
+    }
+
+    setFilteredProducts(newFilteredProducts);
+  }
+
+  const handleFilterChange = (name, value) => {
+    setFilters({ ...filters, [name]: value });
+  };
+
+  useEffect(() => {
+    filterProducts();
+  }, [filters]);
+
+  // const filteredItems = itemData.filter((item) => {
+  //   const matchProducts =
+  //     filterState.products.length === 0 ||
+  //     filterState.products.includes(item.product);
+
+  //   const matchType =
+  //     filterState.type.length === 0 || filterState.type.includes(item.type);
+
+  //   const matchWeight =
+  //     filterState.weight.length === 0 ||
+  //     filterState.weight.includes(item.weight);
+  //   return matchProducts && matchType && matchWeight;
+  // });
+
+  const displayCategoryName = filters.product
+    ? displayNames[category] || ""
+    : "";
 
   const { open } = useUI;
   return (
+    // NEED TO COMEBACK TO THIS
     <div className={open ? " bg-slate-200/20 backdrop-blur-sm" : ""}>
       <NavBar />
       <section className="flex flex-col py-[128px] px-[24px] bg-offWhite text-green09 gap-[96px] md:gap-[64px] lg:px-[48px]">
         {/* Desktop  */}
         <div className="hidden grid-cols-4 md:grid">
           <BackButton />
-          <div className="font-font02 text-[76px]">{displayCategoryName}</div>
+          <div className="font-font02 text-[76px]">{filters.product}</div>
           <div></div>
           <div className=" flex gap-[4px] place-self-center justify-self-end font-font01">
             sort
@@ -62,9 +162,9 @@ function Shop() {
           </div>
         </div>
         <div className="hidden md:grid grid-cols-[auto_auto] divide-x-2 gap-x-[32px] ">
-          <Filter />
+          <Filter handleFilterChange={handleFilterChange} />
           <ul className="grid grid-cols-2 gap-y-[48px] gap-x-[32px] min-[1000px]:grid-cols-3">
-            {itemData.map((data) => (
+            {filteredProducts.map((data) => (
               <ShopItem item={data} key={data.id} />
             ))}
           </ul>

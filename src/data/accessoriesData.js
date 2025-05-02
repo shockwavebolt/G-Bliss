@@ -1,7 +1,7 @@
 const accessoriesData = [
   {
     id: 511,
-    product: "accessory",
+    product: "accessories",
     name: "Grav | Coil Water pipe",
     type: "",
     type2: "",
@@ -11,7 +11,7 @@ const accessoriesData = [
   },
   {
     id: 512,
-    product: "accessory",
+    product: "accessories",
     name: "Raw Rolling Paper",
     type: "",
     type2: "",

@@ -1,4 +1,4 @@
-function Filter() {
+function Filter({ handleFilterChange }) {
   return (
     <div className="py-[96px] px-[32px] ">
       <div className="flex flex-col gap-[64px]">
@@ -9,38 +9,57 @@ function Filter() {
               <img src="/public/icons/close.svg"></img>
             </span>
           </div>
+
           <div className="flex flex-col gap-[16px]">
-            <div className="flex gap-[4px] font-font03 text-magenta">
+            <div
+              className="flex gap-[4px] font-font03 text-magenta cursor-pointer"
+              onClick={() => handleFilterChange("product", "flower")}
+            >
               <span>
                 <img src="/public/icons/checked.svg" />
               </span>
               Flower
             </div>
-            <div className="flex gap-[4px] font-font03">
+            <div
+              className="flex gap-[4px] font-font03 cursor-pointer"
+              onClick={() => handleFilterChange("product", "pre-rolls")}
+            >
               <span>
                 <img src="/public/icons/unchecked.svg" />
               </span>
               Pre-Rolls
             </div>
-            <div className="flex gap-[4px] font-font03">
+            <div
+              className="flex gap-[4px] font-font03 cursor-pointer"
+              onClick={() => handleFilterChange("product", "vapes")}
+            >
               <span>
                 <img src="/public/icons/unchecked.svg" />
               </span>
               Vapes
             </div>
-            <div className="flex gap-[4px] font-font03">
+            <div
+              className="flex gap-[4px] font-font03 cursor-pointer"
+              onClick={() => handleFilterChange("product", "edibles")}
+            >
               <span>
                 <img src="/public/icons/unchecked.svg" />
               </span>
               Edibles
             </div>
-            <div className="flex gap-[4px] font-font03">
+            <div
+              className="flex gap-[4px] font-font03 cursor-pointer"
+              onClick={() => handleFilterChange("product", "tinctures")}
+            >
               <span>
                 <img src="/public/icons/unchecked.svg" />
               </span>
               Tinctures
             </div>
-            <div className="flex gap-[4px] font-font03">
+            <div
+              className="flex gap-[4px] font-font03 cursor-pointer"
+              onClick={() => handleFilterChange("product", "accessories")}
+            >
               <span>
                 <img src="/public/icons/unchecked.svg" />
               </span>
@@ -58,13 +77,19 @@ function Filter() {
             </span>
           </div>
           <div className="flex flex-col gap-[16px]">
-            <div className="flex gap-[4px] font-font03 text-magenta">
+            <div
+              className="flex gap-[4px] font-font03 text-magenta"
+              onClick={() => handleFilterChange("type", "Indica")}
+            >
               <span>
                 <img src="/public/icons/checked.svg" />
               </span>
               Indica
             </div>
-            <div className="flex gap-[4px] font-font03">
+            <div
+              className="flex gap-[4px] font-font03"
+              onClick={() => handleFilterChange("type", "Sativa")}
+            >
               <span>
                 <img src="/public/icons/unchecked.svg" />
               </span>

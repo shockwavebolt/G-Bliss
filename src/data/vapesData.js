@@ -1,7 +1,7 @@
 const vapesData = [
   {
     id: 411,
-    product: "vape",
+    product: "vapes",
     name: "Ayrloom | Orange Creamsicle",
     type: "Sativa",
     type2: "Hybrid",
@@ -11,7 +11,7 @@ const vapesData = [
   },
   {
     id: 412,
-    product: "vape",
+    product: "vapes",
     name: "Ayrloom | Rest",
     type: "Indica",
     type2: "",
@@ -22,7 +22,7 @@ const vapesData = [
 
   {
     id: 413,
-    product: "vape",
+    product: "vapes",
     name: "Ayrloom | Pink Rozay",
     type: "Indica",
     type2: "Hybrid",
@@ -33,7 +33,7 @@ const vapesData = [
 
   {
     id: 414,
-    product: "vape",
+    product: "vapes",
     name: "Pax | Pineapple Express",
     type: "Indica",
     type2: "Hybrid",
@@ -44,7 +44,7 @@ const vapesData = [
 
   {
     id: 415,
-    product: "vape",
+    product: "vapes",
     name: "Pax | Blood Orange",
     type: "Sativa",
     type2: "Hybrid",
@@ -55,7 +55,7 @@ const vapesData = [
 
   {
     id: 416,
-    product: "vape",
+    product: "vapes",
     name: "Pax | Lavender Haze",
     type: "Indica",
     type2: "Hybrid",

@@ -1,7 +1,7 @@
 const tincturesData = [
   {
     id: 611,
-    product: "tincture",
+    product: "tinctures",
     name: "Simply Crafted | Daytime",
     type: "",
     type2: "",
@@ -11,7 +11,7 @@ const tincturesData = [
   },
   {
     id: 612,
-    product: "tincture",
+    product: "tinctures",
     name: "Simply Crafted | Nightime",
     type: "",
     type2: "",

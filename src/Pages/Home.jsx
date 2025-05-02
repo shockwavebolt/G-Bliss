@@ -20,7 +20,7 @@ function Home() {
           <Link to="/shop/flower">
             <Category imgSrc={`public/img/flower.png`} category={"Flower"} />
           </Link>
-          <Link to="/shop/prerolls">
+          <Link to="/shop/pre-rolls">
             <Category
               imgSrc={`public/img/pre-roll.jpg`}
               category={"Pre-Roll"}

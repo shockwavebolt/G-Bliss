@@ -1,7 +1,7 @@
 const edibleData = [
   {
     id: 211,
-    product: "edible",
+    product: "edibles",
     name: "Camino | Strawberry Sunset",
     type: "Indica",
     type2: "Hybrid",
@@ -12,7 +12,7 @@ const edibleData = [
 
   {
     id: 212,
-    product: "edible",
+    product: "edibles",
     name: "Camino | Wild Berry",
     type: "Sativa",
     type2: "Hybrid",
@@ -23,7 +23,7 @@ const edibleData = [
 
   {
     id: 213,
-    product: "edible",
+    product: "edibles",
     name: "Camino | Wild Cherry",
     type: "Sativa",
     type2: "",
@@ -34,7 +34,7 @@ const edibleData = [
 
   {
     id: 214,
-    product: "edible",
+    product: "edibles",
     name: "Select | Pomergranate",
     type: "Indica",
     type2: "",
@@ -45,7 +45,7 @@ const edibleData = [
 
   {
     id: 215,
-    product: "edible",
+    product: "edibles",
     name: "Select | Strawberry Peach",
     type: "Hybrid",
     type2: "",
@@ -56,7 +56,7 @@ const edibleData = [
 
   {
     id: 216,
-    product: "edible",
+    product: "edibles",
     name: "WYLD | Peach",
     type: "Indica",
     type2: "",
@@ -67,7 +67,7 @@ const edibleData = [
 
   {
     id: 217,
-    product: "edible",
+    product: "edibles",
     name: "justCBD | Sour Cola",
     type: "Hybrid",
     type2: "",
