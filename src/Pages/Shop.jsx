@@ -162,7 +162,7 @@ function Shop() {
           </div>
         </div>
         <div className="hidden md:grid grid-cols-[auto_auto] divide-x-2 gap-x-[32px] ">
-          <Filter handleFilterChange={handleFilterChange} />
+          <Filter filters={filters} handleFilterChange={handleFilterChange} />
           <ul className="grid grid-cols-2 gap-y-[48px] gap-x-[32px] min-[1000px]:grid-cols-3">
             {filteredProducts.map((data) => (
               <ShopItem item={data} key={data.id} />
