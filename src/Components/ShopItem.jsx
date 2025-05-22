@@ -33,9 +33,12 @@ function ShopItem({ item }) {
   }
 
   return (
-    <li className="flex flex-col max-w-[318px] gap-[24px] px-[16px] self-start bg-white rounded-lg border-[1px] border-[#D5D5D5] ">
-      <img src={img} className="h-[170px] rounded-lg sm:h-[248px]" />
-      <div className="flex flex-col gap-[4px] px-[5px] py-[12px] text-green09">
+    <li className=" flex flex-col gap-[24px] px-[8px] py-[16px] bg-white rounded-lg border-[1px] border-[#D5D5D5] ">
+      <img
+        src={img}
+        className="h-[170px]  place-self-center rounded-lg md:h-[240px] lg:h-[248px]"
+      />
+      <div className="flex flex-col gap-[4px] px-[12px] py-[12px] text-green09">
         <div className="font-font01 text-[22px] md:text-[24px] md:lg-[29px]">
           {name}
         </div>
@@ -46,7 +49,7 @@ function ShopItem({ item }) {
 
         <div className="font-font03">{weight}</div>
 
-        <div className="flex justify-between py-[8px]">
+        <div className="flex justify-between py-[8px] pb-[16px]">
           <div className="font-font01 text-[22px] md:text-[24px] md:lg-[29px]">
             ${price}
           </div>

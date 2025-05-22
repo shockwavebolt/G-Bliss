@@ -148,22 +148,15 @@ function Shop() {
     // NEED TO COMEBACK TO THIS
     <div className={open ? " bg-slate-200/20 backdrop-blur-sm" : ""}>
       <NavBar />
-      <section className="flex flex-col py-[128px] px-[24px] bg-offWhite text-green09 gap-[96px] md:gap-[64px] lg:px-[48px]">
+      <section className="flex flex-col items-center py-[24px] px-[16px] bg-resin00 text-green00 gap-[24px] md:px-[48px] xl:px-[96px] ">
         {/* Desktop  */}
-        <div className="hidden grid-cols-4 md:grid">
+        <div className="flex flex-col gap-[48px] place-self-start md:gap-[192px] md:flex-row ">
           <BackButton />
-          <div className="font-font02 text-[76px]">{filters.product}</div>
-          <div></div>
-          <div className=" flex gap-[4px] place-self-center justify-self-end font-font01">
-            sort
-            <span>
-              <img src="/public/icons/sort.svg"></img>
-            </span>
-          </div>
+          <div className="font-font02 text-[47px]">{filters.product}</div>
         </div>
-        <div className="hidden md:grid grid-cols-[auto_auto] divide-x-2 gap-x-[32px] ">
+        <div className=" w-full  md:grid grid-cols-[auto_1fr] divide-x-2 gap-x-[24px] ">
           <Filter filters={filters} handleFilterChange={handleFilterChange} />
-          <ul className="grid grid-cols-2 gap-y-[48px] gap-x-[32px] min-[1000px]:grid-cols-3">
+          <ul className="grid grid-cols-2 gap-y-[24px] gap-x-[16px]  min-[1000px]:grid-cols-3 min-[1000px]:gap-x-[24px]">
             {filteredProducts.map((data) => (
               <ShopItem item={data} key={data.id} />
             ))}
@@ -171,14 +164,14 @@ function Shop() {
         </div>
 
         {/* Mobile */}
-        <div className="flex items-center justify-between text-green09 md:hidden">
+        {/* <div className="flex items-center justify-between text-green09 md:hidden">
           <div className="flex items-center gap-[8px] font-font01">
             <span>
               <img src="/public/icons/back.svg" />
             </span>
             Back
           </div>
-          <div className="flex gap-[24px]">
+           <div className="flex gap-[24px]">
             <div className="flex gap-[4px] border-2 px-[8px] py-[8px] rounded-lg font-font01 items-center ">
               Filter
               <span>
@@ -191,7 +184,7 @@ function Shop() {
                 <img src="public/icons/sort.svg"></img>
               </span>
             </div>
-          </div>
+          </div> *
         </div>
         <div className="flex flex-col gap-[24px]">
           <div className="font-font02 text-[76px] md:hidden">Flower</div>
@@ -200,7 +193,7 @@ function Shop() {
               <ShopItem item={data} key={data.id} />
             ))}
           </ul>
-        </div>
+        </div> */}
       </section>
     </div>
   );

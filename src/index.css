@@ -1,28 +1,37 @@
-@import url("https://fonts.googleapis.com/css2?family=Condiment&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton+SC&family=Oi&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 @import "tailwindcss";
+
 @theme {
   /* Greens */
   --color-green04: #cde0b4;
   --color-green05: #a0c776;
   --color-green06: #33481e;
   --color-green09: #141d0c;
-  --color-greenGd: linear-gradient(to bottom, #a0c776, #aecf8a);
+
+  --color-green00: #465949;
 
   /* Magenta */
   --color-magenta: #7a0037;
+  --color-orange00: #cf5c36;
 
   /* Off-white */
   --color-offWhite: #fcf9f4;
+  --color-resin00: #e6e1c5;
 
   /* Fonts */
-  --font-font01: "Anton";
-  --font-font02: "Condiment";
+  --font-font01: "Anton SC";
+  --font-font02: "Oi";
   --font-font03: "Inter";
 
   /* Breakpoints */
   --breakpoint-xs: 480px;
+}
+
+@layer components {
+  .cartIndicator {
+    @apply flex w-[24px] h-[24px] rounded-full bg-orange00  items-center justify-center text-[16px] text-resin00 font-font01;
+  }
 }
 @tailwind utilities;
