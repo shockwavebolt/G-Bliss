@@ -8,10 +8,10 @@
   --color-green04: #cde0b4;
   --color-green05: #a0c776;
   --color-green06: #33481e;
-  --color-green09: #141d0c;
+  --color-green09: #121713;
 
   --color-green00: #465949;
-  ----color-green01: #394739;
+  --color-green01: #394739;
 
   /* Magenta */
   --color-magenta: #7a0037;
@@ -20,6 +20,7 @@
   /* Off-white */
   --color-offWhite: #fcf9f4;
   --color-resin00: #e6e1c5;
+  --color-resin01: #dad3a9;
 
   /* Fonts */
   --font-font01: "Anton SC";

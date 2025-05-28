@@ -4,6 +4,11 @@ const UIContext = createContext();
 
 function UIProvider({ children }) {
   const [open, setOpen] = useState(false);
+  if (open) {
+    document.body.classList.add("overflow-hidden");
+  } else {
+    document.body.classList.remove("overflow-hidden");
+  }
 
   return (
     <UIContext.Provider value={{ open, setOpen }}>

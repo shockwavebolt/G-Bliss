@@ -146,7 +146,7 @@ function Shop() {
   const { open } = useUI;
   return (
     // NEED TO COMEBACK TO THIS
-    <div className={open ? " bg-slate-200/20 backdrop-blur-sm" : ""}>
+    <div>
       <NavBar />
       <section className="flex flex-col items-center py-[24px] px-[16px] bg-resin00 text-green00 gap-[24px] md:px-[48px] xl:px-[96px] ">
         {/* Desktop  */}
@@ -156,7 +156,7 @@ function Shop() {
         </div>
         <div className=" w-full  md:grid grid-cols-[auto_1fr] divide-x-2 gap-x-[24px] ">
           <Filter filters={filters} handleFilterChange={handleFilterChange} />
-          <ul className="grid grid-cols-2 gap-y-[24px] gap-x-[16px]  min-[1000px]:grid-cols-3 min-[1000px]:gap-x-[24px]">
+          <ul className="grid  grid-cols-2 gap-y-[24px] items-start gap-x-[16px]  min-[1000px]:grid-cols-3 min-[1000px]:gap-x-[24px]">
             {filteredProducts.map((data) => (
               <ShopItem item={data} key={data.id} />
             ))}

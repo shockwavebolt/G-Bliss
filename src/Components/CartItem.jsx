@@ -16,7 +16,7 @@ function CartItem({ item }) {
   }
 
   return (
-    <div className="flex px-[24px] gap-[16px] items-center">
+    <li className="flex p-[24px]  gap-[16px] items-center">
       <div className="font-font01 text-resin00 text-[29px]">{currQt}x</div>
       <div className="flex flex-col gap-[16px] items-end">
         <div
@@ -75,7 +75,7 @@ function CartItem({ item }) {
       </div>
 
       <div className="font-font01 text-resin00 text-[29px]">= $50</div>
-    </div>
+    </li>
   );
 }
 

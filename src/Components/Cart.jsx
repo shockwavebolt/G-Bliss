@@ -1,14 +1,17 @@
+import { useEffect } from "react";
 import { useCart } from "./CartContext";
 import CartItem from "./CartItem";
 import { useUI } from "./UIContext";
+import { Link } from "react-router-dom";
 
 function Cart() {
   const { cart, getTotalCartPrice } = useCart();
   const { setOpen } = useUI();
   const total = getTotalCartPrice();
+
   return (
-    <div className="absolute top-0 left-0 z-10 flex justify-end w-full">
-      <div className="w-[700px] h-screen flex flex-col px-[24px] py-[48px] gap-[48px] bg-green00">
+    <div className="absolute top-0 left-0 z-10 flex justify-end w-full backdrop-blur-sm">
+      <div className="w-[700px] h-screen overflow-y-auto flex flex-col px-[24px] py-[48px] gap-[48px] bg-green00">
         <div className="flex justify-between border-b-2 border-resin00">
           <div className="font-font02 text-[47px] text-resin00">Cart</div>
           <svg
@@ -28,10 +31,23 @@ function Cart() {
             />
           </svg>
         </div>
-        <div className="flex flex-col gap-[48px] divide-y-2 items-center ">
+        <ul className="flex flex-col divide-y-2 divide-[#394739] items-center">
           {cart.map((item) => (
             <CartItem item={item} key={item.id} />
           ))}
+        </ul>
+        <div className="flex flex-col pt-[24px] border-t-2 border-resin00 gap-[24px]">
+          <div className=" flex justify-between px-[48px] font-font01 text-[29px] text-resin00">
+            <span>Total</span>
+            <span>${total}</span>
+          </div>
+          <Link
+            to={"/checkout"}
+            className="flex py-[24px] gap-[8px] text-[22px] items-center justify-center rounded-sm bg-green09 font-font01 text-white border-t-[2.5px] border-[#595746] shadow-[2px_2px_7px_0_rgba(0,0,0,0.25)] cursor-pointer active:scale-97 active:border-none active:shadow-none active:translate-y-[1px] transition-all duration-100"
+            onClick={() => setOpen(false)}
+          >
+            Checkout
+          </Link>
         </div>
       </div>
 
