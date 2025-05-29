@@ -86,7 +86,7 @@ function ShopItem({ item }) {
           </div>
         </div>
         <button
-          className=" flex px-[8px] py-[12px] rounded-sm items-center justify-center bg-green09 font-font01 text-white border-t-[2.5px] border-green00 shadow-[2px_2px_7px_0_rgba(0,0,0,0.25)] cursor-pointer active:scale-97 active:border-none active:shadow-none active:translate-y-[1px] transition-all duration-100"
+          className=" flex px-[8px] py-[12px] rounded-sm items-center justify-center bg-green09 font-font01 text-white border-t-[2.5px] border-green00 shadow-[2px_2px_7px_0_rgba(0,0,0,0.25)] cursor-pointer  active:scale-97 hover:border-green09 hover:shadow-none active:translate-y-[1px] transition-all duration-100"
           onClick={() => handleAddCart()}
         >
           Add to cart

@@ -88,7 +88,7 @@ function Shop() {
   const [itemData, setItemData] = useState(data);
   const [filteredProducts, setFilteredProducts] = useState(data);
   const [filters, setFilters] = useState({
-    product: category,
+    product: category === "all" ? "" : category,
     type: "",
     weight: "",
   });
@@ -152,7 +152,9 @@ function Shop() {
         {/* Desktop  */}
         <div className="flex flex-col gap-[48px] place-self-start md:gap-[192px] md:flex-row ">
           <BackButton />
-          <div className="font-font02 text-[47px]">{filters.product}</div>
+          <div className="font-font02 text-[47px]">
+            {filters.product.charAt(0).toUpperCase() + filters.product.slice(1)}
+          </div>
         </div>
         <div className=" w-full  md:grid grid-cols-[auto_1fr] divide-x-2 gap-x-[24px] ">
           <Filter filters={filters} handleFilterChange={handleFilterChange} />
