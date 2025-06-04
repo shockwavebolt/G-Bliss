@@ -5,10 +5,10 @@ function BackButton() {
   const location = useLocation();
   return (
     <button
-      className="group flex items-center gap-[8px] font-font01"
+      className="group flex items-center gap-[4px] font-font01 cursor-pointer"
       onClick={() => navigate(-1)}
     >
-      <span className="cursor-pointer">
+      <span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="48"
@@ -37,7 +37,7 @@ function BackButton() {
           />
         </svg>
       </span>
-      <span className="group-hover:text-[#CF5C36] transition-colors duration-200 cursor-pointer">
+      <span className="group-hover:text-[#CF5C36] transition-colors duration-200">
         Back
       </span>
     </button>

@@ -12,6 +12,7 @@ import tincturesData from "../data/tincturesData";
 import accessoriesData from "../data/accessoriesData";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import FilterButton from "../Components/FilterButton";
 // import { useReducer } from "react";
 
 // const initialFilterState = {
@@ -93,6 +94,14 @@ function Shop() {
     weight: "",
   });
 
+  const resetFilters = () => {
+    setFilters((filters) => ({
+      ...filters,
+      type: "",
+      weight: "",
+    }));
+  };
+
   function filterProducts() {
     let newFilteredProducts = [...itemData];
 
@@ -143,26 +152,37 @@ function Shop() {
     ? displayNames[category] || ""
     : "";
 
-  const { open } = useUI;
   return (
-    // NEED TO COMEBACK TO THIS
     <div>
       <NavBar />
-      <section className="flex flex-col items-center py-[24px] px-[16px] bg-resin00 text-green00 gap-[24px] md:px-[48px] xl:px-[96px] ">
+      <section className="flex flex-col items-center pt-[192px] pb-[96px] px-[16px] bg-resin00 text-green00 gap-[24px] md:px-[48px] xl:px-[96px] ">
         {/* Desktop  */}
-        <div className="flex flex-col gap-[48px] place-self-start md:gap-[192px] md:flex-row ">
-          <BackButton />
+        <div className="w-full flex flex-col gap-[48px] place-self-start md:gap-[192px] md:flex-row ">
+          <div className="flex justify-between ">
+            <BackButton />
+            <FilterButton />
+          </div>
           <div className="font-font02 text-[47px]">
             {filters.product.charAt(0).toUpperCase() + filters.product.slice(1)}
           </div>
         </div>
         <div className=" w-full  md:grid grid-cols-[auto_1fr] divide-x-2 gap-x-[24px] ">
-          <Filter filters={filters} handleFilterChange={handleFilterChange} />
-          <ul className="grid  grid-cols-2 gap-y-[24px] items-start gap-x-[16px]  min-[1000px]:grid-cols-3 min-[1000px]:gap-x-[24px]">
-            {filteredProducts.map((data) => (
-              <ShopItem item={data} key={data.id} />
-            ))}
-          </ul>
+          <Filter
+            filters={filters}
+            handleFilterChange={handleFilterChange}
+            resetFilters={resetFilters}
+          />
+          {filteredProducts?.length > 0 ? (
+            <ul className="grid  grid-cols-2 gap-y-[24px] items-start gap-x-[16px]  min-[1000px]:grid-cols-3 min-[1000px]:gap-x-[24px]">
+              {filteredProducts.map((data) => (
+                <ShopItem item={data} key={data.id} />
+              ))}
+            </ul>
+          ) : (
+            <div className="flex justify-center w-full pt-[25%] font-font03 text-[20px] text-green00">
+              No items match the filter settings.
+            </div>
+          )}
         </div>
 
         {/* Mobile */}

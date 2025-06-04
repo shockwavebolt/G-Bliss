@@ -5,12 +5,15 @@ function Checkout() {
   return (
     <div>
       <NavBar />
-      <section className="flex flex-col py-[96px]  bg-resin00 text-green00 gap-[24-xpx] lg:pl-[96px]">
-        <div className="px-[48px] text-[47px] font-font02">Checkout</div>
+      <section className="flex flex-col pt-[192px] bg-resin00 text-green00 gap-[48px] lg:pl-[96px]">
+        <div className="text-[34px] font-font02 sm:text-[47px] self-center lg:self-start">
+          Checkout
+        </div>
         <CheckoutForm />
       </section>
     </div>
   );
 }
+0;
 
 export default Checkout;

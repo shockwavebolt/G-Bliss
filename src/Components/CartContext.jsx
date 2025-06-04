@@ -87,6 +87,10 @@ function CartProvider({ children }) {
     return item ? item.quantity : 0;
   }
 
+  function getCartQuantity() {
+    return cart.length;
+  }
+
   function getTotalCartPrice() {
     return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   }
@@ -101,6 +105,7 @@ function CartProvider({ children }) {
         decreaseQt,
         getQuantity,
         getTotalCartPrice,
+        getCartQuantity,
       }}
     >
       {children}

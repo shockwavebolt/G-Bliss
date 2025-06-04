@@ -2,15 +2,18 @@ import { Link, useLocation } from "react-router-dom";
 import Cart from "./Cart";
 import { useUI } from "./UIContext";
 import BackButton from "../UI/BackButton";
+import { useCart } from "./CartContext";
 
 function NavBar() {
   const location = useLocation();
+  const { getCartQuantity } = useCart();
+  const cartQt = getCartQuantity();
 
   const { open, setOpen } = useUI();
   return (
     <>
       {/* Desktop */}
-      <div className="hidden relative w-full  px-[48px] py-[32px] gap-auto items-center justify-between bg-green00 text-resin00 lg:flex xl:px-[96px]">
+      <div className="hidden  w-full fixed top-0  z-5  px-[48px] py-[32px] gap-auto items-center justify-between bg-green00 text-resin00 lg:flex xl:px-[96px]">
         {location.pathname === "/checkout" && <BackButton />}
         <Link
           to="/"
@@ -33,7 +36,7 @@ function NavBar() {
               className="flex gap-[4px] cursor-pointer transition-colors duration-200 ease-in-out hover:text-orange00"
               onClick={() => setOpen(true)}
             >
-              Cart<span className="cartIndicator">0</span>
+              Cart<span className="cartIndicator">{cartQt}</span>
             </div>
             {open && <Cart />}
           </div>
@@ -41,7 +44,7 @@ function NavBar() {
       </div>
 
       {/* Mobile */}
-      <div className="flex relative w-full  px-[24px] py-[48px] gap-auto items-center justify-between bg-green00 text-resin00 md:px-[48px] md:py-[32px] lg:hidden">
+      <div className="flex  w-full fixed top-0  px-[24px] py-[48px] gap-auto items-center justify-between bg-green00 text-resin00 md:px-[48px] md:py-[32px] lg:hidden">
         {location.pathname !== "/checkout" ? (
           <>
             <div className="cursor-pointer">
@@ -56,7 +59,7 @@ function NavBar() {
               onClick={() => setOpen(true)}
             >
               <img src="/public/icons/cart.svg" />{" "}
-              <span className="cartIndicator">0</span>
+              <span className="cartIndicator">{cartQt}</span>
             </div>
             {open && <Cart />}
           </>

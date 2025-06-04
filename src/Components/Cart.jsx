@@ -11,7 +11,11 @@ function Cart() {
 
   return (
     <div className="absolute top-0 left-0 z-10 flex justify-end w-full backdrop-blur-sm">
-      <div className="w-[700px] h-screen overflow-y-auto flex flex-col px-[24px] py-[48px] justify-between bg-green00 ">
+      <div
+        className={`w-[700px] h-screen overflow-y-auto flex flex-col px-[24px] py-[48px]  ${
+          cart?.length > 0 ? "justify-between" : "gap-[35vh]"
+        } bg-green00`}
+      >
         <div className="flex justify-between border-b-2 border-resin00">
           <div className="font-font02 text-[29px] text-resin00">Cart</div>
           <svg
@@ -31,24 +35,32 @@ function Cart() {
             />
           </svg>
         </div>
-        <ul className="flex flex-col divide-y-2 divide-[#394739] items-center">
-          {cart.map((item) => (
-            <CartItem item={item} key={item.id} />
-          ))}
-        </ul>
-        <div className="flex flex-col pt-[24px] border-t-2 border-resin00 gap-[24px]">
-          <div className=" flex justify-between px-[48px] font-font01 text-[26px] text-resin00 sm:text-[29px]">
-            <span>Total</span>
-            <span>${total}</span>
+        {cart?.length > 0 ? (
+          <>
+            <ul className="flex flex-col divide-y-2 divide-[#394739] items-center">
+              {cart.map((item) => (
+                <CartItem item={item} key={item.id} />
+              ))}
+            </ul>
+            <div className="flex flex-col pt-[24px] border-t-2 border-resin00 gap-[24px]">
+              <div className=" flex justify-between px-[48px] font-font01 text-[26px] text-resin00 sm:text-[29px]">
+                <span>Total</span>
+                <span>${total}</span>
+              </div>
+              <Link
+                to={"/checkout"}
+                className="flex py-[24px] gap-[8px] text-[26px] items-center justify-center rounded-sm bg-green09 font-font01 text-white border-t-[2.5px] border-[#595746]  shadow-[2px_2px_7px_0_rgba(0,0,0,0.25)] cursor-pointer active:scale-97 hover:border-green09 hover:shadow-none active:translate-y-[1px] transition-all duration-100"
+                onClick={() => setOpen(false)}
+              >
+                Checkout
+              </Link>
+            </div>
+          </>
+        ) : (
+          <div className="self-center font-font03 text-resin00">
+            Your cart is empty.
           </div>
-          <Link
-            to={"/checkout"}
-            className="flex py-[24px] gap-[8px] text-[26px] items-center justify-center rounded-sm bg-green09 font-font01 text-white border-t-[2.5px] border-[#595746]  shadow-[2px_2px_7px_0_rgba(0,0,0,0.25)] cursor-pointer active:scale-97 hover:border-green09 hover:shadow-none active:translate-y-[1px] transition-all duration-100"
-            onClick={() => setOpen(false)}
-          >
-            Checkout
-          </Link>
-        </div>
+        )}
       </div>
 
       {/* <div className=" flex flex-col gap-y-[64px] w-[600px] px-[48px] py-[40px] bg-green05">

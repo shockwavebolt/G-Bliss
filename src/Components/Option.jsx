@@ -1,10 +1,13 @@
-function Option({ filters, yy, handleFilterChange, children }) {
+function Option({ filters, yy, handleFilterChange, children, resetFilters }) {
   return (
     <div
-      className={`flex gap-[4px] font-font03 hover:text-orange00 ${
+      className={`flex gap-[4px] font-font03 font-semibold hover:text-orange00 ${
         filters[yy] === children ? "text-orange00" : ""
       } cursor-pointer`}
-      onClick={() => handleFilterChange(yy, children)}
+      onClick={() => {
+        handleFilterChange(yy, children);
+        resetFilters();
+      }}
     >
       <span>
         {filters[yy] === children ? (

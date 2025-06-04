@@ -4,27 +4,41 @@ function CheckoutItem({ item }) {
   const { getQuantity } = useCart();
   const currQt = getQuantity(item.id);
   return (
-    <li className=" flex p-[24px] gap-[16px] items-center">
-      <div className="font-font01 text-resin00 text-[29px]">{currQt}x</div>
-      <div className="flex flex-col gap-[16px] items-end">
-        <div className="flex p-[24px] pr-[64px] bg-white gap-[16px] rounded-lg">
-          <img src={item.img} className="w-[150px]" />
-          <div className="flex flex-col py-[24px] text-black">
-            <div className="font-font01 text-[20px]">{item.name}</div>
-            <div
-              className={`flex ${item.type2 != "" && "divide-x-2"} font-font03`}
-            >
-              <div className="pr-[4px] text-[18px]">{item.type}</div>
-              {item.type2 != "" && (
-                <div className="pl-[4px] text-[18px]">{item.type2}</div>
-              )}
+    <li className="flex p-[24px]  gap-[8px] items-center sm:gap-[16px]">
+      <div className="font-font01 text-resin00 text-[26px] sm:text-[29px]">
+        {currQt}x
+      </div>
+      <div className="flex flex-col gap-[8px] items-end sm:gap-[16px]">
+        <div className="flex p-[16px] bg-white rounded-lg sm:p-[24px]">
+          <img src={item.img} className="h-[120px] sm:h-[150px] self-center" />
+          <div className=" flex flex-col  pr-[24px]">
+            <div className="flex flex-col py-[16px] text-green09 sm:py-[24px]">
+              <div className="font-font01 text-[20px]">{item.name}</div>
+              <div
+                className={`flex ${
+                  item.type2 != "" && "divide-x-2"
+                } font-font03`}
+              >
+                <div className="pr-[4px] text-[16px] sm:text-[18px]">
+                  {item.type}
+                </div>
+                {item.type2 != "" && (
+                  <div className="pl-[4px] text-[16px] sm:text-[18px]">
+                    {item.type2}
+                  </div>
+                )}
+              </div>
+              <div className="font-font01 text-[16px] sm:text-[18px]">
+                ${item.price}
+              </div>
             </div>
-            <div className="font-font01 text-[18px]">${item.price}</div>
           </div>
         </div>
       </div>
 
-      <div className="font-font01 text-resin00 text-[29px]">= $50</div>
+      <div className="font-font01 text-resin00 text-[26px] sm:text-[29px]">
+        = $50
+      </div>
     </li>
   );
 }

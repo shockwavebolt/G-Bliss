@@ -86,7 +86,7 @@ function CartItem({ item }) {
       </div>
 
       <div className="font-font01 text-resin00 text-[26px] sm:text-[29px]">
-        = $50
+        = ${currQt * item.price}
       </div>
     </li>
   );

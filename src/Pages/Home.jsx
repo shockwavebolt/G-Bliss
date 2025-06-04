@@ -10,7 +10,7 @@ function Home() {
         <img src="public\img\staticBG2.png"></img>
       </section>
 
-      <section className="flex flex-col px-[24px] py-[24px] gap-[48px] w-full bg-resin00 items-center md:px-[48px] md:py-[48px] lg:px-[96px] lg:py-[96px] md:gap-[24px]">
+      <section className="flex flex-col px-[24px] pt-[128px] pb-[24px] gap-[48px] w-full bg-resin00 items-center md:px-[48px] md:py-[48px] lg:px-[96px] lg:py-[96px] md:gap-[24px]">
         <div className="w-full px-[24px] py-[12px] font-font01 text-[20px] text-green00 border-b-2 border-b-green00 md:text-[26px] lg:text-[47px]">
           Shop for...
         </div>

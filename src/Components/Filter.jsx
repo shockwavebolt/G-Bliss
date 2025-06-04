@@ -1,22 +1,19 @@
+import DisabledOption from "./DisabledOption";
 import Option from "./Option";
 
-function Filter({ filters, handleFilterChange }) {
+function Filter({ filters, handleFilterChange, resetFilters }) {
   return (
     <div className="hidden py-[96px] px-[64px] items-center md:block ">
       <div className="flex flex-col gap-[64px]">
         <div className="flex flex-col gap-[24px]">
-          <div className="flex items-center gap-[4px] font-font01 text-[29px] ">
-            Product
-            <span>
-              <img src="/public/icons/close.svg"></img>
-            </span>
-          </div>
+          <div className=" font-font01 text-[29px] ">Product</div>
 
           <div className="flex flex-col gap-[16px]">
             <Option
               filters={filters}
               yy="product"
               handleFilterChange={handleFilterChange}
+              resetFilters={resetFilters}
             >
               flower
             </Option>
@@ -25,6 +22,7 @@ function Filter({ filters, handleFilterChange }) {
               filters={filters}
               yy="product"
               handleFilterChange={handleFilterChange}
+              resetFilters={resetFilters}
             >
               pre-rolls
             </Option>
@@ -32,6 +30,7 @@ function Filter({ filters, handleFilterChange }) {
               filters={filters}
               yy="product"
               handleFilterChange={handleFilterChange}
+              resetFilters={resetFilters}
             >
               vapes
             </Option>
@@ -39,6 +38,7 @@ function Filter({ filters, handleFilterChange }) {
               filters={filters}
               yy="product"
               handleFilterChange={handleFilterChange}
+              resetFilters={resetFilters}
             >
               edibles
             </Option>
@@ -46,6 +46,7 @@ function Filter({ filters, handleFilterChange }) {
               filters={filters}
               yy="product"
               handleFilterChange={handleFilterChange}
+              resetFilters={resetFilters}
             >
               tinctures
             </Option>
@@ -53,6 +54,7 @@ function Filter({ filters, handleFilterChange }) {
               filters={filters}
               yy="product"
               handleFilterChange={handleFilterChange}
+              resetFilters={resetFilters}
             >
               accessories
             </Option>
@@ -61,52 +63,72 @@ function Filter({ filters, handleFilterChange }) {
 
         {/* Type */}
         <div className="flex flex-col gap-[24px]">
-          <div className="flex items-center gap-[4px] font-font01 text-[29px] ">
+          <div
+            className={`font-font01 text-[29px] ${
+              filters.product === "accessories" ? "text-resin01" : ""
+            }`}
+          >
             Type
-            <span>
-              <img src="/public/icons/close.svg"></img>
-            </span>
           </div>
           <div className="flex flex-col gap-[16px]">
-            <Option
-              filters={filters}
-              yy="type"
-              handleFilterChange={handleFilterChange}
-            >
-              Indica
-            </Option>
-            <Option
-              filters={filters}
-              yy="type"
-              handleFilterChange={handleFilterChange}
-            >
-              Sativa
-            </Option>
-            <Option
-              filters={filters}
-              yy="type"
-              handleFilterChange={handleFilterChange}
-            >
-              Hybrid
-            </Option>
+            {filters.product === "accessories" ? (
+              <DisabledOption>Indica</DisabledOption>
+            ) : (
+              <Option
+                filters={filters}
+                yy="type"
+                handleFilterChange={handleFilterChange}
+              >
+                Indica
+              </Option>
+            )}
+
+            {filters.product === "accessories" ? (
+              <DisabledOption>Sativa</DisabledOption>
+            ) : (
+              <Option
+                filters={filters}
+                yy="type"
+                handleFilterChange={handleFilterChange}
+              >
+                Sativa
+              </Option>
+            )}
+
+            {filters.product === "accessories" ? (
+              <DisabledOption>Hybrid</DisabledOption>
+            ) : (
+              <Option
+                filters={filters}
+                yy="type"
+                handleFilterChange={handleFilterChange}
+              >
+                Hybrid
+              </Option>
+            )}
           </div>
         </div>
 
         <div className="flex flex-col gap-[24px]">
-          <div className="flex items-center gap-[4px] font-font01 text-[29px] ">
+          <div
+            className={`font-font01 text-[29px] ${
+              filters.product === "accessories" ? "text-resin01" : ""
+            }`}
+          >
             Weight
-            <span>
-              <img src="/public/icons/close.svg"></img>
-            </span>
           </div>
           <div className="flex flex-col gap-[16px]">
-            <Option
-              filters={filters}
-              yy="weight"
-              handleFilterChange={handleFilterChange}
-            >
-              3.5g
-            </Option>
+            {filters.product === "accessories" ? (
+              <DisabledOption>3.5g</DisabledOption>
+            ) : (
+              <Option
+                filters={filters}
+                yy="weight"
+                handleFilterChange={handleFilterChange}
+              >
+                3.5g
+              </Option>
+            )}
           </div>
         </div>
       </div>
