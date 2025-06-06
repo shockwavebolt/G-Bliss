@@ -1,6 +1,5 @@
 import Filter from "../Components/Filter";
 import NavBar from "../Components/NavBar";
-import { useUI } from "../Components/UIContext";
 import ShopItem from "../Components/shopItem";
 import BackButton from "../UI/BackButton";
 
@@ -13,6 +12,7 @@ import accessoriesData from "../data/accessoriesData";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import FilterButton from "../Components/FilterButton";
+import MobileFilter from "../Components/MobileFilter";
 // import { useReducer } from "react";
 
 // const initialFilterState = {
@@ -93,6 +93,13 @@ function Shop() {
     type: "",
     weight: "",
   });
+  const [openFilter, setOpenFilter] = useState(false);
+
+  if (openFilter) {
+    document.body.classList.add("overflow-hidden");
+  } else {
+    document.body.classList.remove("overflow-hidden");
+  }
 
   const resetFilters = () => {
     setFilters((filters) => ({
@@ -155,12 +162,22 @@ function Shop() {
   return (
     <div>
       <NavBar />
+      {openFilter && (
+        <MobileFilter
+          filters={filters}
+          handleFilterChange={handleFilterChange}
+          resetFilters={resetFilters}
+          openFilter={openFilter}
+          setOpenFilter={setOpenFilter}
+          filterMatches={filteredProducts.length}
+        />
+      )}
       <section className="flex flex-col items-center pt-[192px] pb-[96px] px-[16px] bg-resin00 text-green00 gap-[24px] md:px-[48px] xl:px-[96px] ">
         {/* Desktop  */}
         <div className="w-full flex flex-col gap-[48px] place-self-start md:gap-[192px] md:flex-row ">
           <div className="flex justify-between ">
             <BackButton />
-            <FilterButton />
+            <FilterButton setOpenFilter={setOpenFilter} />
           </div>
           <div className="font-font02 text-[47px]">
             {filters.product.charAt(0).toUpperCase() + filters.product.slice(1)}
@@ -171,6 +188,8 @@ function Shop() {
             filters={filters}
             handleFilterChange={handleFilterChange}
             resetFilters={resetFilters}
+            openFilter={openFilter}
+            setOpenFilter={setOpenFilter}
           />
           {filteredProducts?.length > 0 ? (
             <ul className="grid  grid-cols-2 gap-y-[24px] items-start gap-x-[16px]  min-[1000px]:grid-cols-3 min-[1000px]:gap-x-[24px]">
@@ -179,46 +198,46 @@ function Shop() {
               ))}
             </ul>
           ) : (
-            <div className="flex justify-center w-full pt-[25%] font-font03 text-[20px] text-green00">
+            <div className="flex h-screen justify-center w-full pt-[25%] font-font03 text-[16px] text-green00 md:text-[20px]">
               No items match the filter settings.
             </div>
           )}
         </div>
-
-        {/* Mobile */}
-        {/* <div className="flex items-center justify-between text-green09 md:hidden">
-          <div className="flex items-center gap-[8px] font-font01">
-            <span>
-              <img src="/public/icons/back.svg" />
-            </span>
-            Back
-          </div>
-           <div className="flex gap-[24px]">
-            <div className="flex gap-[4px] border-2 px-[8px] py-[8px] rounded-lg font-font01 items-center ">
-              Filter
-              <span>
-                <img src="/public/icons/filter.svg"></img>
-              </span>
-            </div>
-            <div className="flex gap-[2px] border-2 px-[8px] py-[8px] rounded-lg font-font01 ">
-              sort
-              <span>
-                <img src="public/icons/sort.svg"></img>
-              </span>
-            </div>
-          </div> *
-        </div>
-        <div className="flex flex-col gap-[24px]">
-          <div className="font-font02 text-[76px] md:hidden">Flower</div>
-          <ul className="grid grid-cols-2 gap-y-[48px] gap-x-[16px]  sm:gap-x-[32px] md:hidden">
-            {itemData.map((data) => (
-              <ShopItem item={data} key={data.id} />
-            ))}
-          </ul>
-        </div> */}
       </section>
     </div>
   );
 }
 
 export default Shop;
+
+// {/* Mobile */}
+// {/* <div className="flex items-center justify-between text-green09 md:hidden">
+//   <div className="flex items-center gap-[8px] font-font01">
+//     <span>
+//       <img src="/public/icons/back.svg" />
+//     </span>
+//     Back
+//   </div>
+//    <div className="flex gap-[24px]">
+//     <div className="flex gap-[4px] border-2 px-[8px] py-[8px] rounded-lg font-font01 items-center ">
+//       Filter
+//       <span>
+//         <img src="/public/icons/filter.svg"></img>
+//       </span>
+//     </div>
+//     <div className="flex gap-[2px] border-2 px-[8px] py-[8px] rounded-lg font-font01 ">
+//       sort
+//       <span>
+//         <img src="public/icons/sort.svg"></img>
+//       </span>
+//     </div>
+//   </div> *
+// </div>
+// <div className="flex flex-col gap-[24px]">
+//   <div className="font-font02 text-[76px] md:hidden">Flower</div>
+//   <ul className="grid grid-cols-2 gap-y-[48px] gap-x-[16px]  sm:gap-x-[32px] md:hidden">
+//     {itemData.map((data) => (
+//       <ShopItem item={data} key={data.id} />
+//     ))}
+//   </ul>
+// </div> */}

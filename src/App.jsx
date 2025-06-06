@@ -3,7 +3,6 @@ import Home from "./Pages/Home";
 import Shop from "./Pages/Shop";
 import Checkout from "./Pages/Checkout";
 import { CartProvider } from "./Components/CartContext";
-import { UIProvider } from "./Components/UIContext";
 import Confirmation from "./Pages/Confirmation";
 
 const router = createBrowserRouter([
@@ -27,11 +26,9 @@ const router = createBrowserRouter([
 ]);
 function App() {
   return (
-    <UIProvider>
-      <CartProvider>
-        <RouterProvider router={router} />
-      </CartProvider>
-    </UIProvider>
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
   );
 }
 

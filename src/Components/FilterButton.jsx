@@ -1,6 +1,9 @@
-function FilterButton() {
+function FilterButton({ setOpenFilter }) {
   return (
-    <div className="group flex p-[12px] gap-[4px] items-center border-2 border-green00 rounded-md font-font01 hover:text-orange00 hover:border-orange00 cursor-pointer transition-colors duration-200 ease-in-out md:hidden  ">
+    <div
+      className="group flex p-[12px] gap-[4px] items-center font-font01 hover:text-orange00 hover:border-orange00 cursor-pointer transition-colors duration-200 ease-in-out md:hidden  "
+      onClick={() => setOpenFilter(true)}
+    >
       Filter
       <svg
         xmlns="http://www.w3.org/2000/svg"

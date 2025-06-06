@@ -1,12 +1,11 @@
 import { useEffect } from "react";
 import { useCart } from "./CartContext";
 import CartItem from "./CartItem";
-import { useUI } from "./UIContext";
 import { Link } from "react-router-dom";
 
 function Cart() {
   const { cart, getTotalCartPrice } = useCart();
-  const { setOpen } = useUI();
+  const { setOpenCart } = useCart();
   const total = getTotalCartPrice();
 
   return (
@@ -14,7 +13,7 @@ function Cart() {
       <div
         className={`w-[700px] h-screen overflow-y-auto flex flex-col px-[24px] py-[48px]  ${
           cart?.length > 0 ? "justify-between" : "gap-[35vh]"
-        } bg-green00`}
+        } bg-green00 `}
       >
         <div className="flex justify-between border-b-2 border-resin00">
           <div className="font-font02 text-[29px] text-resin00">Cart</div>
@@ -25,7 +24,7 @@ function Cart() {
             viewBox="0 0 28 29"
             fill="none"
             className="text-[#E6E1C5] hover:text-[#CF5C36] transition-colors duration-200 ease-in-out cursor-pointer"
-            onClick={() => setOpen(false)}
+            onClick={() => setOpenCart(false)}
           >
             <path
               fillRule="evenodd"
@@ -50,7 +49,7 @@ function Cart() {
               <Link
                 to={"/checkout"}
                 className="flex py-[24px] gap-[8px] text-[26px] items-center justify-center rounded-sm bg-green09 font-font01 text-white border-t-[2.5px] border-[#595746]  shadow-[2px_2px_7px_0_rgba(0,0,0,0.25)] cursor-pointer active:scale-97 hover:border-green09 hover:shadow-none active:translate-y-[1px] transition-all duration-100"
-                onClick={() => setOpen(false)}
+                onClick={() => setOpenCart(false)}
               >
                 Checkout
               </Link>

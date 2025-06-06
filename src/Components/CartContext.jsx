@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer, useState } from "react";
 
 const CartContext = createContext();
 
@@ -95,6 +95,13 @@ function CartProvider({ children }) {
     return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   }
 
+  const [openCart, setOpenCart] = useState(false);
+  if (openCart) {
+    document.body.classList.add("overflow-hidden");
+  } else {
+    document.body.classList.remove("overflow-hidden");
+  }
+
   return (
     <CartContext.Provider
       value={{
@@ -106,6 +113,8 @@ function CartProvider({ children }) {
         getQuantity,
         getTotalCartPrice,
         getCartQuantity,
+        openCart,
+        setOpenCart,
       }}
     >
       {children}
