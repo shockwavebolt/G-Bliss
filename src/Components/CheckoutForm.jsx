@@ -62,13 +62,13 @@ function CheckoutForm() {
         <div className="font-font02 text-[29px] text-resin00 border-resin00 border-b-2 pb-[24px]">
           cart
         </div>
-        <ul className="flex flex-col py-[24px] items-center divide-y-2 divide-green00 ">
+        <ul className="flex flex-col py-[24px] items-center divide-y-2 divide-green00 text-resin00 ">
           {cart.map((item) => (
             <CheckoutItem item={item} key={item.id} />
           ))}
         </ul>
         <div className="flex flex-col pt-[24px] border-t-2 border-resin00 gap-[24px]">
-          <div className=" flex justify-between px-[64px] font-font01 text-[29px] text-resin00">
+          <div className=" flex justify-between px-[24px] font-font01 text-[29px] text-resin00 sm:px-[48px]">
             <span>Total</span>
             <span>${total}</span>
           </div>

@@ -1,6 +1,6 @@
 function Category({ imgSrc, category }) {
   return (
-    <div className="flex flex-col border-2 border-white  gap-[40px] transition-colors duration-200 bg-white rounded-lg hover:shadow-md hover:cursor-pointer  cursor-pointer hover:border-orange00 group md:gap-[32px] lg:p-[4px] ">
+    <div className="flex flex-col pb-[24px] border-2 border-white  gap-[40px] transition-colors duration-200 bg-white rounded-lg hover:shadow-md hover:cursor-pointer  cursor-pointer hover:border-orange00 group md:gap-[32px] lg:p-[4px] ">
       <img
         className=" h-[140px] rounded-sm md:h-[240px] lg:h-[280px] xl:h-[400px]"
         src={imgSrc}

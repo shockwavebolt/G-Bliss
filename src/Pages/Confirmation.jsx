@@ -21,8 +21,8 @@ function Confirmation() {
         </div>
         <div className="grid w-full grid-cols-1 gap-[24px] items-start lg:grid-cols-2">
           <div className="flex flex-col gap-[24px]">
-            <div className=" flex p-[48px] bg-resin01 justify-between">
-              <div className="flex flex-col gap-[18px]">
+            <div className=" flex p-[24px] bg-resin01 justify-between sm:p-[48px]">
+              <div className="flex flex-col gap-[16px]">
                 <div className="font-font01 text-[16px] md:text-[18px]">
                   Order Detail
                 </div>
@@ -37,7 +37,7 @@ function Confirmation() {
                 </div>
               </div>
 
-              <div className="flex flex-col gap-[18px]">
+              <div className="flex flex-col gap-[16px]">
                 <div className="font-font01 text-[16px] md:text-[18px]">
                   Order Summary
                 </div>
@@ -50,7 +50,7 @@ function Confirmation() {
               </div>
             </div>
 
-            <div className="flex flex-col p-[32px] gap-[24px] bg-resin01">
+            <div className="flex flex-col p-[24px] gap-[24px] bg-resin01 sm:p-[48px]">
               <div className="flex justify-between font-font01 text-[16px] md:text-[18px]">
                 <div>
                   219 Grove Street
@@ -69,12 +69,12 @@ function Confirmation() {
 
           <div className="flex flex-col gap-[24px] px-[24px] py-[24px] bg-resin01 items-center">
             <div className="font-font01 text-[18px]">Ordered Items</div>
-            <ul className="flex flex-col py-[24px] px-[24px] items-center divide-y-2 divide-resin00 text-green00">
+            <ul className="flex flex-col py-[24px] items-center divide-y-2 divide-resin00 text-green00">
               {cart.map((item) => (
                 <CheckoutItem item={item} key={item.id} />
               ))}
             </ul>
-            <div className=" w-full flex justify-between px-[32px] pt-[24px] border-t-2 border-resin00 font-font01 text-[29px] text-resin00">
+            <div className=" w-full flex justify-between px-[32px] pt-[24px] border-t-2 border-green00 font-font01 text-[29px] text-green00">
               <span>Total</span>
               <span>${total}</span>
             </div>

@@ -192,7 +192,7 @@ function Shop() {
             setOpenFilter={setOpenFilter}
           />
           {filteredProducts?.length > 0 ? (
-            <ul className="grid  grid-cols-2 gap-y-[24px] items-start gap-x-[16px]  min-[1000px]:grid-cols-3 min-[1000px]:gap-x-[24px]">
+            <ul className="grid  grid-cols-2  gap-y-[24px] items-start gap-x-[16px]  min-[1000px]:grid-cols-3 min-[1000px]:gap-x-[24px]">
               {filteredProducts.map((data) => (
                 <ShopItem item={data} key={data.id} />
               ))}

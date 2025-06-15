@@ -31,6 +31,62 @@
   --breakpoint-xs: 480px;
 }
 
+.hamburger {
+  display: block;
+  cursor: pointer;
+  width: 24px;
+  height: 32px;
+  transition: all 0.2s;
+  position: relative;
+  outline: none;
+  background: none;
+  border: none;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  width: 32px;
+  height: 2.5px;
+  top: 8px;
+  left: 0;
+  background: #e6e1c5;
+  transform: rotate(0);
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.hamburger:hover .hamburger-top,
+.hamburger:hover .hamburger-middle,
+.hamburger:hover .hamburger-bottom {
+  background: #cf5c36;
+}
+
+.hamburger-middle {
+  transform: translateY(7px);
+}
+
+.hamburger-bottom {
+  transform: translateY(14px);
+}
+
+.hamburger.open {
+  transform: rotate(90deg);
+}
+
+.hamburger.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.hamburger.open .hamburger-middle {
+  display: none;
+}
+
+.hamburger.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
 @layer components {
   .cartIndicator {
     @apply flex w-[24px] h-[24px] rounded-full bg-orange00  items-center justify-center text-[16px] text-resin00 font-font01;
