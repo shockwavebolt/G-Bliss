@@ -1,4 +1,7 @@
 function Option({ filters, yy, handleFilterChange, children, resetFilters }) {
+  if (yy === "product" && children === "all") {
+    children = "";
+  }
   return (
     <div
       className={`flex gap-[4px] font-font03 font-semibold hover:text-orange00 ${
@@ -38,7 +41,7 @@ function Option({ filters, yy, handleFilterChange, children, resetFilters }) {
           </svg>
         )}
       </span>
-      {children.charAt(0).toUpperCase() + children.slice(1)}
+      {children ? children.charAt(0).toUpperCase() + children.slice(1) : "All"}
     </div>
   );
 }

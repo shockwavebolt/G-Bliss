@@ -23,6 +23,14 @@ function Filter({
                 handleFilterChange={handleFilterChange}
                 resetFilters={resetFilters}
               >
+                all
+              </Option>
+              <Option
+                filters={filters}
+                yy="product"
+                handleFilterChange={handleFilterChange}
+                resetFilters={resetFilters}
+              >
                 flower
               </Option>
 

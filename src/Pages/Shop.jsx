@@ -72,16 +72,6 @@ const categoryMap = {
   accessories: accessoriesData,
 };
 
-const displayNames = {
-  all: "All",
-  flower: "Flower",
-  prerolls: "Pre-Rolls",
-  vapes: "Vapes",
-  edibles: "Edibles",
-  tincture: "Tinctures",
-  accessories: "Accessories",
-};
-
 function Shop() {
   // const [filterState, dispatch] = useReducer(filterReducer, initialFilterState);
   const { category } = useParams();
@@ -134,7 +124,11 @@ function Shop() {
   }
 
   const handleFilterChange = (name, value) => {
-    setFilters({ ...filters, [name]: value });
+    if (name === "product" && value === "all") {
+      setFilters({ ...filters, [name]: "" });
+    } else {
+      setFilters({ ...filters, [name]: value });
+    }
   };
 
   useEffect(() => {
@@ -154,10 +148,6 @@ function Shop() {
   //     filterState.weight.includes(item.weight);
   //   return matchProducts && matchType && matchWeight;
   // });
-
-  const displayCategoryName = filters.product
-    ? displayNames[category] || ""
-    : "";
 
   return (
     <div>
@@ -180,7 +170,11 @@ function Shop() {
             <FilterButton setOpenFilter={setOpenFilter} />
           </div>
           <div className="font-font02 text-[47px]">
-            {filters.product.charAt(0).toUpperCase() + filters.product.slice(1)}
+            {/* {filters.product.charAt(0).toUpperCase() + filters.product.slice(1)} */}
+            {filters.product
+              ? filters.product.charAt(0).toUpperCase() +
+                filters.product.slice(1)
+              : "All"}
           </div>
         </div>
         <div className=" w-full  md:grid grid-cols-[auto_1fr] divide-x-2 gap-x-[24px] ">

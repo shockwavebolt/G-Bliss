@@ -4,11 +4,16 @@ import Shop from "./Pages/Shop";
 import Checkout from "./Pages/Checkout";
 import { CartProvider } from "./Components/CartContext";
 import Confirmation from "./Pages/Confirmation";
+import PageNotFound from "./Pages/PageNotFound";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/shop",
+    element: <Shop />,
   },
   {
     path: "/shop/:category",
@@ -22,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: "/confirmation",
     element: <Confirmation />,
+  },
+  {
+    path: "*", // Catch-all route for undefined paths
+    element: <PageNotFound />,
   },
 ]);
 function App() {

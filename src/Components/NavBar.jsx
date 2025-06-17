@@ -47,7 +47,7 @@ function NavBar() {
               Search
             </div>
             <Link
-              to="/shop/all"
+              to="/shop"
               className="transition-colors duration-200 ease-in-out cursor-pointer hover:text-orange00"
             >
               Shop
