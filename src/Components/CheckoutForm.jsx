@@ -59,7 +59,7 @@ function CheckoutForm() {
       </div>
 
       <div className="flex flex-col py-[64px] px-[16px] sm:px-[48px] lg:px-[24px] gap-[24px] bg-green01">
-        <div className="font-font02 text-[29px] text-resin00 border-resin00 border-b-2 pb-[24px]">
+        <div className="font-font02 text-[29px] cartShadow tracking-wide text-resin00 border-resin00 border-b-2 pb-[24px]">
           cart
         </div>
         <ul className="flex flex-col py-[24px] items-center divide-y-2 divide-green00 text-resin00 ">

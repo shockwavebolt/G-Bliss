@@ -169,7 +169,7 @@ function Shop() {
             <BackButton />
             <FilterButton setOpenFilter={setOpenFilter} />
           </div>
-          <div className="font-font02 text-[47px]">
+          <div className="font-font02 text-[47px] cat_title_shadow tracking-wide">
             {/* {filters.product.charAt(0).toUpperCase() + filters.product.slice(1)} */}
             {filters.product
               ? filters.product.charAt(0).toUpperCase() +

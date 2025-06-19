@@ -16,7 +16,9 @@ function Cart() {
         } bg-green00 `}
       >
         <div className="flex justify-between border-b-2 border-resin00">
-          <div className="font-font02 text-[29px] text-resin00">Cart</div>
+          <div className="font-font02 text-[29px] text-resin00 cartShadow tracking-wide">
+            Cart
+          </div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"

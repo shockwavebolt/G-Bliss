@@ -37,9 +37,9 @@ function NavBar() {
         {location.pathname === "/checkout" && <BackButton />}
         <Link
           to="/"
-          className="transition-colors duration-200 ease-in-out cursor-pointer font-font02 hover:text-orange00"
+          className="tracking-wider transition-colors duration-200 ease-in-out logoShadow text-shadow-lg font-font02 hover:text-orange00"
         >
-          G-bliss
+          G-Bliss
         </Link>
         {location.pathname !== "/checkout" && (
           <div className="flex justify-center items-center gap-[64px] text-[18px] font-font01 ">

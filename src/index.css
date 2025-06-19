@@ -31,6 +31,57 @@
   --breakpoint-xs: 480px;
 }
 
+/* Different text shadows to enhance the Oi font */
+
+.logoShadow {
+  text-shadow: 1px 2px 0px #877c3a;
+}
+.logoShadow:hover {
+  text-shadow: 1px 2px 0px #3e1a0f;
+}
+
+.cat_title_shadow {
+  text-shadow: 2px 4px 0px #394739;
+}
+
+.cartShadow {
+  text-shadow: 1px 2px 0px #877c3a;
+}
+
+/* Parallax set up for the Home section */
+
+.parallax-container {
+  position: relative;
+  height: 100vh;
+  padding-bottom: 96px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parallax-background {
+  text-shadow: 8px 24px 0px #394739;
+
+  position: absolute;
+
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.parallax-foreground {
+  position: relative;
+  top: 30%;
+  left: 25%;
+  z-index: 3;
+  transition: transform 0.1s ease-out;
+}
+
+.parallax-foreground img {
+  max-width: 50%;
+  height: auto;
+}
 .hamburger {
   display: block;
   cursor: pointer;

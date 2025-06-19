@@ -1,17 +1,43 @@
 import { Link } from "react-router-dom";
 import Category from "../Components/Category";
 import NavBar from "../Components/NavBar";
+import { useEffect, useState } from "react";
+
+// "public\img\FloatingBud.png"
 
 function Home() {
+  const [offsetY, setOffsetY] = useState(0);
+
+  const handleScroll = () => {
+    setOffsetY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <div>
       <section className="flex flex-col gap-[64px]  items-center justify-center w-full bg-resin00 ">
         <NavBar />
-        <img className="pt-[198px]" src="public\img\staticBG2.png"></img>
+        <div className="parallax-container">
+          <div className="parallax-background text-[231px] tracking-wide text-green00 font-font02">
+            <span>G-Bliss</span>
+          </div>
+          <div
+            className="parallax-foreground"
+            style={{ transform: `translateY(${offsetY * -0.2}px)` }}
+          >
+            <img src="/img/FloatingBud.png" />
+          </div>
+        </div>
+
+        {/* <img className="pt-[198px]" src="public\img\staticBG2.png"></img> */}
       </section>
 
       <section className="flex flex-col px-[24px] pt-[96px] pb-[24px] gap-[48px] w-full bg-resin00 items-center md:px-[48px] md:py-[48px] lg:px-[96px] lg:py-[96px] md:gap-[24px]">
-        <div className="w-full px-[24px] py-[12px] font-font01 text-[29px] text-green00 border-b-2 border-b-green00 md:text-[26px] lg:text-[47px]">
+        <div className="w-full px-[24px] py-[12px] font-font01 text-[29px] text-green00 border-b-8 border-b-green00 md:text-[26px] lg:text-[47px]">
           Shop for...
         </div>
         <div className=" flex flex-col gap-[24px] items-end lg:px-[32px] xl:px-[64px]">
