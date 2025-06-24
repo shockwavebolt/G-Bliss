@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom";
 import { useCart } from "./CartContext";
 import CheckoutItem from "./CheckoutItem";
+import { useState } from "react";
 
 function CheckoutForm() {
   const { cart, getTotalCartPrice } = useCart();
   const total = getTotalCartPrice();
+
+  const [pickupTime, setPickupTime] = useState("14:30");
+
+  const handleTimeChange = (e) => {
+    setPickupTime(e.target.value);
+  };
   return (
     <div className="grid grid-cols-1 gap-[48px] lg:grid-cols-2">
       <div className="  flex flex-col py-[64px] px-[16px] sm:px-[48px] lg:px-[0px]  ">
@@ -14,7 +21,7 @@ function CheckoutForm() {
               <span className="font-font01 text-[22px] md:text-[29px]">
                 Name
               </span>
-              <span className="italic font-font03 text-[16px] text-orange00 ">
+              <span className="hidden italic font-font03 text-[16px] text-orange00 ">
                 Required*
               </span>
             </label>
@@ -30,7 +37,7 @@ function CheckoutForm() {
               <span className="font-font01 text-[22px] md:text-[29px]">
                 Phone Number
               </span>
-              <span className="italic font-font03 text-[16px] text-orange00 ">
+              <span className="hidden italic font-font03 text-[16px] text-orange00 ">
                 Required*
               </span>
             </label>
@@ -49,11 +56,12 @@ function CheckoutForm() {
               </label>
               <input
                 type="time"
-                value="14:30"
+                value={pickupTime}
+                onChange={handleTimeChange}
                 className=" w-[100px] focus:outline-none font-font01"
               />
             </div>
-            <span className="italic font-font03">Required*</span>
+            <span className="hidden italic font-font03">Required*</span>
           </div>
         </div>
       </div>

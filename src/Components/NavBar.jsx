@@ -88,10 +88,12 @@ function NavBar() {
             <Link
               to="/"
               className={`${
-                toggleNavMenu ? "cursor-pointer font-font02" : "hidden"
+                toggleNavMenu
+                  ? "cursor-pointer  tracking-wider transition-colors duration-200 ease-in-out logoShadow text-shadow-lg font-font02 hover:text-orange00"
+                  : "hidden"
               }`}
             >
-              G-bliss
+              G-Bliss
             </Link>
 
             <div
@@ -124,8 +126,11 @@ function NavBar() {
         ) : (
           <>
             <BackButton />
-            <Link to="/" className="cursor-pointer font-font02">
-              G-bliss
+            <Link
+              to="/"
+              className="tracking-wider transition-colors duration-200 ease-in-out logoShadow text-shadow-lg font-font02 hover:text-orange00"
+            >
+              G-Bliss
             </Link>
           </>
         )}

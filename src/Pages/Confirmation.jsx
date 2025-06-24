@@ -10,7 +10,7 @@ function Confirmation() {
       <NavBar />
       <section className="flex flex-col items-center pt-[192px] pb-[24px] px-[16px] bg-resin00 text-green00 gap-[24px] md:px-[48px] xl:px-[96px] ">
         <div className="flex flex-col items-center gap-[48px]">
-          <div className="font-font02 text-[47px ] cat_title_shadow tracking-wide md:text-[76px]">
+          <div className="font-font02 text-[47px] cat_title_shadow tracking-wide md:text-[76px]">
             Thank You!
           </div>
           <div className="font-font01 text-center text-[16px] md:text-[18px]">

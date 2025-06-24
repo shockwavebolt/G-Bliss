@@ -22,7 +22,7 @@ function Home() {
       <section className="flex flex-col gap-[64px]  items-center justify-center w-full bg-resin00 ">
         <NavBar />
         <div className="parallax-container">
-          <div className="parallax-background text-[231px] tracking-wide text-green00 font-font02">
+          <div className="tracking-wide parallax-background text-green00 font-font02">
             <span>G-Bliss</span>
           </div>
           <div
@@ -37,12 +37,17 @@ function Home() {
       </section>
 
       <section className="flex flex-col px-[24px] pt-[96px] pb-[24px] gap-[48px] w-full bg-resin00 items-center md:px-[48px] md:py-[48px] lg:px-[96px] lg:py-[96px] md:gap-[24px]">
-        <div className="w-full px-[24px] py-[12px] font-font01 text-[29px] text-green00 border-b-8 border-b-green00 md:text-[26px] lg:text-[47px]">
-          Shop for...
-        </div>
         <div className=" flex flex-col gap-[24px] items-end lg:px-[32px] xl:px-[64px]">
-          <div className="font-font01 text-[20px] text-green00 lg:text-[18px] cursor-pointer transition-colors duration-200 hover:text-orange00">
-            Shop All
+          <div className="w-full flex justify-between items-center py-[24px] font-font01   text-green00 border-t-8 border-b-green00 ">
+            <span className=" text-[29px] md:text-[26px] lg:text-[47px]">
+              Shop for...
+            </span>
+            <Link
+              to="/shop"
+              className="text-[20px] text-green00 lg:text-[18px] cursor-pointer transition-colors duration-200 hover:text-orange00"
+            >
+              Shop All
+            </Link>
           </div>
           <div className="grid grid-cols-3 gap-x-[16px] gap-y-[16px] md:gap-x-[24px] md:gap-y-[24px]  ">
             <Link to="/shop/flower">
