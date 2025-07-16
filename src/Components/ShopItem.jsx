@@ -33,31 +33,42 @@ function ShopItem({ item }) {
   }
 
   return (
-    <li className=" flex flex-col h-[465px] justify-between px-[8px] py-[16px] pb-[24px] bg-white rounded-lg border-[1px] border-[#D5D5D5] md:h-[552px]  ">
+    <li className=" flex flex-col justify-between px-[8px] py-[16px]  bg-white rounded-lg border-[1px] border-[#D5D5D5] md:h-[552px]  ">
       <div>
         <img
           src={img}
-          className="h-[170px]  place-self-center rounded-lg md:h-[240px] lg:h-[248px]"
+          className="h-[120px]  place-self-center rounded-lg md:h-[240px] lg:h-[248px]"
         />
-        <div className="flex flex-col gap-[4px] px-[12px] py-[12px] text-green09">
-          <div className="font-font01 text-[22px] md:text-[24px] md:lg-[29px] whitespace-normal">
+        <div className="flex flex-col gap-[8px] px-[12px]  text-green09">
+          <div className="font-font01 text-[16px] md:text-[24px]  whitespace-normal">
             {name}
           </div>
-          <div className={`flex ${type2 != "" && "divide-x-2"} font-font03`}>
-            <div className="pr-[4px]">{type}</div>
-            {type2 != "" && <div className="pl-[4px]">{type2}</div>}
-          </div>
+          <div className=" flex flex-col gap-[4px]">
+            {/* NEED TO CHANGE TEXT SIZE FOR BIGGER SCREENS */}
+            <div
+              className={`flex text-[12px] md:text-[18px] ${
+                type2 != "" && "divide-x-[1.5px]"
+              } font-font03`}
+            >
+              <div className="pr-[4px] text-[12px] md:text-[18px]">{type}</div>
+              {type2 != "" && (
+                <div className="pl-[4px] text-[12px] md:text-[18px]">
+                  {type2}
+                </div>
+              )}
+            </div>
 
-          <div className="font-font03">{weight}</div>
+            <div className="font-font03 text-[12px] md:text-[18px]">
+              {weight}
+            </div>
+          </div>
         </div>
       </div>
 
       <div className="px-[8px] text-green09">
-        <div className="flex justify-between py-[8px] pb-[16px]">
-          <div className="font-font01 text-[22px] md:text-[24px] md:lg-[29px]">
-            ${price}
-          </div>
-          <div className="flex gap-[8px] items-center font-font01 text-[22px] text-green00 md:text-[24px] md:lg-[29px]">
+        <div className="flex items-center justify-between py-[8px] pb-[16px]">
+          <div className="font-font01 text-[16px] md:text-[24px]">${price}</div>
+          <div className="flex gap-[4px] items-center font-font01 text-[16px] text-green00 md:text-[24px] md:lg-[29px]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"
@@ -76,8 +87,8 @@ function ShopItem({ item }) {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"
-              height="33"
-              viewBox="0 0 32 33"
+              height="32"
+              viewBox="0 0 32 32"
               fill="none"
               className="hover:text-[#CF5C36] transition-colors duration-200 ease-in-out cursor-pointer"
               onClick={() => handleInc()}
@@ -90,7 +101,7 @@ function ShopItem({ item }) {
           </div>
         </div>
         <button
-          className=" flex w-full px-[8px] py-[12px] rounded-sm items-center justify-center bg-green09 font-font01 text-white border-t-[2.5px] border-green00 shadow-[2px_2px_7px_0_rgba(0,0,0,0.25)] cursor-pointer  active:scale-97 hover:border-green09 hover:shadow-none active:translate-y-[1px] transition-all duration-100"
+          className=" flex w-full px-[8px] py-[12px] text-[16px] rounded-sm items-center justify-center bg-green09 font-font01 text-white border-t-[2.5px] border-green00 shadow-[2px_2px_7px_0_rgba(0,0,0,0.25)] cursor-pointer  active:scale-97 hover:border-green09 hover:shadow-none active:translate-y-[1px] transition-all duration-100"
           onClick={() => handleAddCart()}
         >
           Add to cart

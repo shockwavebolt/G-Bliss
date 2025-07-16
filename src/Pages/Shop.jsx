@@ -162,14 +162,14 @@ function Shop() {
           filterMatches={filteredProducts.length}
         />
       )}
-      <section className="flex flex-col items-center pt-[192px] pb-[96px] px-[16px] bg-resin00 text-green00 gap-[24px] md:px-[48px] xl:px-[96px] ">
+      <section className="flex flex-col items-center pt-[128px] pb-[96px] px-[16px] bg-resin00 text-green00 gap-[12px] md:px-[48px] xl:px-[96px] ">
         {/* Desktop  */}
         <div className="w-full flex flex-col gap-[48px] place-self-start md:gap-[192px] md:flex-row ">
           <div className="flex justify-between ">
             <BackButton />
             <FilterButton setOpenFilter={setOpenFilter} />
           </div>
-          <div className="font-font02 text-[29px] cat_title_shadow tracking-wide md:text-[47px]">
+          <div className="font-font02 text-[26px] cat_title_shadow tracking-wide md:text-[47px]">
             {/* {filters.product.charAt(0).toUpperCase() + filters.product.slice(1)} */}
             {filters.product
               ? filters.product.charAt(0).toUpperCase() +
@@ -186,7 +186,7 @@ function Shop() {
             setOpenFilter={setOpenFilter}
           />
           {filteredProducts?.length > 0 ? (
-            <ul className="grid  grid-cols-2  gap-y-[24px] items-start gap-x-[16px]  min-[1000px]:grid-cols-3 min-[1000px]:gap-x-[24px]">
+            <ul className="grid  grid-cols-2  gap-y-[12px] items-start gap-x-[12px]  min-[1000px]:grid-cols-3 min-[1000px]:gap-x-[24px]">
               {filteredProducts.map((data) => (
                 <ShopItem item={data} key={data.id} />
               ))}

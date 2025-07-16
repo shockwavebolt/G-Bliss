@@ -36,20 +36,20 @@ function Home() {
         {/* <img className="pt-[198px]" src="public\img\staticBG2.png"></img> */}
       </section>
 
-      <section className="flex flex-col px-[24px] pt-[96px] pb-[24px] gap-[48px] w-full bg-resin00 items-center md:px-[48px] md:py-[48px] lg:px-[96px] lg:py-[96px] md:gap-[24px]">
-        <div className=" flex flex-col gap-[24px] items-end lg:px-[32px] xl:px-[64px]">
-          <div className="w-full flex justify-between items-center py-[24px] font-font01   text-green00 border-t-8 border-b-green00 ">
-            <span className=" text-[29px] md:text-[26px] lg:text-[47px]">
+      <section className="flex flex-col px-[16px]  pb-[24px] gap-[48px] w-full bg-resin00 items-center xs:px-[24px] md:px-[48px] md:py-[48px] lg:px-[96px] lg:py-[96px] md:gap-[24px]">
+        <div className=" flex flex-col gap-[16px] items-end lg:px-[32px] xl:px-[64px]">
+          <div className="flex justify-between w-full font-font01 text-green00">
+            <span className=" text-[20px] md:text-[26px] lg:text-[47px]">
               Shop for...
             </span>
             <Link
               to="/shop"
-              className="text-[20px] text-green00 lg:text-[18px] cursor-pointer transition-colors duration-200 hover:text-orange00"
+              className="text-[16px] md:text-[20px] lg:text-[29px] text-green00  cursor-pointer transition-colors duration-200 hover:text-orange00"
             >
-              Shop All
+              Shop all
             </Link>
           </div>
-          <div className="grid grid-cols-3 gap-x-[16px] gap-y-[16px] md:gap-x-[24px] md:gap-y-[24px]  ">
+          <div className="w-full grid grid-cols-3 gap-x-[12px] gap-y-[12px]  sm:gap-x-[24px] md:gap-y-[24px]  ">
             <Link to="/shop/flower">
               <Category imgSrc={`public/img/flower.png`} category={"Flower"} />
             </Link>

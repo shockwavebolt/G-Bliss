@@ -16,41 +16,39 @@ function CartItem({ item }) {
   }
 
   return (
-    <li className="flex p-[16px]  gap-[8px] items-center sm:gap-[16px]">
-      <div className="font-font01 text-resin00 text-[26px] sm:text-[29px]">
+    <li className="w-full flex py-[16px] gap-[8px] items-center sm:gap-[16px]">
+      <div className="font-font01 text-resin00 text-[16px] sm:text-[29px]">
         {currQt}x
       </div>
-      <div className="flex flex-col gap-[8px] items-end sm:gap-[16px]">
+      <div className="flex flex-col w-full max-w-[380px] gap-[8px] items-end sm:gap-[16px]">
         <div
-          className="transition-colors duration-200 ease-in-out cursor-pointer font-font03 text-resin00 text-[16px] sm:text-[18px] hover:text-orange00"
+          className="transition-colors duration-200 ease-in-out cursor-pointer font-font03 text-resin00 text-[12px] sm:text-[18px] hover:text-orange00"
           onClick={() => removeFromCart(item)}
         >
           Remove
         </div>
-        <div className="flex p-[16px] bg-white rounded-lg sm:p-[24px]">
-          <img src={item.img} className="h-[120px] sm:h-[150px] self-center" />
-          <div className=" flex flex-col  pr-[24px]">
-            <div className="flex flex-col py-[16px] text-green09 sm:py-[24px]">
-              <div className="font-font01 text-[20px]">{item.name}</div>
-              <div
-                className={`flex ${
-                  item.type2 != "" && "divide-x-2"
-                } font-font03`}
-              >
-                <div className="pr-[4px] text-[16px] sm:text-[18px]">
-                  {item.type}
+        <div className="flex w-full py-[16px] px-[8px]  bg-white rounded-lg sm:p-[24px]">
+          <img src={item.img} className="h-[95px] sm:h-[150px] self-center" />
+          <div className="flex flex-col gap-[16px]">
+            <div className="flex flex-col text-green09 gap-[8px]  sm:py-[24px]">
+              <div className="font-font01 text-[16px]">{item.name}</div>
+              <div className="flex flex-col">
+                <div
+                  className={`flex ${
+                    item.type2 != "" && "divide-x-2"
+                  } font-font03`}
+                >
+                  <div className="pr-[4px] text-[12px] ">{item.type}</div>
+                  {item.type2 != "" && (
+                    <div className="pl-[4px] text-[12px]">{item.type2}</div>
+                  )}
                 </div>
-                {item.type2 != "" && (
-                  <div className="pl-[4px] text-[16px] sm:text-[18px]">
-                    {item.type2}
-                  </div>
-                )}
+                <div className="font-font03 text-[12px]">{item.weight}</div>
               </div>
-              <div className="font-font01 text-[16px] sm:text-[18px]">
-                ${item.price}
-              </div>
+
+              <div className="font-font01 text-[16px] ">${item.price}</div>
             </div>
-            <div className="flex gap-[4px] self-end font-font01 text-[22px] md:text-[24px] md:lg-[29px] text-green00">
+            <div className="flex gap-[4px]  text-green00">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -85,7 +83,7 @@ function CartItem({ item }) {
         </div>
       </div>
 
-      <div className="font-font01 text-resin00 text-[26px] sm:text-[29px] whitespace-nowrap">
+      <div className="font-font01 text-resin00 text-[16px] sm:text-[29px] whitespace-nowrap">
         = ${currQt * item.price}
       </div>
     </li>

@@ -16,7 +16,7 @@ function Cart() {
         } bg-green00 `}
       >
         <div className="flex justify-between border-b-2 border-resin00">
-          <div className="font-font02 text-[29px] text-resin00 cartShadow tracking-wide">
+          <div className="font-font02 text-[26px] text-resin00 cartShadow tracking-wide">
             Cart
           </div>
           <svg
@@ -38,19 +38,19 @@ function Cart() {
         </div>
         {cart?.length > 0 ? (
           <>
-            <ul className="flex flex-col divide-y-2 divide-[#394739] items-center">
+            <ul className=" flex flex-col  px-[16px] divide-y-2 divide-[#394739]  mx-auto">
               {cart.map((item) => (
                 <CartItem item={item} key={item.id} />
               ))}
             </ul>
             <div className="flex flex-col pt-[24px] border-t-2 border-resin00 gap-[24px]">
-              <div className=" flex justify-between px-[24px] font-font01 text-[26px] text-resin00 sm:text-[29px] sm:px-[48px]">
+              <div className=" flex justify-between px-[24px] font-font01 text-[16px] text-resin00 sm:text-[29px] sm:px-[48px]">
                 <span>Total</span>
                 <span>${total}</span>
               </div>
               <Link
                 to={"/checkout"}
-                className="flex py-[24px] gap-[8px] text-[26px] items-center justify-center rounded-sm bg-green09 font-font01 text-white border-t-[2.5px] border-[#595746]  shadow-[2px_2px_7px_0_rgba(0,0,0,0.25)] cursor-pointer active:scale-97 hover:border-green09 hover:shadow-none active:translate-y-[1px] transition-all duration-100"
+                className="flex py-[24px] gap-[8px] text-[16px] sm:text-[29px] sm:px-[48px] items-center justify-center rounded-sm bg-green09 font-font01 text-white border-t-[2.5px] border-[#595746]  shadow-[2px_2px_7px_0_rgba(0,0,0,0.25)] cursor-pointer active:scale-97 hover:border-green09 hover:shadow-none active:translate-y-[1px] transition-all duration-100"
                 onClick={() => setOpenCart(false)}
               >
                 Checkout

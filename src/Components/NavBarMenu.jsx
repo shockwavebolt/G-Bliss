@@ -11,7 +11,7 @@ function NavBarMenu() {
       />
       <Link
         to="/shop/all"
-        className="transition-colors duration-200 ease-in-out cursor-pointer hover:text-orange00"
+        className="self-end transition-colors duration-200 ease-in-out cursor-pointer hover:text-orange00"
       >
         Shop
       </Link>

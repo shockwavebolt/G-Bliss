@@ -9,7 +9,7 @@ function MobileFilter({
   setOpenFilter,
 }) {
   return (
-    <div className="h-screen z-10 pt-[192px] pb-[48px] px-[24px] flex flex-col gap-[24px] bg-resin00 text-green00 ">
+    <div className="h-screen z-10 pt-[128px] pb-[48px] px-[24px] flex flex-col gap-[24px] bg-resin00 text-green00 ">
       <div className="flex  justify-between pb-[8px] border-b-2 border-green00">
         <div className="flex gap-[16px] items-center">
           <span className="font-font02 text-[29px] cat_title_shadow tracking-wide ">
