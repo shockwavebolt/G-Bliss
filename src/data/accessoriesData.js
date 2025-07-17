@@ -7,7 +7,7 @@ const accessoriesData = [
     type2: "",
     weight: "",
     price: 120,
-    img: "/public/products/accessories/Grav coil waterpipe.png",
+    img: "/G-Bliss/products/accessories/Grav coil waterpipe.png",
   },
   {
     id: 512,
@@ -17,7 +17,7 @@ const accessoriesData = [
     type2: "",
     weight: "",
     price: 30,
-    img: "/public/products/accessories/Raw Rolling paper.jpeg",
+    img: "/G-Bliss/products/accessories/Raw Rolling paper.jpeg",
   },
 ];
 

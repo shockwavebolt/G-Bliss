@@ -7,7 +7,7 @@ const tincturesData = [
     type2: "",
     weight: "3000mg",
     price: 30,
-    img: "/public/products/tinctures/Simply Crafted - Full Spectrum oil.jpg",
+    img: "/G-Bliss/products/tinctures/Simply Crafted - Full Spectrum oil.jpg",
   },
   {
     id: 612,
@@ -17,7 +17,7 @@ const tincturesData = [
     type2: "",
     weight: "3000mg",
     price: 30,
-    img: "/public/products/tinctures/Simply Crafted- Nightime.jpg",
+    img: "/G-Bliss/products/tinctures/Simply Crafted- Nightime.jpg",
   },
 ];
 

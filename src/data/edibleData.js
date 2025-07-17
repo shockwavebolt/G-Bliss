@@ -7,7 +7,7 @@ const edibleData = [
     type2: "Hybrid",
     weight: "10mg ",
     price: 20,
-    img: "/public/products/edibles/Camino- Strawberry Sunset- 10mg- 10pk.jpg",
+    img: "/G-Bliss/products/edibles/Camino- Strawberry Sunset- 10mg- 10pk.jpg",
   },
 
   {
@@ -18,7 +18,7 @@ const edibleData = [
     type2: "Hybrid",
     weight: "5mg ",
     price: 20,
-    img: "/public/products/edibles/Camino- Wild Berry- 5mg- 20pk.jpg",
+    img: "/G-Bliss/products/edibles/Camino- Wild Berry- 5mg- 20pk.jpg",
   },
 
   {
@@ -29,7 +29,7 @@ const edibleData = [
     type2: "",
     weight: "5mg ",
     price: 20,
-    img: "/public/products/edibles/Camino- Wild Cherry- 5mg- 20pk.jpg",
+    img: "/G-Bliss/products/edibles/Camino- Wild Cherry- 5mg- 20pk.jpg",
   },
 
   {
@@ -40,7 +40,7 @@ const edibleData = [
     type2: "",
     weight: "100mg ",
     price: 20,
-    img: "/public/products/edibles/Select Bites-Pomergranate 20pk-100mg-Indica.jpg",
+    img: "/G-Bliss/products/edibles/Select Bites-Pomergranate 20pk-100mg-Indica.jpg",
   },
 
   {
@@ -51,7 +51,7 @@ const edibleData = [
     type2: "",
     weight: "100mg ",
     price: 20,
-    img: "/public/products/edibles/Select Bites - Strawberry Peach- 10pk -100mg- hybrid.jpg",
+    img: "/G-Bliss/products/edibles/Select Bites - Strawberry Peach- 10pk -100mg- hybrid.jpg",
   },
 
   {
@@ -62,7 +62,7 @@ const edibleData = [
     type2: "",
     weight: "50mg ",
     price: 20,
-    img: "/public/products/edibles/WYLD- Peach- 50mg-10pk.jpg",
+    img: "/G-Bliss/products/edibles/WYLD- Peach- 50mg-10pk.jpg",
   },
 
   {
@@ -73,7 +73,7 @@ const edibleData = [
     type2: "",
     weight: "30mg ",
     price: 20,
-    img: "/public/products/edibles/justCBD- Sour Cola- 30mg- 60pk.webp",
+    img: "/G-Bliss/products/edibles/justCBD- Sour Cola- 30mg- 60pk.webp",
   },
 ];
 

@@ -79,7 +79,7 @@ function Confirmation() {
                 10:00 AM-10:00 PM
               </div>
             </div>
-            <img src="public/img/map.png"></img>
+            <img src="/G-Bliss/img/map.png"></img>
           </div>
         </div>
       </section>

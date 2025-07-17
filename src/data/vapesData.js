@@ -7,7 +7,7 @@ const vapesData = [
     type2: "Hybrid",
     weight: "0.5g",
     price: 30,
-    img: "/public/products/vapes/Aryloom- Orange Creamsicle- 0.5g.png",
+    img: "/G-Bliss/products/vapes/Aryloom- Orange Creamsicle- 0.5g.png",
   },
   {
     id: 412,
@@ -17,7 +17,7 @@ const vapesData = [
     type2: "",
     weight: "0.5g",
     price: 30,
-    img: "/public/products/vapes/Aryloom- Rest.jpeg",
+    img: "/G-Bliss/products/vapes/Aryloom- Rest.jpeg",
   },
 
   {
@@ -28,7 +28,7 @@ const vapesData = [
     type2: "Hybrid",
     weight: "0.5g",
     price: 30,
-    img: "/public/products/vapes/Aryloom- Rest.jpeg",
+    img: "/G-Bliss/products/vapes/Aryloom- Rest.jpeg",
   },
 
   {
@@ -39,7 +39,7 @@ const vapesData = [
     type2: "Hybrid",
     weight: "0.5g",
     price: 30,
-    img: "/public/products/vapes/Pax - Pineapple Express.png",
+    img: "/G-Bliss/products/vapes/Pax - Pineapple Express.png",
   },
 
   {
@@ -50,7 +50,7 @@ const vapesData = [
     type2: "Hybrid",
     weight: "0.5g",
     price: 30,
-    img: "/public/products/vapes/Pax- Blood Orange.png",
+    img: "/G-Bliss/products/vapes/Pax- Blood Orange.png",
   },
 
   {
@@ -61,7 +61,7 @@ const vapesData = [
     type2: "Hybrid",
     weight: "0.5g",
     price: 30,
-    img: "/public/products/vapes/Pax- Blood Orange.png",
+    img: "/G-Bliss/products/vapes/Pax- Blood Orange.png",
   },
 ];
 

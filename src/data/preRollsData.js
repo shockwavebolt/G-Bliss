@@ -7,7 +7,7 @@ const preRollsData = [
     type2: "",
     weight: "0.5g",
     price: 50,
-    img: "/public/products/pre-rolls/Dad Grass.jpg",
+    img: "/G-Bliss/products/pre-rolls/Dad Grass.jpg",
   },
 
   {
@@ -18,7 +18,7 @@ const preRollsData = [
     type2: "Hybrid",
     weight: "1g ",
     price: 50,
-    img: "/public/products/pre-rolls/&Shine - 1g.jpg",
+    img: "/G-Bliss/products/pre-rolls/&Shine - 1g.jpg",
   },
 
   {
@@ -29,7 +29,7 @@ const preRollsData = [
     type2: "",
     weight: "1g ",
     price: 50,
-    img: "/public/products/pre-rolls/Edie Parker- Nightcap- 2pk- 1g.jpg",
+    img: "/G-Bliss/products/pre-rolls/Edie Parker- Nightcap- 2pk- 1g.jpg",
   },
 
   {
@@ -40,7 +40,7 @@ const preRollsData = [
     type2: "",
     weight: "1g ",
     price: 75,
-    img: "/public/products/pre-rolls/Head Space - Kush Mintz X Gelato.jpg",
+    img: "/G-Bliss/products/pre-rolls/Head Space - Kush Mintz X Gelato.jpg",
   },
 
   {
@@ -51,7 +51,7 @@ const preRollsData = [
     type2: "",
     weight: "3.5g",
     price: 80,
-    img: "/public/products/pre-rolls/Lowell- The Chill Indica blend- 3.5g-6pk.jpg",
+    img: "/G-Bliss/products/pre-rolls/Lowell- The Chill Indica blend- 3.5g-6pk.jpg",
   },
 
   {
@@ -62,7 +62,7 @@ const preRollsData = [
     type2: "",
     weight: "0.5g",
     price: 40,
-    img: "/public/products/pre-rolls/Revert Cannabis - sherbert- 0.5g.avif",
+    img: "/G-Bliss/products/pre-rolls/Revert Cannabis - sherbert- 0.5g.avif",
   },
 
   {
@@ -73,7 +73,7 @@ const preRollsData = [
     type2: "",
     weight: "1g",
     price: 180,
-    img: "/public/products/pre-rolls/Sunday- Blueberry Trainwreck- 28pk- 1g.jpg",
+    img: "/G-Bliss/products/pre-rolls/Sunday- Blueberry Trainwreck- 28pk- 1g.jpg",
   },
 
   {
@@ -84,7 +84,7 @@ const preRollsData = [
     type2: "Hybrid",
     weight: "1g",
     price: 80,
-    img: "/public/products/pre-rolls/Sunday- Blueberry Trainwreck- 28pk- 1g.jpg",
+    img: "/G-Bliss/products/pre-rolls/Sunday- Blueberry Trainwreck- 28pk- 1g.jpg",
   },
 ];
 

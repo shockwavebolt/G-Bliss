@@ -7,7 +7,7 @@ const flowerData = [
     type2: "Hybrid",
     weight: "3.5g",
     price: 50,
-    img: "/public/products/flower/blue-dream.png",
+    img: "/G-Bliss/products/flower/blue-dream.png",
   },
   {
     id: 121,
@@ -17,7 +17,7 @@ const flowerData = [
     type2: "Hybrid",
     weight: "3.5g",
     price: 30,
-    img: "/public/products/flower/gelato.jpg",
+    img: "/G-Bliss/products/flower/gelato.jpg",
   },
   {
     id: 123,
@@ -27,7 +27,7 @@ const flowerData = [
     type2: "Hybrid",
     weight: "3.5g",
     price: 30,
-    img: "/public/products/flower/Gorilla Glue.jpeg",
+    img: "/G-Bliss/products/flower/Gorilla Glue.jpeg",
   },
 
   {
@@ -38,7 +38,7 @@ const flowerData = [
     type2: "Hybrid",
     weight: "3.5g",
     price: 50,
-    img: "/public/products/flower/pineapple-express.png",
+    img: "/G-Bliss/products/flower/pineapple-express.png",
   },
   {
     id: 115,
@@ -48,7 +48,7 @@ const flowerData = [
     type2: "Hybrid",
     weight: "3.5g",
     price: 30,
-    img: "/public/products/flower/pinkRozay.png",
+    img: "/G-Bliss/products/flower/pinkRozay.png",
   },
   {
     id: 116,
@@ -58,7 +58,7 @@ const flowerData = [
     type2: "Hybrid",
     weight: "3.5g",
     price: 30,
-    img: "/public/products/flower/Runtz.jpg",
+    img: "/G-Bliss/products/flower/Runtz.jpg",
   },
   {
     id: 117,
@@ -68,7 +68,7 @@ const flowerData = [
     type2: "Hybrid",
     weight: "3.5g",
     price: 50,
-    img: "/public/products/flower/Sour Diesel.jpg",
+    img: "/G-Bliss/products/flower/Sour Diesel.jpg",
   },
   {
     id: 118,
@@ -78,7 +78,7 @@ const flowerData = [
     type2: "Hybrid",
     weight: "3.5g",
     price: 30,
-    img: "/public/products/flower/sunset-sherbert.jpg",
+    img: "/G-Bliss/products/flower/sunset-sherbert.jpg",
   },
   {
     id: 119,
@@ -88,7 +88,7 @@ const flowerData = [
     type2: "Hybrid",
     weight: "3.5g",
     price: 30,
-    img: "/public/products/flower/Wedding Cake.jpg",
+    img: "/G-Bliss/products/flower/Wedding Cake.jpg",
   },
 ];
 
