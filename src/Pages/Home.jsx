@@ -29,7 +29,7 @@ function Home() {
             className="parallax-foreground"
             style={{ transform: `translateY(${offsetY * -0.2}px)` }}
           >
-            <img src="/img/FloatingBud.png" />
+            <img src="/G-Bliss/img/FloatingBud.png" />
           </div>
         </div>
 
@@ -51,23 +51,35 @@ function Home() {
           </div>
           <div className="w-full grid grid-cols-3 gap-x-[12px] gap-y-[12px]  sm:gap-x-[24px] md:gap-y-[24px]  ">
             <Link to="/shop/flower">
-              <Category imgSrc={`/img/flower.png`} category={"Flower"} />
+              <Category
+                imgSrc={`/G-Bliss/img/flower.png`}
+                category={"Flower"}
+              />
             </Link>
             <Link to="/shop/pre-rolls">
-              <Category imgSrc={`/img/pre-roll.jpg`} category={"Pre-Roll"} />
+              <Category
+                imgSrc={`/G-Bliss/img/pre-roll.jpg`}
+                category={"Pre-Roll"}
+              />
             </Link>
             <Link to="/shop/vapes">
-              <Category imgSrc={`/img/vapes.jpeg`} category={"Vapes"} />
+              <Category imgSrc={`/G-Bliss/img/vapes.jpeg`} category={"Vapes"} />
             </Link>
             <Link to="/shop/edibles">
-              <Category imgSrc={`/img/edibles.webp`} category={"Edibles"} />
+              <Category
+                imgSrc={`/G-Bliss/img/edibles.webp`}
+                category={"Edibles"}
+              />
             </Link>
             <Link to="/shop/tinctures">
-              <Category imgSrc={`/img/tinctures.jpg`} category={"Tinctures"} />
+              <Category
+                imgSrc={`/G-Bliss/img/tinctures.jpg`}
+                category={"Tinctures"}
+              />
             </Link>
             <Link to="/shop/accessories">
               <Category
-                imgSrc={`/img/accessories.jpg`}
+                imgSrc={`/G-Bliss/img/accessories.jpg`}
                 category={"Accessories"}
               />
             </Link>
