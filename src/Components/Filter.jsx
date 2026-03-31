@@ -1,14 +1,7 @@
 import DisabledOption from "./DisabledOption";
-import MobileFilter from "./MobileFilter";
 import Option from "./Option";
 
-function Filter({
-  filters,
-  handleFilterChange,
-  resetFilters,
-  openFilter,
-  setOpenFilter,
-}) {
+function Filter({ filters, handleFilterChange, resetFilters }) {
   return (
     <>
       <div className="hidden py-[96px] px-[64px] items-center md:block ">
@@ -19,7 +12,7 @@ function Filter({
             <div className="flex flex-col gap-[16px]">
               <Option
                 filters={filters}
-                yy="product"
+                filterType="product"
                 handleFilterChange={handleFilterChange}
                 resetFilters={resetFilters}
               >
@@ -27,7 +20,7 @@ function Filter({
               </Option>
               <Option
                 filters={filters}
-                yy="product"
+                filterType="product"
                 handleFilterChange={handleFilterChange}
                 resetFilters={resetFilters}
               >
@@ -36,7 +29,7 @@ function Filter({
 
               <Option
                 filters={filters}
-                yy="product"
+                filterType="product"
                 handleFilterChange={handleFilterChange}
                 resetFilters={resetFilters}
               >
@@ -44,7 +37,7 @@ function Filter({
               </Option>
               <Option
                 filters={filters}
-                yy="product"
+                filterType="product"
                 handleFilterChange={handleFilterChange}
                 resetFilters={resetFilters}
               >
@@ -52,7 +45,7 @@ function Filter({
               </Option>
               <Option
                 filters={filters}
-                yy="product"
+                filterType="product"
                 handleFilterChange={handleFilterChange}
                 resetFilters={resetFilters}
               >
@@ -60,7 +53,7 @@ function Filter({
               </Option>
               <Option
                 filters={filters}
-                yy="product"
+                filterType="product"
                 handleFilterChange={handleFilterChange}
                 resetFilters={resetFilters}
               >
@@ -68,7 +61,7 @@ function Filter({
               </Option>
               <Option
                 filters={filters}
-                yy="product"
+                filterType="product"
                 handleFilterChange={handleFilterChange}
                 resetFilters={resetFilters}
               >
@@ -81,7 +74,7 @@ function Filter({
           <div className="flex flex-col gap-[24px]">
             <div
               className={`font-font01 text-[29px] ${
-                filters.product === "accessories" ? "text-resin01" : ""
+                filters.product === "accessories" ? "text-green01" : ""
               }`}
             >
               Type
@@ -92,7 +85,7 @@ function Filter({
               ) : (
                 <Option
                   filters={filters}
-                  yy="type"
+                  filterType="type"
                   handleFilterChange={handleFilterChange}
                 >
                   Indica
@@ -104,7 +97,7 @@ function Filter({
               ) : (
                 <Option
                   filters={filters}
-                  yy="type"
+                  filterType="type"
                   handleFilterChange={handleFilterChange}
                 >
                   Sativa
@@ -116,7 +109,7 @@ function Filter({
               ) : (
                 <Option
                   filters={filters}
-                  yy="type"
+                  filterType="type"
                   handleFilterChange={handleFilterChange}
                 >
                   Hybrid
@@ -128,7 +121,7 @@ function Filter({
           <div className="flex flex-col gap-[24px]">
             <div
               className={`font-font01 text-[29px] ${
-                filters.product === "accessories" ? "text-resin01" : ""
+                filters.product === "accessories" ? "text-green01" : ""
               }`}
             >
               Weight
@@ -139,7 +132,7 @@ function Filter({
               ) : (
                 <Option
                   filters={filters}
-                  yy="weight"
+                  filterType="weight"
                   handleFilterChange={handleFilterChange}
                 >
                   3.5g

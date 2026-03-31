@@ -1,8 +1,5 @@
-import { useCart } from "./CartContext";
-
 function CheckoutItem({ item }) {
-  const { getQuantity } = useCart();
-  const currQt = getQuantity(item.id);
+  const currQt = item.quantity;
   return (
     <li className="w-full flex py-[16px] gap-[8px] items-center sm:gap-[16px]">
       <div className="font-font01 text-[16px] sm:text-[29px]">{currQt}x</div>

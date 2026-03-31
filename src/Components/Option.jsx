@@ -1,19 +1,25 @@
-function Option({ filters, yy, handleFilterChange, children, resetFilters }) {
-  if (yy === "product" && children === "all") {
+function Option({
+  filters,
+  filterType,
+  handleFilterChange,
+  children,
+  resetFilters,
+}) {
+  if (filterType === "product" && children === "all") {
     children = "";
   }
   return (
     <div
       className={`flex gap-[4px] font-font03 font-semibold hover:text-orange00 ${
-        filters[yy] === children ? "text-orange00" : ""
+        filters[filterType] === children ? "text-orange00" : ""
       } cursor-pointer`}
       onClick={() => {
-        handleFilterChange(yy, children);
+        handleFilterChange(filterType, children);
         resetFilters();
       }}
     >
       <span>
-        {filters[yy] === children ? (
+        {filters[filterType] === children ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"

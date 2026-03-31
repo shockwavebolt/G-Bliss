@@ -13,47 +13,6 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import FilterButton from "../Components/FilterButton";
 import MobileFilter from "../Components/MobileFilter";
-// import { useReducer } from "react";
-
-// const initialFilterState = {
-//   products: [],
-//   type: [],
-//   weight: [],
-// };
-
-// function filterReducer(state, action) {
-//   switch (action.type) {
-//     case "TOGGLE_PRODUCT":
-//       return {
-//         ...state,
-//         products: state.products.includes(action.payload)
-//           ? state.products.filter((product) => product !== action.payload)
-//           : [...state.products, action.payload],
-//       };
-
-//     case "TOGGLE_TYPE":
-//       return {
-//         ...state,
-//         type: state.type.includes(action.payload)
-//           ? state.type.filter((type) => type !== action.payload)
-//           : [...state.type, action.payload],
-//       };
-
-//     case "TOGGLE_WEIGHT":
-//       return {
-//         ...state,
-//         weight: state.weight.includes(action.payload)
-//           ? state.weight.filter((weight) => weight !== action.payload)
-//           : [...state.weight, action.payload],
-//       };
-
-//     case "RESET_FILTERS":
-//       return initialFilterState;
-
-//     default:
-//       return state;
-//   }
-// }
 
 const categoryMap = {
   all: [
@@ -73,7 +32,6 @@ const categoryMap = {
 };
 
 function Shop() {
-  // const [filterState, dispatch] = useReducer(filterReducer, initialFilterState);
   const { category } = useParams();
   const data = categoryMap.all;
   const [itemData, setItemData] = useState(data);
@@ -83,6 +41,7 @@ function Shop() {
     type: "",
     weight: "",
   });
+
   const [openFilter, setOpenFilter] = useState(false);
 
   if (openFilter) {
@@ -104,19 +63,19 @@ function Shop() {
 
     if (filters.product) {
       newFilteredProducts = newFilteredProducts.filter(
-        (item) => item.product === filters.product
+        (item) => item.product === filters.product,
       );
     }
 
     if (filters.type) {
       newFilteredProducts = newFilteredProducts.filter(
-        (item) => item.type === filters.type
+        (item) => item.type === filters.type,
       );
     }
 
     if (filters.weight) {
       newFilteredProducts = newFilteredProducts.filter(
-        (item) => item.weight === filters.weight
+        (item) => item.weight === filters.weight,
       );
     }
 
@@ -135,20 +94,6 @@ function Shop() {
     filterProducts();
   }, [filters]);
 
-  // const filteredItems = itemData.filter((item) => {
-  //   const matchProducts =
-  //     filterState.products.length === 0 ||
-  //     filterState.products.includes(item.product);
-
-  //   const matchType =
-  //     filterState.type.length === 0 || filterState.type.includes(item.type);
-
-  //   const matchWeight =
-  //     filterState.weight.length === 0 ||
-  //     filterState.weight.includes(item.weight);
-  //   return matchProducts && matchType && matchWeight;
-  // });
-
   return (
     <div>
       <NavBar />
@@ -162,7 +107,7 @@ function Shop() {
           filterMatches={filteredProducts.length}
         />
       )}
-      <section className="flex flex-col items-center pt-[128px] pb-[96px] px-[16px] bg-resin00 text-green00 gap-[12px] md:px-[48px] xl:px-[96px] ">
+      <section className="flex flex-col items-center pt-[128px] pb-[96px] px-[16px] bg-green00 text-resin00 gap-[12px] md:px-[48px] xl:px-[96px] ">
         {/* Desktop  */}
         <div className="w-full flex flex-col gap-[48px] place-self-start md:gap-[192px] md:flex-row ">
           <div className="flex justify-between ">
@@ -170,14 +115,13 @@ function Shop() {
             <FilterButton setOpenFilter={setOpenFilter} />
           </div>
           <div className="font-font02 text-[26px] cat_title_shadow tracking-wide md:text-[47px]">
-            {/* {filters.product.charAt(0).toUpperCase() + filters.product.slice(1)} */}
             {filters.product
               ? filters.product.charAt(0).toUpperCase() +
                 filters.product.slice(1)
               : "All"}
           </div>
         </div>
-        <div className=" w-full  md:grid grid-cols-[auto_1fr] divide-x-2 gap-x-[24px] ">
+        <div className=" w-full  md:grid grid-cols-[auto_1fr] divide-x-1 gap-x-[24px] ">
           <Filter
             filters={filters}
             handleFilterChange={handleFilterChange}
@@ -192,7 +136,7 @@ function Shop() {
               ))}
             </ul>
           ) : (
-            <div className="flex h-screen justify-center w-full pt-[25%] font-font03 text-[16px] text-green00 md:text-[20px]">
+            <div className="flex h-screen justify-center w-full pt-[25%] font-font03 text-[16px] text-resin00 md:text-[20px]">
               No items match the filter settings.
             </div>
           )}

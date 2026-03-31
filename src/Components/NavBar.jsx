@@ -32,7 +32,7 @@ function NavBar() {
       <div
         className={`hidden  w-full fixed top-0  z-5 transition-transform duration-300 ${
           hideNav ? "-translate-y-full shadow-none" : "translate-y-0 "
-        } px-[48px] py-[32px] gap-auto items-center justify-between bg-green00  text-resin00 lg:flex xl:px-[96px] shadow-[0px_5px_3px_0px_rgba(0,0,0,0.25)]`}
+        } px-[48px] py-[32px] gap-auto items-center justify-between bg-green00  text-resin00 lg:flex xl:px-[96px] border-b border-resin00`}
       >
         {location.pathname === "/checkout" && <BackButton />}
         <Link

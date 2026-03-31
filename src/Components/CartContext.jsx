@@ -34,6 +34,9 @@ function reducer(state, action) {
         cart: state.cart.filter((item) => item.id !== action.payload.id),
       };
 
+    case "cart/clear":
+      return { ...state, cart: [] };
+
     case "cart.quantity/increase": {
       const updatedCart = state.cart.map((item) =>
         item.id === action.payload.id
@@ -82,6 +85,10 @@ function CartProvider({ children }) {
     dispatch({ type: "cart.quantity/decrease", payload: item });
   }
 
+  function clearCart() {
+    dispatch({ type: "cart/clear" });
+  }
+
   function getQuantity(id) {
     const item = cart.find((item) => item.id === id);
     return item ? item.quantity : 0;
@@ -110,6 +117,7 @@ function CartProvider({ children }) {
         removeFromCart,
         increaseQt,
         decreaseQt,
+        clearCart,
         getQuantity,
         getTotalCartPrice,
         getCartQuantity,
@@ -130,6 +138,3 @@ function useCart() {
 
 export { CartProvider, useCart };
 
-//   useEffect(() => {
-//     console.log("Cart updated:", cart);
-//   }, [cart]);

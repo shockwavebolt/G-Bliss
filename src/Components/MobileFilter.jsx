@@ -46,7 +46,7 @@ function MobileFilter({
             <div className="flex flex-col gap-[16px]">
               <Option
                 filters={filters}
-                yy="product"
+                filterType="product"
                 handleFilterChange={handleFilterChange}
                 resetFilters={resetFilters}
               >
@@ -54,7 +54,7 @@ function MobileFilter({
               </Option>
               <Option
                 filters={filters}
-                yy="product"
+                filterType="product"
                 handleFilterChange={handleFilterChange}
                 resetFilters={resetFilters}
               >
@@ -63,7 +63,7 @@ function MobileFilter({
 
               <Option
                 filters={filters}
-                yy="product"
+                filterType="product"
                 handleFilterChange={handleFilterChange}
                 resetFilters={resetFilters}
               >
@@ -71,7 +71,7 @@ function MobileFilter({
               </Option>
               <Option
                 filters={filters}
-                yy="product"
+                filterType="product"
                 handleFilterChange={handleFilterChange}
                 resetFilters={resetFilters}
               >
@@ -79,7 +79,7 @@ function MobileFilter({
               </Option>
               <Option
                 filters={filters}
-                yy="product"
+                filterType="product"
                 handleFilterChange={handleFilterChange}
                 resetFilters={resetFilters}
               >
@@ -87,7 +87,7 @@ function MobileFilter({
               </Option>
               <Option
                 filters={filters}
-                yy="product"
+                filterType="product"
                 handleFilterChange={handleFilterChange}
                 resetFilters={resetFilters}
               >
@@ -95,7 +95,7 @@ function MobileFilter({
               </Option>
               <Option
                 filters={filters}
-                yy="product"
+                filterType="product"
                 handleFilterChange={handleFilterChange}
                 resetFilters={resetFilters}
               >
@@ -119,7 +119,7 @@ function MobileFilter({
               ) : (
                 <Option
                   filters={filters}
-                  yy="type"
+                  filterType="type"
                   handleFilterChange={handleFilterChange}
                 >
                   Indica
@@ -131,7 +131,7 @@ function MobileFilter({
               ) : (
                 <Option
                   filters={filters}
-                  yy="type"
+                  filterType="type"
                   handleFilterChange={handleFilterChange}
                 >
                   Sativa
@@ -143,7 +143,7 @@ function MobileFilter({
               ) : (
                 <Option
                   filters={filters}
-                  yy="type"
+                  filterType="type"
                   handleFilterChange={handleFilterChange}
                 >
                   Hybrid
@@ -166,7 +166,7 @@ function MobileFilter({
               ) : (
                 <Option
                   filters={filters}
-                  yy="weight"
+                  filterType="weight"
                   handleFilterChange={handleFilterChange}
                 >
                   3.5g
