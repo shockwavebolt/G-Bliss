@@ -4,6 +4,7 @@ import BackButton from "../UI/BackButton";
 import { useCart } from "./CartContext";
 import { useEffect, useState } from "react";
 import NavBarMenu from "./NavBarMenu";
+import SearchBox from "./SearchBox";
 
 function NavBar() {
   const location = useLocation();
@@ -11,6 +12,13 @@ function NavBar() {
   const cartQt = getCartQuantity();
   const [hideNav, setHideNav] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [openSearch, setOpenSearch] = useState(false);
+
+  if (openSearch) {
+    document.body.classList.add("overflow-hidden");
+  } else {
+    document.body.classList.remove("overflow-hidden");
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,7 +51,10 @@ function NavBar() {
         </Link>
         {location.pathname !== "/checkout" && (
           <div className="flex justify-center items-center gap-[64px] text-[18px] font-font01 ">
-            <div className="transition-colors duration-200 ease-in-out cursor-pointer hover:text-orange00">
+            <div
+              className="transition-colors duration-200 ease-in-out cursor-pointer hover:text-orange00"
+              onClick={() => setOpenSearch(true)}
+            >
               Search
             </div>
             <Link
@@ -59,6 +70,7 @@ function NavBar() {
               Cart<span className="cartIndicator">{cartQt}</span>
             </div>
             {openCart && <Cart />}
+            {openSearch && <SearchBox setOpenSearch={setOpenSearch} />}
           </div>
         )}
       </div>

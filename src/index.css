@@ -44,6 +44,16 @@
   text-shadow: 2px 4px 0px #394739;
 }
 
+.shadow_404 {
+  text-shadow: 8px 6px 0px #394739;
+}
+
+@media (min-width: 768px) {
+  .shadow_404 {
+    text-shadow: 8px 20px 0px #394739;
+  }
+}
+
 .cartShadow {
   text-shadow: 1px 2px 0px #394739;
 }
