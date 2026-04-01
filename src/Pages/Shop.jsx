@@ -1,6 +1,6 @@
 import Filter from "../Components/Filter";
 import NavBar from "../Components/NavBar";
-import ShopItem from "../Components/shopItem";
+import ShopItem from "../Components/ShopItem";
 import BackButton from "../UI/BackButton";
 
 import flowerData from "../data/flowerData";
