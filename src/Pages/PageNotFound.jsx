@@ -4,7 +4,7 @@ function PageNotFound() {
   return (
     <div>
       <NavBar />
-      <section className="flex flex-col h-screen pt-[35vh]  px-[96px] bg-resin00 text-green00 items-center">
+      <section className="flex flex-col h-screen pt-[35vh]  px-[96px] bg-green00 text-resin00 items-center">
         <div className="font-font02 text-[123px] tracking-wide md:text-[200px] lg:text-[231px] ">
           404
         </div>

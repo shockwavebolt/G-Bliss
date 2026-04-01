@@ -9,7 +9,7 @@ function FilterButton({ setOpenFilter }) {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="none"
-        className="w-6 h-6 transition-colors duration-200 ease-in-out text-green00 group-hover:text-orange00"
+        className="w-6 h-6 transition-colors duration-200 ease-in-out text-resin00 group-hover:text-orange00"
       >
         <line
           x1="3"

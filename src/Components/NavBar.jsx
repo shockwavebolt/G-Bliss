@@ -69,7 +69,7 @@ function NavBar() {
           toggleNavMenu
             ? ""
             : "flex-col transition-all duration-300 overflow-hidden max-h-100"
-        } w-full fixed top-0  px-[16px] py-[24px] items-end justify-between bg-green00  text-resin00   lg:hidden shadow-[0px_5px_3px_0px_rgba(0,0,0,0.25)]`}
+        } w-full fixed top-0  px-[16px] py-[24px] items-end justify-between bg-green00  text-resin00   lg:hidden border-b border-resin00`}
       >
         {location.pathname !== "/checkout" ? (
           <>

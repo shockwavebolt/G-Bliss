@@ -9,8 +9,8 @@ function MobileFilter({
   setOpenFilter,
 }) {
   return (
-    <div className="h-screen z-10 pt-[128px] pb-[48px] px-[24px] flex flex-col gap-[24px] bg-resin00 text-green00 ">
-      <div className="flex  justify-between pb-[8px] border-b-2 border-green00">
+    <div className="h-screen z-10 pt-[128px] pb-[48px] px-[24px] flex flex-col gap-[64px] bg-green00 text-resin00 ">
+      <div className="flex  justify-between pb-[8px]">
         <div className="flex gap-[16px] items-center">
           <span className="font-font02 text-[29px] cat_title_shadow tracking-wide ">
             Filter
@@ -27,7 +27,7 @@ function MobileFilter({
           height="44"
           viewBox="0 0 28 29"
           fill="none"
-          className="text-green00 hover:text-[#CF5C36] transition-colors duration-200 ease-in-out cursor-pointer"
+          className="text-resin00 hover:text-[#CF5C36] transition-colors duration-200 ease-in-out cursor-pointer"
           onClick={() => setOpenFilter(false)}
         >
           <path
