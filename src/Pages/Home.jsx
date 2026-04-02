@@ -26,14 +26,16 @@ function Home() {
           </div>
           <div
             className="parallax-foreground"
-            style={{ transform: `translateX(-50%) translateY(${offsetY * -0.5}px)` }}
+            style={{
+              transform: `translateX(-50%) translateY(${offsetY * -0.5}px)`,
+            }}
           >
             <img src="/G-Bliss/img/FloatingBud.png" />
           </div>
         </div>
       </section>
 
-      <section className="flex flex-col px-[16px]  pb-[24px] gap-[48px] w-full bg-green00 items-center xs:px-[24px] md:px-[48px] md:py-[48px] lg:px-[96px] lg:py-[96px] md:gap-[24px]">
+      <section className="flex flex-col px-[16px] py-[48px] gap-[48px] w-full bg-green00 items-center xs:px-[24px] md:px-[48px]  lg:px-[96px] lg:py-[96px] md:gap-[24px]">
         <div className=" flex flex-col gap-[16px] items-end lg:px-[32px] xl:px-[64px]">
           <div className="flex justify-between w-full font-font01 text-resin00">
             <span className=" text-[20px] md:text-[26px] lg:text-[47px]">
