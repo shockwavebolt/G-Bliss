@@ -26,7 +26,7 @@ function Home() {
           </div>
           <div
             className="parallax-foreground"
-            style={{ transform: `translateY(${offsetY * -0.5}px)` }}
+            style={{ transform: `translateX(-50%) translateY(${offsetY * -0.5}px)` }}
           >
             <img src="/G-Bliss/img/FloatingBud.png" />
           </div>
