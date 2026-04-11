@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import DisabledOption from "./DisabledOption";
 import Option from "./Option";
 
@@ -8,11 +9,16 @@ function MobileFilter({
   filterMatches,
   setOpenFilter,
 }) {
+  useEffect(() => {
+    document.body.classList.add("overflow-hidden");
+    return () => document.body.classList.remove("overflow-hidden");
+  }, []);
+
   return (
-    <div className="h-screen z-10 pt-[128px] pb-[48px] px-[24px] flex flex-col gap-[64px] bg-green00 text-resin00 ">
+    <div className="h-screen  pt-[128px] pb-[48px] px-[24px] flex flex-col gap-[64px] bg-green00 text-resin00 ">
       <div className="flex  justify-between pb-[8px]">
         <div className="flex gap-[16px] items-center">
-          <span className="font-font02 text-[29px] cat_title_shadow tracking-wide ">
+          <span className="font-font02 text-[20px] cat_title_shadow tracking-wide ">
             Filter
           </span>
           <span className="font-font03 text-[18px]">
@@ -41,7 +47,7 @@ function MobileFilter({
       <div className="overflow-y-auto ">
         <div className="flex flex-col gap-[64px] ">
           <div className="flex flex-col gap-[24px]">
-            <div className=" font-font01 text-[29px] ">Product</div>
+            <div className=" font-font01 text-[20px] ">Product</div>
 
             <div className="flex flex-col gap-[16px]">
               <Option
@@ -107,8 +113,8 @@ function MobileFilter({
           {/* Type */}
           <div className="flex flex-col gap-[24px]">
             <div
-              className={`font-font01 text-[29px] ${
-                filters.product === "accessories" ? "text-resin01" : ""
+              className={`font-font01 text-[20px] ${
+                filters.product === "accessories" ? "text-green01" : ""
               }`}
             >
               Type
@@ -154,8 +160,8 @@ function MobileFilter({
 
           <div className="flex flex-col gap-[24px]">
             <div
-              className={`font-font01 text-[29px] ${
-                filters.product === "accessories" ? "text-resin01" : ""
+              className={`font-font01 text-[20px] ${
+                filters.product === "accessories" ? "text-green01" : ""
               }`}
             >
               Weight

@@ -44,12 +44,6 @@ function Shop() {
 
   const [openFilter, setOpenFilter] = useState(false);
 
-  if (openFilter) {
-    document.body.classList.add("overflow-hidden");
-  } else {
-    document.body.classList.remove("overflow-hidden");
-  }
-
   const resetFilters = () => {
     setFilters((filters) => ({
       ...filters,
@@ -95,7 +89,7 @@ function Shop() {
   }, [filters]);
 
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <NavBar />
       {openFilter && (
         <MobileFilter
@@ -107,8 +101,7 @@ function Shop() {
           filterMatches={filteredProducts.length}
         />
       )}
-      <section className="flex flex-col items-center pt-[128px] pb-[96px] px-[16px] bg-green00 text-resin00 gap-[12px] md:px-[48px] xl:px-[96px] ">
-        {/* Desktop  */}
+      <section className="flex flex-col flex-1 items-center pt-[128px] pb-[96px] px-[16px] bg-green00 text-resin00 gap-[12px] md:px-[48px] xl:px-[96px] ">
         <div className="w-full flex flex-col gap-[48px] place-self-start md:gap-[192px] md:flex-row ">
           <div className="flex justify-between ">
             <BackButton />
@@ -147,35 +140,3 @@ function Shop() {
 }
 
 export default Shop;
-
-// {/* Mobile */}
-// {/* <div className="flex items-center justify-between text-green09 md:hidden">
-//   <div className="flex items-center gap-[8px] font-font01">
-//     <span>
-//       <img src="/public/icons/back.svg" />
-//     </span>
-//     Back
-//   </div>
-//    <div className="flex gap-[24px]">
-//     <div className="flex gap-[4px] border-2 px-[8px] py-[8px] rounded-lg font-font01 items-center ">
-//       Filter
-//       <span>
-//         <img src="/public/icons/filter.svg"></img>
-//       </span>
-//     </div>
-//     <div className="flex gap-[2px] border-2 px-[8px] py-[8px] rounded-lg font-font01 ">
-//       sort
-//       <span>
-//         <img src="public/icons/sort.svg"></img>
-//       </span>
-//     </div>
-//   </div> *
-// </div>
-// <div className="flex flex-col gap-[24px]">
-//   <div className="font-font02 text-[76px] md:hidden">Flower</div>
-//   <ul className="grid grid-cols-2 gap-y-[48px] gap-x-[16px]  sm:gap-x-[32px] md:hidden">
-//     {itemData.map((data) => (
-//       <ShopItem item={data} key={data.id} />
-//     ))}
-//   </ul>
-// </div> */}
