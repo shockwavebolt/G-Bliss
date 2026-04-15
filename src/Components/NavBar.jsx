@@ -19,6 +19,12 @@ function NavBar() {
     document.body.classList.remove("overflow-hidden");
   }
 
+  if (openCart) {
+    document.body.classList.add("overflow-hidden");
+  } else {
+    document.body.classList.remove("overflow-hidden");
+  }
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
