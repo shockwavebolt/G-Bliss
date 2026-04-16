@@ -13,7 +13,7 @@ function Cart() {
       <div
         className={`w-[500px] h-[100vh] overflow-y-auto flex flex-col px-[16px] py-[24px]  ${
           cart?.length > 0 ? "justify-between" : "gap-[35vh]"
-        } bg-green00 md:px-[24px] py-[48px] `}
+        } bg-green01 md:px-[24px] py-[48px] `}
       >
         <div className="flex justify-between border-b border-resin00">
           <div className="font-font02 text-[26px] text-resin00 cartShadow tracking-wide">

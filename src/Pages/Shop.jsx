@@ -3,44 +3,52 @@ import NavBar from "../Components/NavBar";
 import ShopItem from "../Components/ShopItem";
 import BackButton from "../UI/BackButton";
 
-import flowerData from "../data/flowerData";
-import preRollsData from "../data/preRollsData";
-import vapesData from "../data/vapesData";
-import edibleData from "../data/edibleData";
-import tincturesData from "../data/tincturesData";
-import accessoriesData from "../data/accessoriesData";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import FilterButton from "../Components/FilterButton";
 import MobileFilter from "../Components/MobileFilter";
+import ShopItemSkeleton from "../Components/ShopItemSkeleton";
+import { supabase } from "../supabaseClient";
 
-const categoryMap = {
-  all: [
-    ...flowerData,
-    ...preRollsData,
-    ...vapesData,
-    ...edibleData,
-    ...tincturesData,
-    ...accessoriesData,
-  ],
-  flower: flowerData,
-  prerolls: preRollsData,
-  vapes: vapesData,
-  edibles: edibleData,
-  tincture: tincturesData,
-  accessories: accessoriesData,
+const categoryIdToProduct = {
+  1: "flower",
+  2: "edibles",
+  3: "pre-rolls",
+  4: "vapes",
+  5: "accessories",
+  6: "tinctures",
 };
 
 function Shop() {
   const { category } = useParams();
-  const data = categoryMap.all;
-  const [itemData, setItemData] = useState(data);
-  const [filteredProducts, setFilteredProducts] = useState(data);
+  const [itemData, setItemData] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [fetchError, setFetchError] = useState(false);
   const [filters, setFilters] = useState({
     product: category === "all" ? "" : category,
     type: "",
     weight: "",
   });
+
+  useEffect(() => {
+    async function fetchProducts() {
+      const { data, error } = await supabase.from("Products").select("*");
+      if (error) {
+        setFetchError(true);
+      } else {
+        setItemData(
+          data.map((row) => ({
+            ...row,
+            img: row.image_url,
+            product: categoryIdToProduct[row.category_id] ?? "",
+          })),
+        );
+      }
+      setLoading(false);
+    }
+    fetchProducts();
+  }, []);
 
   const [openFilter, setOpenFilter] = useState(false);
 
@@ -52,30 +60,6 @@ function Shop() {
     }));
   };
 
-  function filterProducts() {
-    let newFilteredProducts = [...itemData];
-
-    if (filters.product) {
-      newFilteredProducts = newFilteredProducts.filter(
-        (item) => item.product === filters.product,
-      );
-    }
-
-    if (filters.type) {
-      newFilteredProducts = newFilteredProducts.filter(
-        (item) => item.type === filters.type,
-      );
-    }
-
-    if (filters.weight) {
-      newFilteredProducts = newFilteredProducts.filter(
-        (item) => item.weight === filters.weight,
-      );
-    }
-
-    setFilteredProducts(newFilteredProducts);
-  }
-
   const handleFilterChange = (name, value) => {
     if (name === "product" && value === "all") {
       setFilters({ ...filters, [name]: "" });
@@ -85,8 +69,22 @@ function Shop() {
   };
 
   useEffect(() => {
-    filterProducts();
-  }, [filters]);
+    let result = [...itemData];
+
+    if (filters.product) {
+      result = result.filter((item) => item.product === filters.product);
+    }
+
+    if (filters.type) {
+      result = result.filter((item) => item.type === filters.type);
+    }
+
+    if (filters.weight) {
+      result = result.filter((item) => item.weight === filters.weight);
+    }
+
+    setFilteredProducts(result);
+  }, [itemData, filters]);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -122,12 +120,22 @@ function Shop() {
             openFilter={openFilter}
             setOpenFilter={setOpenFilter}
           />
-          {filteredProducts?.length > 0 ? (
+          {loading ? (
+            <ul className="grid grid-cols-2 gap-y-[12px] items-start gap-x-[12px] min-[1000px]:grid-cols-3 min-[1000px]:gap-x-[24px] min-[1000px]:gap-y-[24px]">
+              {Array.from({ length: 6 }).map((_, i) => (
+                <ShopItemSkeleton key={i} />
+              ))}
+            </ul>
+          ) : filteredProducts.length > 0 ? (
             <ul className="grid  grid-cols-2  gap-y-[12px] items-start gap-x-[12px]  min-[1000px]:grid-cols-3 min-[1000px]:gap-x-[24px] min-[1000px]:gap-y-[24px]">
               {filteredProducts.map((data) => (
                 <ShopItem item={data} key={data.id} />
               ))}
             </ul>
+          ) : fetchError ? (
+            <div className="flex h-screen justify-center w-full pt-[25%] font-font03 text-[16px] text-resin00 md:text-[20px]">
+              Something went wrong. Please try again later.
+            </div>
           ) : (
             <div className="flex h-screen justify-center w-full pt-[25%] font-font03 text-[16px] text-resin00 md:text-[20px]">
               No items match the filter settings.
