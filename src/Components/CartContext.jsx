@@ -14,7 +14,7 @@ function reducer(state, action) {
         const updatedCart = state.cart.map((item) =>
           item.id === action.payload.id
             ? { ...item, quantity: item.quantity + action.payload.quantity }
-            : item
+            : item,
         );
         return {
           ...state,
@@ -41,7 +41,7 @@ function reducer(state, action) {
       const updatedCart = state.cart.map((item) =>
         item.id === action.payload.id
           ? { ...item, quantity: item.quantity + 1 }
-          : item
+          : item,
       );
 
       return {
@@ -54,7 +54,7 @@ function reducer(state, action) {
       const updatedCart = state.cart.map((item) =>
         item.id === action.payload.id
           ? { ...item, quantity: item.quantity - 1 }
-          : item
+          : item,
       );
 
       return {
@@ -103,11 +103,12 @@ function CartProvider({ children }) {
   }
 
   const [openCart, setOpenCart] = useState(false);
-  if (openCart) {
-    document.body.classList.add("overflow-hidden");
-  } else {
-    document.body.classList.remove("overflow-hidden");
-  }
+
+  // if (openCart) {
+  //   document.body.classList.add("overflow-hidden");
+  // } else {
+  //   document.body.classList.remove("overflow-hidden");
+  // }
 
   return (
     <CartContext.Provider
@@ -137,4 +138,3 @@ function useCart() {
 }
 
 export { CartProvider, useCart };
-

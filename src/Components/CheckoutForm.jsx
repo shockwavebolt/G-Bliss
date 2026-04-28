@@ -29,8 +29,7 @@ function CheckoutForm() {
 
             <input
               type="text"
-              className="w-full h-[40px] rounded-sm bg-white  focus:outline-none px-[24px] text-[20px] text-green09"
-              style={{ boxShadow: "inset 0px 4px 4px rgba(0,0,0,0.25)" }}
+              className="w-full h-[40px] rounded-full bg-resin00  focus:outline-none px-[24px] text-[20px] text-green09"
             />
           </div>
           <div className="flex flex-col gap-[16px]">
@@ -45,8 +44,7 @@ function CheckoutForm() {
 
             <input
               type="text"
-              className="w-full h-[40px] rounded-sm bg-white  focus:outline-none px-[24px] text-[20px] text-green09"
-              style={{ boxShadow: "inset 0px 4px 4px rgba(0,0,0,0.25)" }}
+              className="w-full h-[40px] rounded-full bg-resin00  focus:outline-none px-[24px] text-[20px] text-green09"
             />
           </div>
 
@@ -68,7 +66,7 @@ function CheckoutForm() {
       </div>
 
       <div className="flex flex-col py-[64px] px-[16px] sm:px-[48px] lg:px-[24px] gap-[24px] bg-green01">
-        <div className="font-font02 text-[20px] cartShadow tracking-wide text-resin00 border-resin00 border-b pb-[24px]">
+        <div className="font-font02 text-[26px] cartShadow tracking-wide text-resin00 border-resin00 border-b pb-[24px]">
           cart
         </div>
         <ul className="flex flex-col py-[16px] mx-auto items-center divide-y-2 divide-green00 text-resin00 ">
@@ -85,7 +83,7 @@ function CheckoutForm() {
             onClick={() => {
               navigate("/confirmation", { state: { order: cart } });
             }}
-            className="flex py-[24px] gap-[8px] text-[16px] sm:text-[29px] items-center justify-center rounded-sm bg-green09 font-font01 text-white border-t-[2.5px] border-[#595746] shadow-[2px_2px_7px_0_rgba(0,0,0,0.25)] cursor-pointer active:scale-97 hover:border-t-[0px] hover:shadow-shadow-[0px_0px_0px_0_rgba(0,0,0,0)] active:translate-y-[1px] transition-all duration-200"
+            className="flex py-[24px] gap-[8px] text-[16px] sm:text-[29px] items-center justify-center rounded-sm bg-green09 font-font01 text-white border-t-[2.5px] border-[#595746] shadow-[2px_2px_7px_0_rgba(0,0,0,0.25)] cursor-pointer active:scale-97 hover:border-t-[0px] hover:shadow-shadow-[0px_0px_0px_0_rgba(0,0,0,0)]  transition-all duration-200"
           >
             CONFIRM ORDER
           </button>

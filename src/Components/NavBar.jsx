@@ -13,13 +13,7 @@ function NavBar() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [openSearch, setOpenSearch] = useState(false);
 
-  if (openSearch) {
-    document.body.classList.add("overflow-hidden");
-  } else {
-    document.body.classList.remove("overflow-hidden");
-  }
-
-  if (openCart) {
+  if (openSearch || openCart) {
     document.body.classList.add("overflow-hidden");
   } else {
     document.body.classList.remove("overflow-hidden");
