@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer, useState } from "react";
+import { createContext, useContext, useReducer, useState } from 'react';
 
 const CartContext = createContext();
 
@@ -8,7 +8,7 @@ const initialState = {
 
 function reducer(state, action) {
   switch (action.type) {
-    case "cart/add": {
+    case 'cart/add': {
       const isInCart = state.cart.find((item) => item.id === action.payload.id);
       if (isInCart) {
         const updatedCart = state.cart.map((item) =>
@@ -28,16 +28,16 @@ function reducer(state, action) {
       }
     }
 
-    case "cart/remove":
+    case 'cart/remove':
       return {
         ...state,
         cart: state.cart.filter((item) => item.id !== action.payload.id),
       };
 
-    case "cart/clear":
+    case 'cart/clear':
       return { ...state, cart: [] };
 
-    case "cart.quantity/increase": {
+    case 'cart.quantity/increase': {
       const updatedCart = state.cart.map((item) =>
         item.id === action.payload.id
           ? { ...item, quantity: item.quantity + 1 }
@@ -50,7 +50,7 @@ function reducer(state, action) {
       };
     }
 
-    case "cart.quantity/decrease": {
+    case 'cart.quantity/decrease': {
       const updatedCart = state.cart.map((item) =>
         item.id === action.payload.id
           ? { ...item, quantity: item.quantity - 1 }
@@ -72,21 +72,21 @@ function CartProvider({ children }) {
   const [{ cart }, dispatch] = useReducer(reducer, initialState);
   //   Functions that get and modify the cart and will be provided by the context
   function addToCart(item) {
-    dispatch({ type: "cart/add", payload: item });
+    dispatch({ type: 'cart/add', payload: item });
   }
   function removeFromCart(item) {
-    dispatch({ type: "cart/remove", payload: item });
+    dispatch({ type: 'cart/remove', payload: item });
   }
   function increaseQt(item) {
-    dispatch({ type: "cart.quantity/increase", payload: item });
+    dispatch({ type: 'cart.quantity/increase', payload: item });
   }
 
   function decreaseQt(item) {
-    dispatch({ type: "cart.quantity/decrease", payload: item });
+    dispatch({ type: 'cart.quantity/decrease', payload: item });
   }
 
   function clearCart() {
-    dispatch({ type: "cart/clear" });
+    dispatch({ type: 'cart/clear' });
   }
 
   function getQuantity(id) {

@@ -1,10 +1,17 @@
-import { createBrowserRouter, RouterProvider, ScrollRestoration, Outlet, Navigate, useLocation } from "react-router-dom";
-import Home from "./Pages/Home";
-import Shop from "./Pages/Shop";
-import Checkout from "./Pages/Checkout";
-import { CartProvider, useCart } from "./Components/CartContext";
-import Confirmation from "./Pages/Confirmation";
-import PageNotFound from "./Pages/PageNotFound";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  ScrollRestoration,
+  Outlet,
+  Navigate,
+  useLocation,
+} from 'react-router-dom';
+import Home from './Pages/Home';
+import Shop from './Pages/Shop';
+import Checkout from './Pages/Checkout';
+import { CartProvider, useCart } from './Components/CartContext';
+import Confirmation from './Pages/Confirmation';
+import PageNotFound from './Pages/PageNotFound';
 
 function RootLayout() {
   return (
@@ -33,33 +40,41 @@ const router = createBrowserRouter(
       element: <RootLayout />,
       children: [
         {
-          path: "/",
+          path: '/',
           element: <Home />,
         },
         {
-          path: "/shop",
+          path: '/shop',
           element: <Shop />,
         },
         {
-          path: "/shop/:category",
+          path: '/shop/:category',
           element: <Shop />,
         },
         {
-          path: "/checkout",
-          element: <RequireCart><Checkout /></RequireCart>,
+          path: '/checkout',
+          element: (
+            <RequireCart>
+              <Checkout />
+            </RequireCart>
+          ),
         },
         {
-          path: "/confirmation",
-          element: <RequireOrder><Confirmation /></RequireOrder>,
+          path: '/confirmation',
+          element: (
+            <RequireOrder>
+              <Confirmation />
+            </RequireOrder>
+          ),
         },
         {
-          path: "*", // Catch-all route for undefined paths
+          path: '*', // Catch-all route for undefined paths
           element: <PageNotFound />,
         },
       ],
     },
   ],
-  { basename: "/G-Bliss" },
+  { basename: '/G-Bliss' },
 );
 
 function App() {

@@ -1,11 +1,11 @@
-import { useState } from "react";
-import flowerData from "../data/flowerData";
-import preRollsData from "../data/preRollsData";
-import vapesData from "../data/vapesData";
-import edibleData from "../data/edibleData";
-import tincturesData from "../data/tincturesData";
-import accessoriesData from "../data/accessoriesData";
-import SearchedItem from "./SearchedItem";
+import { useState } from 'react';
+import flowerData from '../data/flowerData';
+import preRollsData from '../data/preRollsData';
+import vapesData from '../data/vapesData';
+import edibleData from '../data/edibleData';
+import tincturesData from '../data/tincturesData';
+import accessoriesData from '../data/accessoriesData';
+import SearchedItem from './SearchedItem';
 
 const allItems = [
   ...flowerData,
@@ -17,7 +17,7 @@ const allItems = [
 ];
 
 function SearchBox({ setOpenSearch }) {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState('');
 
   const results = query.trim()
     ? allItems.filter((item) =>
@@ -26,10 +26,10 @@ function SearchBox({ setOpenSearch }) {
     : [];
 
   return (
-    <div className="absolute top-0 left-0 z-50 flex items-center justify-center w-full backdrop-blur-sm">
-      <div className="w-[500px] h-[100vh] overflow-y-auto flex flex-col px-[24px] py-[48px] gap-[40px] bg-green01">
-        <div className="flex justify-between border-b border-resin00">
-          <div className="font-font02 text-[26px] text-resin00 cartShadow tracking-wide">
+    <div className="absolute top-0 left-0 z-50 flex w-full items-center justify-center backdrop-blur-sm">
+      <div className="bg-green01 flex h-[100vh] w-[500px] flex-col gap-[40px] overflow-y-auto px-[24px] py-[48px]">
+        <div className="border-resin00 flex justify-between border-b">
+          <div className="font-font02 text-resin00 cartShadow text-[26px] tracking-wide">
             Search
           </div>
           <svg
@@ -38,7 +38,7 @@ function SearchBox({ setOpenSearch }) {
             height="44"
             viewBox="0 0 28 29"
             fill="none"
-            className="text-[#E6E1C5] hover:text-[#CF5C36] transition-colors duration-200 ease-in-out cursor-pointer"
+            className="cursor-pointer text-[#E6E1C5] transition-colors duration-200 ease-in-out hover:text-[#CF5C36]"
             onClick={() => setOpenSearch(false)}
           >
             <path
@@ -55,13 +55,13 @@ function SearchBox({ setOpenSearch }) {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="flex h-[40px] w-full rounded-full bg-resin00 font-font03  focus:outline-none placeholder:font-font01 px-[16px] text-[16px] text-green09"
+            className="bg-resin00 font-font03 placeholder:font-font01 text-green09 flex h-[40px] w-full rounded-full px-[16px] text-[16px] focus:outline-none"
             placeholder="Search Products..."
           />
         </div>
 
         {query.trim() && (
-          <ul className="flex flex-col  gap-[32px]">
+          <ul className="flex flex-col gap-[32px]">
             {results.length > 0 ? (
               results.map((item) => <SearchedItem key={item.id} item={item} />)
             ) : (

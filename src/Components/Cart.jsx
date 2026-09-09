@@ -1,7 +1,7 @@
-import { useEffect } from "react";
-import { useCart } from "./CartContext";
-import CartItem from "./CartItem";
-import { Link } from "react-router-dom";
+import { useEffect } from 'react';
+import { useCart } from './CartContext';
+import CartItem from './CartItem';
+import { Link } from 'react-router-dom';
 
 function Cart() {
   const { cart, getTotalCartPrice } = useCart();
@@ -9,14 +9,14 @@ function Cart() {
   const total = getTotalCartPrice();
 
   return (
-    <div className="absolute top-0 left-0 z-50 flex justify-end w-full backdrop-blur-sm">
+    <div className="absolute top-0 left-0 z-50 flex w-full justify-end backdrop-blur-sm">
       <div
-        className={`w-[500px] h-[100vh] overflow-y-auto flex flex-col px-[16px] py-[24px]  ${
-          cart?.length > 0 ? "justify-between" : "gap-[35vh]"
-        } bg-green01 md:px-[24px] py-[48px] `}
+        className={`flex h-[100vh] w-[500px] flex-col overflow-y-auto px-[16px] py-[24px] ${
+          cart?.length > 0 ? 'justify-between' : 'gap-[35vh]'
+        } bg-green01 py-[48px] md:px-[24px]`}
       >
-        <div className="flex justify-between border-b border-resin00">
-          <div className="font-font02 text-[26px] text-resin00 cartShadow tracking-wide">
+        <div className="border-resin00 flex justify-between border-b">
+          <div className="font-font02 text-resin00 cartShadow text-[26px] tracking-wide">
             Cart
           </div>
           <svg
@@ -25,7 +25,7 @@ function Cart() {
             height="44"
             viewBox="0 0 28 29"
             fill="none"
-            className="text-[#E6E1C5] hover:text-[#CF5C36] transition-colors duration-200 ease-in-out cursor-pointer"
+            className="cursor-pointer text-[#E6E1C5] transition-colors duration-200 ease-in-out hover:text-[#CF5C36]"
             onClick={() => setOpenCart(false)}
           >
             <path
@@ -38,19 +38,19 @@ function Cart() {
         </div>
         {cart?.length > 0 ? (
           <>
-            <ul className=" flex flex-col  px-[16px] divide-y-2 divide-[#394739]  mx-auto">
+            <ul className="mx-auto flex flex-col divide-y-2 divide-[#394739] px-[16px]">
               {cart.map((item) => (
                 <CartItem item={item} key={item.id} />
               ))}
             </ul>
-            <div className="flex flex-col pt-[24px] border-t border-resin00 gap-[24px]">
-              <div className=" flex justify-between px-[24px] font-font01 text-[16px] text-resin00 sm:text-[29px] sm:px-[48px]">
+            <div className="border-resin00 flex flex-col gap-[24px] border-t pt-[24px]">
+              <div className="font-font01 text-resin00 flex justify-between px-[24px] text-[16px] sm:px-[48px] sm:text-[29px]">
                 <span>Total</span>
                 <span>${total}</span>
               </div>
               <Link
-                to={"/checkout"}
-                className="flex py-[24px] gap-[8px] text-[16px] sm:text-[29px] sm:px-[48px] items-center justify-center rounded-sm bg-green09 font-font01 text-white border-t-[2.5px] border-[#595746]  shadow-[2px_2px_7px_0_rgba(0,0,0,0.25)] cursor-pointer active:scale-97 hover:border-green09 hover:shadow-none active:translate-y-[1px] transition-all duration-100"
+                to={'/checkout'}
+                className="bg-green09 font-font01 hover:border-green09 flex cursor-pointer items-center justify-center gap-[8px] rounded-sm border-t-[2.5px] border-[#595746] py-[24px] text-[16px] text-white shadow-[2px_2px_7px_0_rgba(0,0,0,0.25)] transition-all duration-100 hover:shadow-none active:translate-y-[1px] active:scale-97 sm:px-[48px] sm:text-[29px]"
                 onClick={() => setOpenCart(false)}
               >
                 Checkout
@@ -58,7 +58,7 @@ function Cart() {
             </div>
           </>
         ) : (
-          <div className="self-center font-font03 text-resin00">
+          <div className="font-font03 text-resin00 self-center">
             Your cart is empty.
           </div>
         )}

@@ -1,9 +1,9 @@
-import { Link, useLocation } from "react-router-dom";
-import Cart from "./Cart";
-import BackButton from "../UI/BackButton";
-import { useCart } from "./CartContext";
-import { useEffect, useState } from "react";
-import SearchBox from "./SearchBox";
+import { Link, useLocation } from 'react-router-dom';
+import Cart from './Cart';
+import BackButton from '../UI/BackButton';
+import { useCart } from './CartContext';
+import { useEffect, useState } from 'react';
+import SearchBox from './SearchBox';
 
 function NavBar() {
   const location = useLocation();
@@ -14,9 +14,9 @@ function NavBar() {
   const [openSearch, setOpenSearch] = useState(false);
 
   if (openSearch || openCart) {
-    document.body.classList.add("overflow-hidden");
+    document.body.classList.add('overflow-hidden');
   } else {
-    document.body.classList.remove("overflow-hidden");
+    document.body.classList.remove('overflow-hidden');
   }
 
   useEffect(() => {
@@ -27,41 +27,41 @@ function NavBar() {
       setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
   return (
     <>
       {/* Desktop */}
       <div
-        className={`hidden  w-full fixed top-0  z-5 transition-transform duration-300 ${
-          hideNav ? "-translate-y-full shadow-none" : "translate-y-0 "
-        } px-[48px] py-[32px] gap-auto items-center justify-between bg-green00  text-resin00 lg:flex xl:px-[96px] border-b border-resin00`}
+        className={`fixed top-0 z-5 hidden w-full transition-transform duration-300 ${
+          hideNav ? '-translate-y-full shadow-none' : 'translate-y-0 '
+        } gap-auto bg-green00 text-resin00 border-resin00 items-center justify-between border-b px-[48px] py-[32px] lg:flex xl:px-[96px]`}
       >
-        {location.pathname === "/checkout" && <BackButton />}
+        {location.pathname === '/checkout' && <BackButton />}
         <Link
           to="/"
-          className="tracking-wider transition-colors duration-200 ease-in-out logoShadow text-shadow-lg font-font02 hover:text-orange00"
+          className="logoShadow text-shadow-lg font-font02 hover:text-orange00 tracking-wider transition-colors duration-200 ease-in-out"
         >
           G-Bliss
         </Link>
-        {location.pathname !== "/checkout" && (
-          <div className="flex justify-center items-center gap-[64px] text-[18px] font-font01 ">
+        {location.pathname !== '/checkout' && (
+          <div className="font-font01 flex items-center justify-center gap-[64px] text-[18px]">
             <div
-              className="transition-colors duration-200 ease-in-out cursor-pointer hover:text-orange00"
+              className="hover:text-orange00 cursor-pointer transition-colors duration-200 ease-in-out"
               onClick={() => setOpenSearch(true)}
             >
               Search
             </div>
             <Link
               to="/shop"
-              className="transition-colors duration-200 ease-in-out cursor-pointer hover:text-orange00"
+              className="hover:text-orange00 cursor-pointer transition-colors duration-200 ease-in-out"
             >
               Shop
             </Link>
             <div
-              className="flex gap-[4px] cursor-pointer transition-colors duration-200 ease-in-out hover:text-orange00"
+              className="hover:text-orange00 flex cursor-pointer gap-[4px] transition-colors duration-200 ease-in-out"
               onClick={() => setOpenCart(true)}
             >
               Cart<span className="cartIndicator">{cartQt}</span>
@@ -74,20 +74,20 @@ function NavBar() {
 
       {/* Mobile */}
       <div
-        className={`flex max-h-60 z-5 transition-transform duration-300 ${
-          hideNav ? "-translate-y-full shadow-none" : "translate-y-0 "
-        } w-full fixed top-0  px-[16px] py-[24px] items-end justify-between bg-green00  text-resin00   lg:hidden border-b border-resin00 `}
+        className={`z-5 flex max-h-60 transition-transform duration-300 ${
+          hideNav ? '-translate-y-full shadow-none' : 'translate-y-0 '
+        } bg-green00 text-resin00 border-resin00 fixed top-0 w-full items-end justify-between border-b px-[16px] py-[24px] lg:hidden`}
       >
-        {location.pathname !== "/checkout" ? (
+        {location.pathname !== '/checkout' ? (
           <>
             <Link
               to="/"
-              className="cursor-pointer tracking-wider text-[20px] transition-colors duration-200 ease-in-out cat_title_shadow text-shadow-lg font-font02 hover:text-orange00"
+              className="cat_title_shadow text-shadow-lg font-font02 hover:text-orange00 cursor-pointer text-[20px] tracking-wider transition-colors duration-200 ease-in-out"
             >
               G-Bliss
             </Link>
 
-            <div className="flex  items-center gap-[20px]">
+            <div className="flex items-center gap-[20px]">
               <button onClick={() => setOpenSearch(true)}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +95,7 @@ function NavBar() {
                   height="24"
                   viewBox="0 0 24 24"
                   fill="none"
-                  className="text-resin00 hover:text-[#CF5C36] transition-colors duration-200 ease-in-out cursor-pointer"
+                  className="text-resin00 cursor-pointer transition-colors duration-200 ease-in-out hover:text-[#CF5C36]"
                 >
                   <path
                     d="M3.52637 10.791C3.00658 6.56124 6.56612 3.00169 10.7959 3.52148C13.5959 3.86148 15.9157 6.08136 16.3857 8.86133C16.7257 10.8913 16.1062 12.8012 14.9062 14.2012L15.1865 14.4717H15.9766L20.2158 18.7314C20.6258 19.1414 20.6258 19.8117 20.2158 20.2217C19.8059 20.6312 19.1365 20.6312 18.7266 20.2217L14.4766 15.9717V15.1816L14.2061 14.9014C12.8061 16.1013 10.8962 16.7209 8.86621 16.3809C6.08625 15.9108 3.86636 13.591 3.52637 10.791ZM9.97656 5.47168C7.48656 5.47168 5.47656 7.48168 5.47656 9.97168C5.47675 12.4615 7.48668 14.4717 9.97656 14.4717C12.4663 14.4715 14.4764 12.4614 14.4766 9.97168C14.4766 7.4818 12.4664 5.47187 9.97656 5.47168Z"
@@ -111,7 +111,7 @@ function NavBar() {
                   height="20"
                   viewBox="0 0 20 20"
                   fill="none"
-                  className="text-resin00 hover:text-[#CF5C36] transition-colors duration-200 ease-in-out cursor-pointer"
+                  className="text-resin00 cursor-pointer transition-colors duration-200 ease-in-out hover:text-[#CF5C36]"
                 >
                   <g clip-path="url(#clip0_869_496)">
                     <path
@@ -128,7 +128,7 @@ function NavBar() {
               </Link>
 
               <div
-                className="flex gap-[4px] cursor-pointer items-center"
+                className="flex cursor-pointer items-center gap-[4px]"
                 onClick={() => setOpenCart(true)}
               >
                 <svg
@@ -137,7 +137,7 @@ function NavBar() {
                   height="24"
                   viewBox="0 0 32 32"
                   fill="none"
-                  className="text-resin00 hover:text-[#CF5C36] transition-colors duration-200 ease-in-out cursor-pointer"
+                  className="text-resin00 cursor-pointer transition-colors duration-200 ease-in-out hover:text-[#CF5C36]"
                 >
                   <path
                     d="M32 4L31.0093 6.66667H28.4373L23.8053 22.6667H6.15333L0 8H22.416L21.664 10.6667H4.01067L7.92667 20H21.8307L26.4067 4H32ZM11.3333 24C10.2293 24 9.33333 24.896 9.33333 26C9.33333 27.1053 10.2293 28 11.3333 28C12.4373 28 13.3333 27.1053 13.3333 26C13.3333 24.896 12.4373 24 11.3333 24ZM18 24C16.896 24 16 24.8947 16 26C16 27.1053 16.896 28 18 28C19.104 28 20 27.1053 20 26C20 24.896 19.104 24 18 24Z"
@@ -153,7 +153,7 @@ function NavBar() {
             <BackButton />
             <Link
               to="/"
-              className="tracking-wider transition-colors duration-200 ease-in-out logoShadow text-shadow-lg font-font02 hover:text-orange00"
+              className="logoShadow text-shadow-lg font-font02 hover:text-orange00 tracking-wider transition-colors duration-200 ease-in-out"
             >
               G-Bliss
             </Link>

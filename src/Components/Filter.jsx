@@ -1,13 +1,13 @@
-import DisabledOption from "./DisabledOption";
-import Option from "./Option";
+import DisabledOption from './DisabledOption';
+import Option from './Option';
 
 function Filter({ filters, handleFilterChange, resetFilters }) {
   return (
     <>
-      <div className="hidden py-[96px] px-[64px] items-center md:block ">
+      <div className="hidden items-center px-[64px] py-[96px] md:block">
         <div className="flex flex-col gap-[64px]">
           <div className="flex flex-col gap-[24px]">
-            <div className=" font-font01 text-[29px] ">Product</div>
+            <div className="font-font01 text-[29px]">Product</div>
 
             <div className="flex flex-col gap-[16px]">
               <Option
@@ -74,13 +74,13 @@ function Filter({ filters, handleFilterChange, resetFilters }) {
           <div className="flex flex-col gap-[24px]">
             <div
               className={`font-font01 text-[29px] ${
-                filters.product === "accessories" ? "text-green01" : ""
+                filters.product === 'accessories' ? 'text-green01' : ''
               }`}
             >
               Type
             </div>
             <div className="flex flex-col gap-[16px]">
-              {filters.product === "accessories" ? (
+              {filters.product === 'accessories' ? (
                 <DisabledOption>Indica</DisabledOption>
               ) : (
                 <Option
@@ -92,7 +92,7 @@ function Filter({ filters, handleFilterChange, resetFilters }) {
                 </Option>
               )}
 
-              {filters.product === "accessories" ? (
+              {filters.product === 'accessories' ? (
                 <DisabledOption>Sativa</DisabledOption>
               ) : (
                 <Option
@@ -104,7 +104,7 @@ function Filter({ filters, handleFilterChange, resetFilters }) {
                 </Option>
               )}
 
-              {filters.product === "accessories" ? (
+              {filters.product === 'accessories' ? (
                 <DisabledOption>Hybrid</DisabledOption>
               ) : (
                 <Option
@@ -121,13 +121,13 @@ function Filter({ filters, handleFilterChange, resetFilters }) {
           <div className="flex flex-col gap-[24px]">
             <div
               className={`font-font01 text-[29px] ${
-                filters.product === "accessories" ? "text-green01" : ""
+                filters.product === 'accessories' ? 'text-green01' : ''
               }`}
             >
               Weight
             </div>
             <div className="flex flex-col gap-[16px]">
-              {filters.product === "accessories" ? (
+              {filters.product === 'accessories' ? (
                 <DisabledOption>3.5g</DisabledOption>
               ) : (
                 <Option

@@ -5,13 +5,13 @@ function Option({
   children,
   resetFilters,
 }) {
-  if (filterType === "product" && children === "all") {
-    children = "";
+  if (filterType === 'product' && children === 'all') {
+    children = '';
   }
   return (
     <div
-      className={`flex gap-[4px] font-font03 font-semibold hover:text-orange00 ${
-        filters[filterType] === children ? "text-orange00" : ""
+      className={`font-font03 hover:text-orange00 flex gap-[4px] font-semibold ${
+        filters[filterType] === children ? 'text-orange00' : ''
       } cursor-pointer`}
       onClick={() => {
         handleFilterChange(filterType, children);
@@ -47,7 +47,7 @@ function Option({
           </svg>
         )}
       </span>
-      {children ? children.charAt(0).toUpperCase() + children.slice(1) : "All"}
+      {children ? children.charAt(0).toUpperCase() + children.slice(1) : 'All'}
     </div>
   );
 }

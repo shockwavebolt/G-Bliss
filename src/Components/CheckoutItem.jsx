@@ -1,23 +1,23 @@
 function CheckoutItem({ item }) {
   const currQt = item.quantity;
   return (
-    <li className="w-full flex py-[16px] gap-[8px] items-center sm:gap-[16px]">
+    <li className="flex w-full items-center gap-[8px] py-[16px] sm:gap-[16px]">
       <div className="font-font01 text-[16px] sm:text-[29px]">{currQt}x</div>
-      <div className="flex flex-col w-full  gap-[8px] sm:gap-[16px]">
-        <div className="flex p-[16px] bg-white rounded-lg sm:p-[24px]">
-          <img src={item.img} className="h-[100px] sm:h-[150px] self-center" />
-          <div className="flex flex-col ">
-            <div className="flex flex-col py-[16px] text-green09 sm:py-[24px]">
+      <div className="flex w-full flex-col gap-[8px] sm:gap-[16px]">
+        <div className="flex rounded-lg bg-white p-[16px] sm:p-[24px]">
+          <img src={item.img} className="h-[100px] self-center sm:h-[150px]" />
+          <div className="flex flex-col">
+            <div className="text-green09 flex flex-col py-[16px] sm:py-[24px]">
               <div className="font-font01 text-[16px]">{item.name}</div>
               <div className="flex flex-col">
                 <div
                   className={`flex ${
-                    item.type2 != "" && "divide-x-2"
+                    item.type2 != '' && 'divide-x-2'
                   } font-font03`}
                 >
-                  <div className="pr-[4px] text-[12px] ">{item.type}</div>
-                  {item.type2 != "" && (
-                    <div className="pl-[4px] text-[12px] ">{item.type2}</div>
+                  <div className="pr-[4px] text-[12px]">{item.type}</div>
+                  {item.type2 != '' && (
+                    <div className="pl-[4px] text-[12px]">{item.type2}</div>
                   )}
                 </div>
                 <div className="font-font03 text-[12px]">{item.weight}</div>
@@ -29,7 +29,7 @@ function CheckoutItem({ item }) {
         </div>
       </div>
 
-      <div className="font-font01  text-[16px] sm:text-[29px] whitespace-nowrap">
+      <div className="font-font01 text-[16px] whitespace-nowrap sm:text-[29px]">
         = ${currQt * item.price}
       </div>
     </li>

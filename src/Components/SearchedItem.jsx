@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useCart } from "./CartContext";
+import { useState } from 'react';
+import { useCart } from './CartContext';
 
 function SearchedItem({ item }) {
   const { id, img, name, type, type2, weight, price } = item;
@@ -20,36 +20,36 @@ function SearchedItem({ item }) {
   }
 
   return (
-    <li className="flex  gap-[12px] px-[24px] py-[12px] bg-white rounded-sm">
+    <li className="flex gap-[12px] rounded-sm bg-white px-[24px] py-[12px]">
       <img
         src={img}
-        className="h-[64px] w-[64px] object-cover rounded-md shrink-0"
+        className="h-[64px] w-[64px] shrink-0 rounded-md object-cover"
       />
 
-      <div className="flex flex-col flex-1 min-w-0 gap-[2px]">
-        <div className="font-font01 text-green09 text-[16px] truncate">
+      <div className="flex min-w-0 flex-1 flex-col gap-[2px]">
+        <div className="font-font01 text-green09 truncate text-[16px]">
           {name}
         </div>
         <div
-          className={`flex text-[12px] font-font03 text-green09 ${type2 !== "" && "divide-x-[1.5px] divide-green09"}`}
+          className={`font-font03 text-green09 flex text-[12px] ${type2 !== '' && 'divide-green09 divide-x-[1.5px]'}`}
         >
           <span className="pr-[4px]">{type}</span>
-          {type2 !== "" && <span className="pl-[4px]">{type2}</span>}
+          {type2 !== '' && <span className="pl-[4px]">{type2}</span>}
         </div>
-        <div className="font-font03 text-[12px] text-green09">{weight}</div>
+        <div className="font-font03 text-green09 text-[12px]">{weight}</div>
       </div>
 
-      <div className="flex flex-col items-end gap-[8px] shrink-0">
+      <div className="flex shrink-0 flex-col items-end gap-[8px]">
         <div className="font-font01 text-green09 text-[16px]">${price}</div>
 
-        <div className="flex items-center gap-[4px] text-green00">
+        <div className="text-green00 flex items-center gap-[4px]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
             viewBox="0 0 32 33"
             fill="none"
-            className="transition-colors duration-200 cursor-pointer hover:text-orange00"
+            className="hover:text-orange00 cursor-pointer transition-colors duration-200"
             onClick={handleDec}
           >
             <path
@@ -57,7 +57,7 @@ function SearchedItem({ item }) {
               fill="currentColor"
             />
           </svg>
-          <span className="font-font01 text-[16px] w-[16px] text-center">
+          <span className="font-font01 w-[16px] text-center text-[16px]">
             {quantity}
           </span>
           <svg
@@ -66,7 +66,7 @@ function SearchedItem({ item }) {
             height="24"
             viewBox="0 0 32 32"
             fill="none"
-            className="transition-colors duration-200 cursor-pointer hover:text-orange00"
+            className="hover:text-orange00 cursor-pointer transition-colors duration-200"
             onClick={handleInc}
           >
             <path
@@ -77,7 +77,7 @@ function SearchedItem({ item }) {
         </div>
 
         <button
-          className="px-[12px] py-[6px] bg-green09 text-white font-font01 text-[13px] rounded-sm border-t-[2px] border-green00 shadow-[1px_1px_5px_0_rgba(0,0,0,0.25)] cursor-pointer active:scale-97 active:translate-y-[1px] hover:border-green09 hover:shadow-none transition-all duration-100"
+          className="bg-green09 font-font01 border-green00 hover:border-green09 cursor-pointer rounded-sm border-t-[2px] px-[12px] py-[6px] text-[13px] text-white shadow-[1px_1px_5px_0_rgba(0,0,0,0.25)] transition-all duration-100 hover:shadow-none active:translate-y-[1px] active:scale-97"
           onClick={handleAddCart}
         >
           Add to cart

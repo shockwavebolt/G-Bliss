@@ -1,22 +1,22 @@
-import Filter from "../Components/Filter";
-import NavBar from "../Components/NavBar";
-import ShopItem from "../Components/ShopItem";
-import BackButton from "../UI/BackButton";
+import Filter from '../Components/Filter';
+import NavBar from '../Components/NavBar';
+import ShopItem from '../Components/ShopItem';
+import BackButton from '../UI/BackButton';
 
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import FilterButton from "../Components/FilterButton";
-import MobileFilter from "../Components/MobileFilter";
-import ShopItemSkeleton from "../Components/ShopItemSkeleton";
-import { supabase } from "../supabaseClient";
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import FilterButton from '../Components/FilterButton';
+import MobileFilter from '../Components/MobileFilter';
+import ShopItemSkeleton from '../Components/ShopItemSkeleton';
+import { supabase } from '../supabaseClient';
 
 const categoryIdToProduct = {
-  1: "flower",
-  2: "edibles",
-  3: "pre-rolls",
-  4: "vapes",
-  5: "accessories",
-  6: "tinctures",
+  1: 'flower',
+  2: 'edibles',
+  3: 'pre-rolls',
+  4: 'vapes',
+  5: 'accessories',
+  6: 'tinctures',
 };
 
 function Shop() {
@@ -26,14 +26,14 @@ function Shop() {
   const [loading, setLoading] = useState(true);
   const [fetchError, setFetchError] = useState(false);
   const [filters, setFilters] = useState({
-    product: category === "all" ? "" : category,
-    type: "",
-    weight: "",
+    product: category === 'all' ? '' : category,
+    type: '',
+    weight: '',
   });
 
   useEffect(() => {
     async function fetchProducts() {
-      const { data, error } = await supabase.from("Products").select("*");
+      const { data, error } = await supabase.from('Products').select('*');
       if (error) {
         setFetchError(true);
       } else {
@@ -41,7 +41,7 @@ function Shop() {
           data.map((row) => ({
             ...row,
             img: row.image_url,
-            product: categoryIdToProduct[row.category_id] ?? "",
+            product: categoryIdToProduct[row.category_id] ?? '',
           })),
         );
       }
@@ -55,14 +55,14 @@ function Shop() {
   const resetFilters = () => {
     setFilters((filters) => ({
       ...filters,
-      type: "",
-      weight: "",
+      type: '',
+      weight: '',
     }));
   };
 
   const handleFilterChange = (name, value) => {
-    if (name === "product" && value === "all") {
-      setFilters({ ...filters, [name]: "" });
+    if (name === 'product' && value === 'all') {
+      setFilters({ ...filters, [name]: '' });
     } else {
       setFilters({ ...filters, [name]: value });
     }
@@ -87,7 +87,7 @@ function Shop() {
   }, [itemData, filters]);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex min-h-screen flex-col">
       <NavBar />
       {openFilter && (
         <MobileFilter
@@ -99,20 +99,20 @@ function Shop() {
           filterMatches={filteredProducts.length}
         />
       )}
-      <section className="flex flex-col flex-1 items-center pt-[128px] pb-[96px] px-[16px] bg-green00 text-resin00 gap-[12px] md:px-[48px] xl:px-[96px] ">
-        <div className="w-full flex flex-col gap-[48px] place-self-start md:gap-[192px] md:flex-row ">
-          <div className="flex justify-between ">
+      <section className="bg-green00 text-resin00 flex flex-1 flex-col items-center gap-[12px] px-[16px] pt-[128px] pb-[96px] md:px-[48px] xl:px-[96px]">
+        <div className="flex w-full flex-col gap-[48px] place-self-start md:flex-row md:gap-[192px]">
+          <div className="flex justify-between">
             <BackButton />
             <FilterButton setOpenFilter={setOpenFilter} />
           </div>
-          <div className="font-font02 text-[26px] cat_title_shadow tracking-wide md:text-[47px]">
+          <div className="font-font02 cat_title_shadow text-[26px] tracking-wide md:text-[47px]">
             {filters.product
               ? filters.product.charAt(0).toUpperCase() +
                 filters.product.slice(1)
-              : "All"}
+              : 'All'}
           </div>
         </div>
-        <div className=" w-full  md:grid grid-cols-[auto_1fr] divide-x-1 gap-x-[24px] ">
+        <div className="w-full grid-cols-[auto_1fr] gap-x-[24px] divide-x-1 md:grid">
           <Filter
             filters={filters}
             handleFilterChange={handleFilterChange}
@@ -121,23 +121,23 @@ function Shop() {
             setOpenFilter={setOpenFilter}
           />
           {loading ? (
-            <ul className="grid grid-cols-2 gap-y-[12px] items-start gap-x-[12px] min-[1000px]:grid-cols-3 min-[1000px]:gap-x-[24px] min-[1000px]:gap-y-[24px]">
+            <ul className="grid grid-cols-2 items-start gap-x-[12px] gap-y-[12px] min-[1000px]:grid-cols-3 min-[1000px]:gap-x-[24px] min-[1000px]:gap-y-[24px]">
               {Array.from({ length: 6 }).map((_, i) => (
                 <ShopItemSkeleton key={i} />
               ))}
             </ul>
           ) : filteredProducts.length > 0 ? (
-            <ul className="grid  grid-cols-2  gap-y-[12px] items-start gap-x-[12px]  min-[1000px]:grid-cols-3 min-[1000px]:gap-x-[24px] min-[1000px]:gap-y-[24px]">
+            <ul className="grid grid-cols-2 items-start gap-x-[12px] gap-y-[12px] min-[1000px]:grid-cols-3 min-[1000px]:gap-x-[24px] min-[1000px]:gap-y-[24px]">
               {filteredProducts.map((data) => (
                 <ShopItem item={data} key={data.id} />
               ))}
             </ul>
           ) : fetchError ? (
-            <div className="flex h-screen justify-center w-full pt-[25%] font-font03 text-[16px] text-resin00 md:text-[20px]">
+            <div className="font-font03 text-resin00 flex h-screen w-full justify-center pt-[25%] text-[16px] md:text-[20px]">
               Something went wrong. Please try again later.
             </div>
           ) : (
-            <div className="flex h-screen justify-center w-full pt-[25%] font-font03 text-[16px] text-resin00 md:text-[20px]">
+            <div className="font-font03 text-resin00 flex h-screen w-full justify-center pt-[25%] text-[16px] md:text-[20px]">
               No items match the filter settings.
             </div>
           )}

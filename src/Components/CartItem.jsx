@@ -1,4 +1,4 @@
-import { useCart } from "./CartContext";
+import { useCart } from './CartContext';
 
 function CartItem({ item }) {
   const { removeFromCart, increaseQt, decreaseQt, getQuantity } = useCart();
@@ -16,46 +16,46 @@ function CartItem({ item }) {
   }
 
   return (
-    <li className="w-full flex py-[16px] gap-[8px] items-center sm:gap-[16px]">
+    <li className="flex w-full items-center gap-[8px] py-[16px] sm:gap-[16px]">
       <div className="font-font01 text-resin00 text-[16px] sm:text-[29px]">
         {currQt}x
       </div>
-      <div className="flex flex-col w-full max-w-[380px] gap-[8px] items-end sm:gap-[16px]">
+      <div className="flex w-full max-w-[380px] flex-col items-end gap-[8px] sm:gap-[16px]">
         <div
-          className="transition-colors duration-200 ease-in-out cursor-pointer font-font03 text-resin00 text-[12px] sm:text-[18px] hover:text-orange00"
+          className="font-font03 text-resin00 hover:text-orange00 cursor-pointer text-[12px] transition-colors duration-200 ease-in-out sm:text-[18px]"
           onClick={() => removeFromCart(item)}
         >
           Remove
         </div>
-        <div className="flex w-full py-[16px] px-[8px]  bg-white rounded-lg sm:p-[24px]">
-          <img src={item.img} className="h-[95px] sm:h-[150px] self-center" />
+        <div className="flex w-full rounded-lg bg-white px-[8px] py-[16px] sm:p-[24px]">
+          <img src={item.img} className="h-[95px] self-center sm:h-[150px]" />
           <div className="flex flex-col gap-[16px]">
-            <div className="flex flex-col text-green09 gap-[8px]  sm:py-[24px]">
+            <div className="text-green09 flex flex-col gap-[8px] sm:py-[24px]">
               <div className="font-font01 text-[16px]">{item.name}</div>
               <div className="flex flex-col">
                 <div
                   className={`flex ${
-                    item.type2 != "" && "divide-x-2"
+                    item.type2 != '' && 'divide-x-2'
                   } font-font03`}
                 >
-                  <div className="pr-[4px] text-[12px] ">{item.type}</div>
-                  {item.type2 != "" && (
+                  <div className="pr-[4px] text-[12px]">{item.type}</div>
+                  {item.type2 != '' && (
                     <div className="pl-[4px] text-[12px]">{item.type2}</div>
                   )}
                 </div>
                 <div className="font-font03 text-[12px]">{item.weight}</div>
               </div>
 
-              <div className="font-font01 text-[16px] ">${item.price}</div>
+              <div className="font-font01 text-[16px]">${item.price}</div>
             </div>
-            <div className="flex gap-[4px]  text-green00">
+            <div className="text-green00 flex gap-[4px]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
                 height="33"
                 viewBox="0 0 32 33"
                 fill="none"
-                className="text-green00 hover:text-[#CF5C36] transition-colors duration-200 ease-in-out cursor-pointer"
+                className="text-green00 cursor-pointer transition-colors duration-200 ease-in-out hover:text-[#CF5C36]"
                 onClick={() => handleDec()}
               >
                 <path
@@ -70,7 +70,7 @@ function CartItem({ item }) {
                 height="33"
                 viewBox="0 0 32 33"
                 fill="none"
-                className="text-green00 hover:text-[#CF5C36] transition-colors duration-200 ease-in-out cursor-pointer"
+                className="text-green00 cursor-pointer transition-colors duration-200 ease-in-out hover:text-[#CF5C36]"
                 onClick={() => handleInc()}
               >
                 <path
@@ -83,7 +83,7 @@ function CartItem({ item }) {
         </div>
       </div>
 
-      <div className="font-font01 text-resin00 text-[16px] sm:text-[29px] whitespace-nowrap">
+      <div className="font-font01 text-resin00 text-[16px] whitespace-nowrap sm:text-[29px]">
         = ${currQt * item.price}
       </div>
     </li>

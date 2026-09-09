@@ -1,6 +1,6 @@
 function DisabledOption({ children }) {
   return (
-    <div className="flex gap-[4px] font-font0 text-green01">
+    <div className="font-font0 text-green01 flex gap-[4px]">
       <span>
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -1,7 +1,7 @@
 function FilterButton({ setOpenFilter }) {
   return (
     <div
-      className="group flex p-[12px] gap-[4px] items-center font-font01 hover:text-orange00 hover:border-orange00 cursor-pointer transition-colors duration-200 ease-in-out md:hidden  "
+      className="group font-font01 hover:text-orange00 hover:border-orange00 flex cursor-pointer items-center gap-[4px] p-[12px] transition-colors duration-200 ease-in-out md:hidden"
       onClick={() => setOpenFilter(true)}
     >
       Filter
@@ -9,7 +9,7 @@ function FilterButton({ setOpenFilter }) {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="none"
-        className="w-6 h-6 transition-colors duration-200 ease-in-out text-resin00 group-hover:text-orange00"
+        className="text-resin00 group-hover:text-orange00 h-6 w-6 transition-colors duration-200 ease-in-out"
       >
         <line
           x1="3"
