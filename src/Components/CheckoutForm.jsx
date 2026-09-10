@@ -25,10 +25,13 @@ function CheckoutForm() {
 
     if (nameMissing || phoneMissing) {
       setErrors({ name: nameMissing, phone: phoneMissing });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
 
-    navigate('/confirmation', { state: { order: cart } });
+    navigate('/confirmation', {
+      state: { order: cart, name, pickupTime },
+    });
   };
 
   return (
@@ -60,7 +63,7 @@ function CheckoutForm() {
                 if (errors.name)
                   setErrors((prev) => ({ ...prev, name: false }));
               }}
-              className="text-green09 h-[40px] w-3/4 rounded-sm bg-white px-[24px] text-[20px] focus:outline-none"
+              className="text-green09 h-[40px] w-full rounded-sm bg-white px-[24px] text-[20px] focus:outline-none md:w-3/4"
             />
           </div>
           <div className="flex flex-col gap-[16px]">
@@ -85,7 +88,7 @@ function CheckoutForm() {
                 if (errors.phone)
                   setErrors((prev) => ({ ...prev, phone: false }));
               }}
-              className="text-green09 h-[40px] w-3/4 rounded-sm bg-white px-[24px] text-[20px] focus:outline-none"
+              className="text-green09 h-[40px] w-full rounded-sm bg-white px-[24px] text-[20px] focus:outline-none md:w-3/4"
             />
           </div>
 

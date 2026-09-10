@@ -7,6 +7,8 @@ import { useCart } from '../Components/CartContext';
 function Confirmation() {
   const { state } = useLocation();
   const order = state.order;
+  const name = state.name;
+  const pickupTime = state.pickupTime;
   const total = order.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0,
@@ -46,8 +48,14 @@ function Confirmation() {
                     <span className="text-resin01 font-medium">05/14/25</span>
                   </div>
                   <div className="font-font03 text-[12px] font-semibold md:text-[18px]">
+                    Name:{' '}
+                    <span className="text-resin01 font-medium">{name}</span>
+                  </div>
+                  <div className="font-font03 text-[12px] font-semibold md:text-[18px]">
                     Pick-up time:{' '}
-                    <span className="text-resin01 font-medium">3:00 PM</span>
+                    <span className="text-resin01 font-medium">
+                      {pickupTime} {pickupTime < '12:00' ? 'AM' : 'PM'}
+                    </span>
                   </div>
                   <div className="font-font03 text-[12px] font-semibold md:text-[18px]">
                     Pick-up in store:{' '}
