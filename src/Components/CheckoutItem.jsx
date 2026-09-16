@@ -4,7 +4,7 @@ function CheckoutItem({ item }) {
     <li className="flex w-full items-center gap-[8px] py-[16px] sm:gap-[16px]">
       <div className="font-font01 text-[16px] sm:text-[29px]">{currQt}x</div>
       <div className="flex w-full flex-col gap-[8px] sm:gap-[16px]">
-        <div className="flex rounded-lg bg-white p-[16px] sm:p-[24px]">
+        <div className="border-resin00 flex rounded-lg border-4 bg-white p-[16px] sm:p-[24px]">
           <img src={item.img} className="h-[100px] self-center sm:h-[150px]" />
           <div className="flex flex-col">
             <div className="text-green09 flex flex-col py-[16px] sm:py-[24px]">

@@ -40,7 +40,7 @@ function CheckoutForm() {
       className="grid grid-cols-1 gap-[48px] lg:grid-cols-2"
     >
       <div className="flex flex-col px-[16px] py-[24px]">
-        <div className="flex flex-col gap-[24px]">
+        <div className="flex flex-col gap-[48px]">
           <div className="flex flex-col gap-[16px]">
             <label className="flex items-baseline gap-4">
               <span className="font-font01 text-[16px] md:text-[29px]">
@@ -63,9 +63,10 @@ function CheckoutForm() {
                 if (errors.name)
                   setErrors((prev) => ({ ...prev, name: false }));
               }}
-              className="text-green09 h-[40px] w-full rounded-sm bg-white px-[24px] text-[20px] focus:outline-none md:w-3/4"
+              className="text-green09 border-resin00 h-[40px] w-full rounded-sm border-4 bg-white px-[24px] text-[20px] focus:outline-none md:w-3/4"
             />
           </div>
+
           <div className="flex flex-col gap-[16px]">
             <label className="flex items-baseline gap-4">
               <span className="font-font01 text-[16px] md:text-[29px]">
@@ -88,11 +89,22 @@ function CheckoutForm() {
                 if (errors.phone)
                   setErrors((prev) => ({ ...prev, phone: false }));
               }}
-              className="text-green09 h-[40px] w-full rounded-sm bg-white px-[24px] text-[20px] focus:outline-none md:w-3/4"
+              className="text-green09 border-resin00 h-[40px] w-full rounded-sm border-4 bg-white px-[24px] text-[20px] focus:outline-none md:w-3/4"
             />
           </div>
 
-          <div className="flex flex-col justify-items-center gap-4">
+          <div className="flex gap-[16px]">
+            <label className="font-font01 flex justify-between text-[16px] md:text-[29px]">
+              Your Date of Birth{' '}
+            </label>
+            <input
+              type="date"
+
+              className="px-4 bg-white border-4 rounded-sm font-font03 text-green09 border-resin00 focus:outline-none"
+            />
+          </div>
+
+          <div className="flex flex-col gap-4 justify-items-center">
             <p className="font-font03 text-resin00 text-[10px] italic md:text-[16px]">
               Operating Hours: 10:00 AM - 10:00 PM
             </p>
@@ -107,7 +119,7 @@ function CheckoutForm() {
                 max="20:00"
                 value={pickupTime}
                 onChange={handleTimeChange}
-                className="font-font03 text-green09 rounded-sm bg-white px-4 focus:outline-none"
+                className="px-4 bg-white border-4 rounded-sm font-font03 text-green09 border-resin00 focus:outline-none"
               />
             </div>
           </div>

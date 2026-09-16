@@ -33,7 +33,7 @@ function ShopItem({ item }) {
   }
 
   return (
-    <li className="flex h-full flex-col justify-between rounded-lg border-[1px] border-[#D5D5D5] bg-white px-[8px] py-[16px] md:h-[552px]">
+    <li className="border-resin00 flex h-full flex-col justify-between rounded-lg border-[4px] bg-white px-[8px] py-[16px] md:h-[552px]">
       <div>
         <img
           src={img}

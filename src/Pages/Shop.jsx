@@ -8,16 +8,31 @@ import { useEffect, useState } from 'react';
 import FilterButton from '../Components/FilterButton';
 import MobileFilter from '../Components/MobileFilter';
 import ShopItemSkeleton from '../Components/ShopItemSkeleton';
-import { supabase } from '../supabaseClient';
+// import { supabase } from '../supabaseClient';
+import flowerData from '../data/flowerData';
+import preRollsData from '../data/preRollsData';
+import vapesData from '../data/vapesData';
+import edibleData from '../data/edibleData';
+import tincturesData from '../data/tincturesData';
+import accessoriesData from '../data/accessoriesData';
 
-const categoryIdToProduct = {
-  1: 'flower',
-  2: 'edibles',
-  3: 'pre-rolls',
-  4: 'vapes',
-  5: 'accessories',
-  6: 'tinctures',
-};
+const allHardcodedItems = [
+  ...flowerData,
+  ...preRollsData,
+  ...vapesData,
+  ...edibleData,
+  ...tincturesData,
+  ...accessoriesData,
+];
+
+// const categoryIdToProduct = {
+//   1: 'flower',
+//   2: 'edibles',
+//   3: 'pre-rolls',
+//   4: 'vapes',
+//   5: 'accessories',
+//   6: 'tinctures',
+// };
 
 function Shop() {
   const { category } = useParams();
@@ -32,22 +47,24 @@ function Shop() {
   });
 
   useEffect(() => {
-    async function fetchProducts() {
-      const { data, error } = await supabase.from('Products').select('*');
-      if (error) {
-        setFetchError(true);
-      } else {
-        setItemData(
-          data.map((row) => ({
-            ...row,
-            img: row.image_url,
-            product: categoryIdToProduct[row.category_id] ?? '',
-          })),
-        );
-      }
-      setLoading(false);
-    }
-    fetchProducts();
+    // async function fetchProducts() {
+    //   const { data, error } = await supabase.from('Products').select('*');
+    //   if (error) {
+    //     setFetchError(true);
+    //   } else {
+    //     setItemData(
+    //       data.map((row) => ({
+    //         ...row,
+    //         img: row.image_url,
+    //         product: categoryIdToProduct[row.category_id] ?? '',
+    //       })),
+    //     );
+    //   }
+    //   setLoading(false);
+    // }
+    // fetchProducts();
+    setItemData(allHardcodedItems);
+    setLoading(false);
   }, []);
 
   const [openFilter, setOpenFilter] = useState(false);

@@ -27,7 +27,7 @@ function CartItem({ item }) {
         >
           Remove
         </div>
-        <div className="flex w-full rounded-lg bg-white px-[8px] py-[16px] sm:p-[24px]">
+        <div className="border-resin00 flex w-full rounded-lg border-[4px] bg-white px-[8px] py-[16px] sm:p-[24px]">
           <img src={item.img} className="h-[95px] self-center sm:h-[150px]" />
           <div className="flex flex-col gap-[16px]">
             <div className="text-green09 flex flex-col gap-[8px] sm:py-[24px]">

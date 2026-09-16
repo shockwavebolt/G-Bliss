@@ -55,7 +55,7 @@ function SearchBox({ setOpenSearch }) {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="font-font03 placeholder:font-font01 text-green09 flex h-[40px] w-full rounded-sm bg-white px-[16px] text-[16px] focus:outline-none"
+            className="font-font03 placeholder:font-font01 text-green09 border-resin00 flex h-[40px] w-full rounded-sm border-4 bg-white px-[16px] text-[16px] focus:outline-none"
             placeholder="Search Products..."
           />
         </div>

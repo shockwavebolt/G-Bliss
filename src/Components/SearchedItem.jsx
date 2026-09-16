@@ -20,7 +20,7 @@ function SearchedItem({ item }) {
   }
 
   return (
-    <li className="flex gap-[12px] rounded-sm bg-white px-[24px] py-[12px]">
+    <li className="border-resin00 flex gap-[12px] rounded-sm border-4 bg-white px-[24px] py-[12px]">
       <img
         src={img}
         className="h-[64px] w-[64px] shrink-0 rounded-md object-cover"
