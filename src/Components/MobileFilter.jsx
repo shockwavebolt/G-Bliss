@@ -15,8 +15,8 @@ function MobileFilter({
   }, []);
 
   return (
-    <div className="bg-green00 text-resin00 flex h-screen flex-col gap-[64px] px-[24px] pt-[128px] pb-[48px]">
-      <div className="flex justify-between pb-[8px]">
+    <div className="bg-green00 text-resin00 z-50 flex h-screen flex-col gap-[64px] px-[24px] py-[24px]">
+      <div className="border-resin00 flex justify-between border-b pb-[8px]">
         <div className="flex items-center gap-[16px]">
           <span className="font-font02 cat_title_shadow text-[20px] tracking-wide">
             Filter
