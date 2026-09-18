@@ -157,7 +157,7 @@ function CheckoutForm() {
         </div>
       </div>
 
-      <div className="bg-green01 flex flex-col gap-[24px] px-[16px] py-[64px] sm:px-[48px] lg:px-[24px]">
+      <div className="bg-green01 flex flex-col gap-[24px] px-[16px] py-[48px] sm:px-[48px] lg:px-[24px]">
         <div className="font-font02 cartShadow text-resin00 border-resin00 border-b pb-[24px] text-[26px] tracking-wide">
           In your Cart
         </div>

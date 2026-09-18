@@ -76,7 +76,7 @@ function NavBar() {
       <div
         className={`z-5 flex max-h-60 transition-transform duration-300 ${
           hideNav ? '-translate-y-full shadow-none' : 'translate-y-0 '
-        } bg-green00 text-resin00 border-resin00 fixed top-0 w-full items-end justify-between border-b px-[16px] py-[24px] lg:hidden`}
+        } bg-green00 text-resin00 border-resin00 fixed top-0 w-full items-baseline justify-between border-b px-[16px] py-[24px] lg:hidden`}
       >
         {location.pathname !== '/checkout' ? (
           <>

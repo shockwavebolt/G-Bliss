@@ -11,7 +11,7 @@ function Cart() {
   return (
     <div className="absolute top-0 left-0 z-50 flex w-full justify-end backdrop-blur-sm">
       <div
-        className={`flex h-[100vh] w-[500px] flex-col overflow-y-auto px-[16px] py-[24px] ${
+        className={`flex h-[100vh] w-[500px] flex-col overflow-y-auto px-[16px] py-[48px] ${
           cart?.length > 0 ? 'justify-between' : 'gap-[35vh]'
         } bg-green01 py-[48px] md:px-[24px]`}
       >
